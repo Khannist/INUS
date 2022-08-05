@@ -61,18 +61,19 @@ public class CommentController {
 	}
 	
 	// 댓글 삭제
-	@RequestMapping(value="/CommentDelete")
+	@RequestMapping(value="/CommentDelete/{inus_boardNum}/{inus_commentNum}")
 	public @ResponseBody void CommentDelete(HttpServletResponse res, CommentVo vo) throws Exception {
 		Gson gson = new Gson();
 		Map<String, Object> data = new HashMap<String, Object>();
-		System.out.println("CommentDelete 컨트롤러");
-		sqlSession.delete("com.inus.board.CommentMapper.CommentDelete", vo);
+		System.out.println("vo = " + vo);
+		int a = sqlSession.delete("com.inus.board.CommentMapper.CommentDelete", vo);
+		System.out.println("여부 = " + a);
 		List<CommentVo> list = sqlSession.selectList("com.inus.board.CommentMapper.getList", vo);
 		if(list.size() > 0) {
 			data.put("list", list);
 		}
-		System.out.println("list = " + list);
 		System.out.println("CommentDelete 컨트롤러 출력완료");
+		System.out.println("data : "+data);
 		res.setCharacterEncoding("UTF-8");
 		res.getWriter().print(gson.toJson(data));
 	}

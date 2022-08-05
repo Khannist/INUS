@@ -15,7 +15,8 @@ public class CommentVo {
 	public String toString() {
 		
 		return "작성자 : " + inus_CmWriter +
-				" 내용 : " + inus_CmContent;
+				" 내용 : " + inus_CmContent +
+				" 댓글번호 : " + inus_commentNum;
 	}
 	public int getInus_commentNum() {
 		return inus_commentNum;

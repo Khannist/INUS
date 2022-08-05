@@ -4,7 +4,6 @@
 window.onload = function() {
 	getTest();
 	commentList();
-	CommentDelete();
 }
  
 // 댓글 등록 ajax
@@ -53,8 +52,7 @@ function getTest() {
 				var writer = list[i].inus_CmWriter;
 				var commentNum = list[i].inus_commentNum;
 				
-				comment_html += "<div><span id='inus_CmWriter' ><strong>" + commentNum + "</strong></span><br/>";	
-				console.log(commentNum);
+				comment_html += "<div><span id='inus_commentNum' >" + commentNum + "</span><br/>";
 				comment_html += "<div><span id='inus_CmWriter'><strong>" + writer + "</strong></span><br/>";
 				comment_html += "<span id='inus_CmContent'>" + content + "</span><br>";
 				
@@ -66,9 +64,7 @@ function getTest() {
 				console.log(writer === con);
 				if(writer === con){
 					comment_html += '<input type="button" id="CommentDeleteBtn" value="댓글삭제" onclick="CommentDelete()">';
-					comment_html += '<hr></div>';
-					CommentDelete();
-					
+					comment_html += '<hr></div>';				
 				}
 				else{
 					comment_html += "</div><hr>";
@@ -85,23 +81,24 @@ function getTest() {
 // 댓글 삭제
 function CommentDelete(){
 		$("#CommentDeleteBtn").click(function(){
-		var num = $("#inus_commentNum").val(); 
+		
+		var num = document.getElementById("inus_commentNum").innerText; 
+		var num1 = document.getElementById("inus_boardNum").innerText;
 		
 			$.ajax({
 				type:"delete",
-				url:"/comment/CommentDelete/${CommentVo.inus_boardNum}/"+num,
+				url:"/comment/CommentDelete/"+num1+"/"+num,
 				dataType:"text",
-				success:function(result){
-					if(result == "success"){
+				success:function(data){
+					console.log(data);
+					if(data.inus_commentNum = num){
 						alert("삭제가 완료되었습니다.");
-						var count = $("#count").text();
-						$("#count").text(parseInt(count)-1);
-						getList();
+						window.location.reload();
 						}
 					},
-				error:function(result){
-					console.log(num);
+				error:function(data){
 					alert("에러");
+					console.log(num);
 				}
 					
 				
