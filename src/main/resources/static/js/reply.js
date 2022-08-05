@@ -51,7 +51,10 @@ function getTest() {
 			for(i = 0; i < list.length; i++){
 				var content = list[i].inus_CmContent;
 				var writer = list[i].inus_CmWriter;
+				var commentNum = list[i].inus_commentNum;
 				
+				comment_html += "<div><span id='inus_CmWriter' ><strong>" + commentNum + "</strong></span><br/>";	
+				console.log(commentNum);
 				comment_html += "<div><span id='inus_CmWriter'><strong>" + writer + "</strong></span><br/>";
 				comment_html += "<span id='inus_CmContent'>" + content + "</span><br>";
 				
@@ -62,7 +65,7 @@ function getTest() {
 				console.log(con);
 				console.log(writer === con);
 				if(writer === con){
-					comment_html += '<input type="button" id="CommentDeleteBtn" value="댓글삭제">';
+					comment_html += '<input type="button" id="CommentDeleteBtn" value="댓글삭제" onclick="CommentDelete()">';
 					comment_html += '<hr></div>';
 					CommentDelete();
 					
@@ -97,6 +100,7 @@ function CommentDelete(){
 						}
 					},
 				error:function(result){
+					console.log(num);
 					alert("에러");
 				}
 					
