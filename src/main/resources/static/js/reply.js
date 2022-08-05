@@ -98,7 +98,7 @@ function CommentDelete(){
 					},
 				error:function(data){
 					alert("에러");
-					console.log(num);
+					console.log(data);
 				}
 					
 				
