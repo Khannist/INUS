@@ -5,14 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="css/musicSearchcss.css" rel="stylesheet">
+<link href="ny/css/musicSearchcss.css" rel="stylesheet">
 </head>
 <body>
 <div class="MusicSearch">
 	<div></div>
 	<input type="text" class="SearchInput" id="search_Input" value="검색어를 입력해주세요">
     <input type="button" class="SearchInput" id="search_Button" onclick="Search()"> 
-	<img class="ToIMG" id="ToMusic" src="img/NY/icon/ToMusicList.png" onclick="F_ToMusicList()">
+	<img class="ToIMG" id="ToMusic" src="ny/img/icon/ToMusicList.png" onclick="F_ToMusicList()">
 	<ul>	
 		<li id="search01">
 			<p id="num1_th"></p>

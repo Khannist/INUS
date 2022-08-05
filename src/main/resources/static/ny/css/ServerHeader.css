@@ -1,0 +1,20 @@
+@charset "UTF-8";
+header{
+         background-color: #202225;
+         width: 100%;
+         height: 3.3vh;
+     }
+     #logo{
+     	margin-top:3px;
+         margin-left: 10px;
+         width: 23px;
+         /*height:*/
+         float: left;
+         cursor: pointer;
+     } 
+     header #ToProfile{
+	     float:right;
+	     width: 30px;
+	     /*height: 30px;*/
+	     margin-right: 1.5%;
+     }

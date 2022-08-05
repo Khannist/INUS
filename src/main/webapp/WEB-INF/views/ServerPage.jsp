@@ -4,13 +4,21 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link  rel="stylesheet" type="text/css" href="css/NY/ServerPage.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.4.0/sockjs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<link  rel="stylesheet" type="text/css" href="ny/css/ServerPage.css">
+<link  rel="stylesheet" type="text/css" href="ch/css/chat/chat.css">
+<link  rel="stylesheet" type="text/css" href="ch/css/room/room.css">
 
 <title>Insert title here</title>
 </head>
 <body>
 <div class="container"> 
-
+	<input type="hidden" name="userId" id="userId" value="A">
+	<input type="hidden" name="roomCode" id="roomCode">
+	<input type="hidden" name="channelCode" id="channelCode">
+	<input type="hidden" name="username" id="username" value="에이">
 	<jsp:include page="NY/ServerHeader.jsp"></jsp:include>
 
 	<div class="ServerLbar">
@@ -26,19 +34,20 @@
 	      	<!--.ChatPage 여기에 채팅 jsp 넣으면 된담 -->
 	      	<div class="ChatPage">
 	      		<!-- 뮤직페이지 열고 닫는 아이콘 -->
-	      		<img src="img/NY/icon/gogoIcon.png" class="pageIcon" id="OpenMusic" onclick="FMusicPage()">
-	      		<img src="img/NY/icon/closeMusicIcon.png" class="pageIcon" id="CloseMusic" onclick="FC_MusicPage()">
+	      		<img src="ny/img/icon/gogoIcon.png" class="pageIcon" id="OpenMusic" onclick="FMusicPage()">
+	      		<img src="ny/img/icon/closeMusicIcon.png" class="pageIcon" id="CloseMusic" onclick="FC_MusicPage()">
 	      		<div>
 	      		
 	      		</div>
+	      		<jsp:include page="ch/chat/chat.jsp"></jsp:include>
 	      		<div class="inputFix">	<!-- css아직 없음 -->
 	      			<div class="ChatInput">
-	        		<input id="chatRealInput" type="text" placeholder="채팅">
-	        		<img src="img/NY/icon/chatIcon/ghostIcon.png">
-	        		<img src="img/NY/icon/chatIcon/smilIecon.png">
+	        		<input id="chatRealInput" type="text" placeholder="채팅" onkeydown="send(event)">
+	        		<img src="ny/img/icon/chatIcon/ghostIcon.png">
+	        		<img src="ny/img/icon/chatIcon/smilIecon.png">
 	       		</div>
 	       			<div class="ChatSubmit">
-	       				<input id="chatRealsubmit" type="submit" value="보내기">
+	       				<input id="chatRealsubmit" type="button" value="보내기" onclick="sendChatSc()">
 	       			</div>	
 	      		</div>
 	      	</div>
@@ -47,22 +56,27 @@
 		
 	</div>
 </div>
+<script type="text/javascript" src="/ny/js/ServerPage.js"></script>
+<script type="text/javascript" src="/ny/js/MusicRecommand.js"></script>
+<script type="text/javascript" src="/ch/js/channel/channel.js"></script>
+<script type="text/javascript" src="/ch/js/room/room.js"></script>
+<script type="text/javascript" src="/ch/js/room/roomdel.js"></script>
+<script type="text/javascript" src="/ch/js/stomp/stompChat.js"></script>
 <script type="text/javascript">
 
 //서버 수정 페이지 나타남
 function F_openrReplace(){
     document.querySelector('.ServerReplace').style.display = "block";   //서버 수정 페이지 나타남
-    document.querySelector('#chatIcon').style.display = "block";	//닫히는 아이콘 나타남
-    document.querySelector('#chatIcon_2').style.display = "none";	//열리는 아이콘 없어짐
+    document.querySelector('#chatIcon_2').style.display = "block";   //닫히는 아이콘 나타남
+    document.querySelector('#chatIcon').style.display = "none";   //열리는 아이콘 없어짐
 
 }
 //서버 수정 페이지 없어짐
 function F_closeReplace(){
     document.querySelector('.ServerReplace').style.display = "none";   //서버 수정 페이지 없어짐
-    document.querySelector('#chatIcon').style.display = "none";	//닫히는 아이콘 나타남
-    document.querySelector('#chatIcon_2').style.display = "block";	//열리는 아이콘 없어짐  
+    document.querySelector('#chatIcon_2').style.display = "none";         //열리는 아이콘 나타남
+    document.querySelector('#chatIcon').style.display = "block";      //닫히는 아이콘 없어짐  
 }
-
 
 
 

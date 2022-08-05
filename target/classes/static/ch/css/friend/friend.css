@@ -1,0 +1,8 @@
+@charset "UTF-8";
+#friendList p {
+	width: 200px;
+	height: 80px;
+	text-align: center;
+	border: 1px solid #2b2;
+	background-color: #2b2;
+}

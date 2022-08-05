@@ -4,23 +4,14 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="css/NY/ServerLbar.css" rel="stylesheet">
+<link href="ny/css/ServerLbar.css" rel="stylesheet">
 <title>왼쪽 바</title>
 </head>
 <body>
 
 	<div class="ServerList">
 		<div id="serverCount">	<!-- 필요없어보인다고 지우면 안됌 -->
-		<ul>
-			<li>
-				<img class="serverImg" src="https://source.unsplash.com/random">	
-			</li>
-			<li>
-				<a href="/AddServer">
-				<img class="serverImg" id="plusServerImg" src="img/NY/icon/plus2.png">
-				</a>
-			</li>
-		</ul>
+			<jsp:include page="../ch/roomchannel/roomChannel.jsp"></jsp:include>
 		</div>
 	</div>
 	<div class="ChatAndFriendList">
@@ -28,25 +19,12 @@
 			<div class="ChatList">
 				<div class="headerP" >
 						<p id="ChatName">채팅방이름</p>
-						<img class="ChatAndFriend_Icon" id="chatIcon" src="img/NY/icon/ChatListIcon.png" onclick="F_openrReplace()">
-						<img class="ChatAndFriend_Icon" id="chatIcon_2" style="display: none;" src="img/NY/icon/ChatListIcon_2.png" onclick="F_closeReplace()">
+						<img class="ChatAndFriend_Icon" id="chatIcon" src="ny/img/icon/ChatListIcon.png" onclick="F_openrReplace()">
+						<img class="ChatAndFriend_Icon" id="chatIcon_2" style="display: none;" src="ny/img/icon/ChatListIcon_2.png" onclick="F_closeReplace()">
 				</div>
 				<!-- 채팅방이름 7자 이내 -->
 				
-				<ul>	
-					<li>
-						<img src="https://source.unsplash.com/random">
-						<p>나연다현치현</p> <!-- 이름설정할 수 있나? -->
-					</li>
-					<li>
-						<img src="https://source.unsplash.com/random">
-						<p>게임을 합쉬다</p>
-					</li>
-					<li>
-						<img src="https://source.unsplash.com/random">
-						<p>공부를 합쉬다</p>
-					</li>
-				</ul>
+				<jsp:include page="../ch/room/room.jsp"></jsp:include>
 				
 			</div>
 			
@@ -54,8 +32,13 @@
 				<div class="ServerReplace">
 					<ul>
 						<li>초대하기</li>
+						<li onclick="createRoom()">채팅방 만들기</li>
 						<li>서버 나가기</li>
 					</ul>
+					<div id="inputNameSpace" style="display:none;">
+						<input type="text" id="roomName"><br>
+						<input type="button" value="생성" onclick="createRoomName()">
+					</div>
 				</div>
 		
 				<!-- <div class="fixProifle">
@@ -70,7 +53,7 @@
 					
 					
 					<a href="/SET">
-						<img id="setIcon"src="img/NY/icon/set_1.png">
+						<img id="setIcon"src="ny/img/icon/set_1.png">
 					</a>
 				</div> -->
 			</div>	
