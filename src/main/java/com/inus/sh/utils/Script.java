@@ -12,5 +12,6 @@ public class Script {
 		stringBuilder.toString();
 		model.addAttribute("locationMsg" ,stringBuilder);
 		return "utils/locationMsg";
+		return "/sh/utils/locationMsg";
 	}
 }
