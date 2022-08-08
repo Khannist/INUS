@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="NY/css/ServerFriendList.css" rel="stylesheet">
 </head>
@@ -14,7 +14,7 @@
 		<li>
 			<div>
 				<img alt="" src="https://source.unsplash.com/random" class="friendProfilePic">
-				<p class="FriendProfileName">티모꼬딱지</p>
+				<p class="FriendProfileName">�곕え瑗щ�깆�</p>
 				<img src="NY/img/icon/xxIcon.png" id="FriendRomove">
 			</div>
 		</li>

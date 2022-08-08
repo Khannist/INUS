@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<<<<<<< HEAD
+
 <link href="ny/css/musicSearchcss.css" rel="stylesheet">
 </head>
 <body>
@@ -56,7 +56,6 @@
 			<p id="num10_title"></p>
 		</li>
 	</ul>
-=======
 <link href="NY/css/MusicSearch.css" rel="stylesheet">
 </head>
 <body>
@@ -171,11 +170,6 @@
 			</li>
 		</ul>
 	</div>
-<<<<<<< HEAD
->>>>>>> INUS/NY
-=======
->>>>>>> origin/NY
->>>>>>> 0a014d3e67b573cf40038f956ac28498088ee2b6
  <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script type="text/javascript">

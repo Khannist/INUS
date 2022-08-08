@@ -10,23 +10,17 @@
 <link href="js/music.js" rel="">
 <meta charset="UTF-8">
 <title>음악페이지</title>
-<<<<<<< HEAD
+
 <link href="ny/css/MusicRecommand.css" rel="stylesheet">
 </head>
 <body>
 <div class="MusicPage">
 	<img class="ToIMG" id="ToSearch" src="ny/img/icon/ToSearch.png" onclick="F_ToSearch()">
-=======
 <link href="NY/css/MusicRecommand.css" rel="stylesheet">
 </head>
 <body>
 	<img class="ToIMG" id="ToSearch" src="NY/img/icon/ToSearch.png" onclick="F_ToSearch()">
 	<div class="#">
-<<<<<<< HEAD
->>>>>>> INUS/NY
-=======
->>>>>>> origin/NY
->>>>>>> 0a014d3e67b573cf40038f956ac28498088ee2b6
 	    <div class="firstvideo" >
 			<iframe
 			width="560"
@@ -50,54 +44,30 @@
 			</div>
 			<ul>
 				<li>
-<<<<<<< HEAD
+
 					<img src="ny/img/PageImg/koreaTOP100.png" class="top100Img" id="top100Img_1" onclick="showVideo01()">
-=======
 					<img src="NY/img/PageImg/koreaTOP100.png" class="top100Img" id="top100Img_1" onclick="showVideo01()">
-<<<<<<< HEAD
->>>>>>> INUS/NY
-=======
->>>>>>> origin/NY
->>>>>>> 0a014d3e67b573cf40038f956ac28498088ee2b6
 					<p>KoreaTop100</p>
 					<!-- https://music.youtube.com/playlist?list=PLX_q1hyeET2TQLU4PzpVoSVYxsUnhzKaW&feature=share -->
 				</li>
 				<li >
-<<<<<<< HEAD
+
 					<img src="ny/img/PageImg/koreaMVTOP100.png" class="top100Img" id="top100Img_2" onclick="showVideo02()">
-=======
 					<img src="NY/img/PageImg/koreaMVTOP100.png" class="top100Img" id="top100Img_2" onclick="showVideo02()">
-<<<<<<< HEAD
->>>>>>> INUS/NY
-=======
->>>>>>> origin/NY
->>>>>>> 0a014d3e67b573cf40038f956ac28498088ee2b6
 					<p>KoreaMVTop100</p>
 					<!-- https://music.youtube.com/playlist?list=PLX_q1hyeET2Tbwcw6_aMvbCgv4HRtsaOh&feature=share -->
 				</li>
 				<li>
-<<<<<<< HEAD
+
 					<img src="ny/img/PageImg/globalTOP100.png" class="top100Img" id="top100Img_3" onclick="showVideo03()" >
-=======
 					<img src="NY/img/PageImg/globalTOP100.png" class="top100Img" id="top100Img_3" onclick="showVideo03()" >
-<<<<<<< HEAD
->>>>>>> INUS/NY
-=======
->>>>>>> origin/NY
->>>>>>> 0a014d3e67b573cf40038f956ac28498088ee2b6
 					<p>GlobalTop100</p>
 					<!-- https://music.youtube.com/playlist?list=PLX_q1hyeET2TyTOUo2FFLNG8H3xk5f5mP&feature=share -->
 				</li>
 				<li>
-<<<<<<< HEAD
+
 					<img src="ny/img/PageImg/globalMVTOP100.png" class="top100Img" id="top100Img_4" onclick="showVideo04()">
-=======
 					<img src="NY/img/PageImg/globalMVTOP100.png" class="top100Img" id="top100Img_4" onclick="showVideo04()">
-<<<<<<< HEAD
->>>>>>> INUS/NY
-=======
->>>>>>> origin/NY
->>>>>>> 0a014d3e67b573cf40038f956ac28498088ee2b6
 					<p>GlobalMVTop100</p>
 					<!-- https://music.youtube.com/playlist?list=PLX_q1hyeET2Q1s--AgeUE0vSOxJBQn1L0&feature=share -->
 				</li>
@@ -119,7 +89,7 @@
 				<input type="button" class="keyword" id="Exercise" value="운동" onclick="F_Exercise()">
 				<input type="button" class="keyword" id="leavework" value="퇴근" onclick="F_Leavework()">
 			</div>
-<<<<<<< HEAD
+
 							
 				<ul class="hiphopList">
 					<li>
@@ -380,7 +350,6 @@
 					<!-- https://music.youtube.com/watch?v=t8ERhuId1h4&list=PLoZaF2VQLrUHlGZV9WvuAj1Sz5wXlfjzR -->
 					</li>
 				</ul>
-=======
 				<div class="sideScroller">
 					<div class="sideScroller_2">
 						<ul class="hiphopList">
@@ -644,11 +613,6 @@
 						</ul>
 					</div>
 				</div>	
-<<<<<<< HEAD
->>>>>>> INUS/NY
-=======
->>>>>>> origin/NY
->>>>>>> 0a014d3e67b573cf40038f956ac28498088ee2b6
 		</div>
 	
 	
