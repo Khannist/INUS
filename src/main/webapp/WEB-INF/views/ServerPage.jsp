@@ -28,7 +28,9 @@
 		      	<div class="MusicSearch">
 		      		<jsp:include page="NY/MusicSearch.jsp"></jsp:include>
 		      	</div>
-		    
+		    	<div class="ServerFriendList">
+		      		<jsp:include page="NY/ServerFriendList.jsp"></jsp:include>
+		      	</div>
 		      </div>
 	      	
 	      	<!--.ChatPage 여기에 채팅 jsp 넣으면 된담 -->
@@ -54,7 +56,19 @@
 </div>
 <script type="text/javascript">
 
+//서버 수정 페이지 나타남
+function F_openrReplace(){
+    document.querySelector('.ServerReplace').style.display = "block";   //서버 수정 페이지 나타남
+    document.querySelector('#chatIcon_2').style.display = "block";	//닫히는 아이콘 나타남
+    document.querySelector('#chatIcon').style.display = "none";	//열리는 아이콘 없어짐
 
+}
+//서버 수정 페이지 없어짐
+function F_closeReplace(){
+    document.querySelector('.ServerReplace').style.display = "none";   //서버 수정 페이지 없어짐
+    document.querySelector('#chatIcon_2').style.display = "none";		   //열리는 아이콘 나타남
+    document.querySelector('#chatIcon').style.display = "block";	   //닫히는 아이콘 없어짐  
+}
 //채팅 옆으로 밀고 뮤직 페이지 등장
 function FMusicRecommand(){
     document.querySelector('.MusicRecommand').style.display = "block";   	//뮤직 페이지 나타남
@@ -84,14 +98,15 @@ function FC_MusicRecommand(){
 function F_ToSearch(){
     document.querySelector('.MusicSearch').style.display = "block";	// 검색페이지 열림
     document.querySelector('.MusicRecommand').style.display = "none";    // 음악페이지 닫힘
+    document.querySelector('.ServerFriendList').style.display = "none";    // 서버에 속한 친구리스트  닫힘
     document.querySelector('#ToSearch').style.display = "none";	//검색 아이콘 없어짐
     document.querySelector('#ToMusic').style.display = "block";	//뮤직 아이콘 나타남
 
 }
-function F_ToMusicList(){
-
-    document.querySelector('.MusicRecommand ').style.display = "block";	//음악페이지 열림
+function F_ToFriendList(){
+    document.querySelector('.ServerFriendList').style.display = "block";	//서버에 속한 친구리스트 열림
     document.querySelector('.MusicSearch').style.display = "none";   //검색페이지 사라짐
+    document.querySelector('.MusicRecommand').style.display = "none";   //뮤직페이지 사라짐
     document.querySelector('#ToMusic').style.display = "none";	//뮤직 아이콘 없어짐
     document.querySelector('#ToSearch').style.display = "block";	//검색 아이콘 나타남
 

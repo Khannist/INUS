@@ -58,14 +58,18 @@ body{
     #CloseMusic{
     	display: none;
     }
-    .MusicRecommand, .MusicSearch{
+    .MusicRecommand, .MusicSearch, .ServerFriendList{
     	display: none;
-    	width:600px;
-     	height: 97vh;
+    	width: 600px;
+     	height: 905px;
      	float: left;
-     	
+     	position: relative;
     }
-    
+    .MusicSearch li{
+    	height: 120px;
+    	padding: 10px 0px 0px 7px;
+    	margin: 5px;
+    }
     /*ChatPage*/
     
     .ChatInput{
@@ -117,32 +121,12 @@ body{
             appearance: none;
         }
     
-    
-    
-    
-    
-    .MusicRecommand{
-    	position:relative;
-    	
-    }
-        
-        
-        /*프로필 하단 고정*/
-    .fixProifle{
-    	position: absolute;
-    	bottom: 0px;
-    	background-color: #292b2f;
-    }
-    
-    
-    
-    
-    
-    
+
     /*검색아이콘, 돌아오는 아이콘 위치*/
 	    .ToIMG{
-		width: 35px;
-		position: absolute;
-		right: 10px;
-		top: 3px;
+		    width: 36px;
+		    height: 36px;
+		    position: absolute;
+		    right: 10px;
+		    top: 17px;
 		}

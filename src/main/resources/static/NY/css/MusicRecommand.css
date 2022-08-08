@@ -3,24 +3,14 @@ p{
 	text-align: left;
 }
 
-    .ToIMG{
-	width: 30px;
-	height: 30px;
-	position: absolute;
-	right: 10px;
-	top: 3px;
-	margin-top: 6px;
-	}
-
-
 	.firstvideo, #ifrmaeID{
-		margin-top:50px;
 		margin-left: 20px;
 		float:left;
+		margin-top: 76px;;
 	}
 	.iframeClass{
 		display: none;
-		margin-top:50px;
+		margin-top:60px;
 		/*margin-left: 30px;*/
 		float:left;
 	}
@@ -48,7 +38,9 @@ p{
 
 	
 	
-	
+	.top100Img:hover{
+		
+	}
 
 
 	/* [음악 추천리스트] top100 추천리스트*/
@@ -56,7 +48,7 @@ p{
 		float:left;
 	}
 	#top100_Title{
-		margin-top: 10px;
+		margin-top: 27px;
 	}
 	
 	.top100List li p{
@@ -68,13 +60,25 @@ p{
 	
 	
 	/* [음악 추천리스트] 키워드 추천리스트*/
+	.keyword {
+	    background-color: whitesmoke;
+	    width: 50px;
+	    border: 1px solid;
+	    border-radius: 6px;
+	}
+	#AniOST{
+		width: 60px;
+	}
+	.sideScroller{
+		width: 590px;
+		max-width: 590px;
+	}
 	.keywordList{
+		width: 590px;
+		height: 337px;
 		clear: both;
 		float: left;
-	}
-
-    .keywordList{
-		margin-top: 30px;
+		margin-top: 27px;
 	}
 	.keyword_Text{
 		margin-bottom: 15px;
@@ -86,3 +90,20 @@ p{
 	.keywordList li span{
 		font-size: 16px;
 	}
+	
+	
+	
+	
+	.sideScroller_2{
+		height: 175px;
+		overflow-y: scroll;
+	}
+	
+	.sideScroller_2::-webkit-scrollbar{
+    display: none; 
+}
+	
+	
+	
+	
+	

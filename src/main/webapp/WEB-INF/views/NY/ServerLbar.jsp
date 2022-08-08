@@ -29,7 +29,7 @@
 				<div class="headerP" >
 						<p id="ChatName">채팅방이름</p>
 						<img class="ChatAndFriend_Icon" id="chatIcon" src="NY/img/icon/ChatListIcon.png" onclick="F_openrReplace()">
-						<img class="ChatAndFriend_Icon" id="chatIcon_2" style="display: none;" src="NY/mg/icon/ChatListIcon_2.png" onclick="F_closeReplace()">
+						<img class="ChatAndFriend_Icon" id="chatIcon_2" style="display: none;" src="NY/img/icon/ChatListIcon_2.png" onclick="F_closeReplace()">
 				</div>
 				<!-- 채팅방이름 7자 이내 -->
 				

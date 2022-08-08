@@ -114,19 +114,20 @@
     
     .chatAndFriendheader li {
     	clear: both;
-
+		margin-top: 10px;
     }   
         
         
         
         
      .ServerReplace{
-     position:absolute;
-     top: 47px;
-     width:160px;
-     height: 90px;
-     background-color: #202225;
-     display: none;
+     	position: absolute;
+		top: 47px;
+		width: 182px;
+		height: 71px;
+		background-color: #202225;
+		margin-left: 5px;
+		display: none;
      }
         
         

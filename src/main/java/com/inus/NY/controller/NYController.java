@@ -38,7 +38,7 @@ public class NYController {
 
 	   @RequestMapping("/SET")
 	   public String SetController() {
-	      return "set";
+	      return "Set";
 	   }
 }
 
