@@ -22,7 +22,11 @@
 <body>
 	<img class="ToIMG" id="ToSearch" src="NY/img/icon/ToSearch.png" onclick="F_ToSearch()">
 	<div class="#">
+<<<<<<< HEAD
 >>>>>>> INUS/NY
+=======
+>>>>>>> origin/NY
+>>>>>>> 0a014d3e67b573cf40038f956ac28498088ee2b6
 	    <div class="firstvideo" >
 			<iframe
 			width="560"
@@ -50,7 +54,11 @@
 					<img src="ny/img/PageImg/koreaTOP100.png" class="top100Img" id="top100Img_1" onclick="showVideo01()">
 =======
 					<img src="NY/img/PageImg/koreaTOP100.png" class="top100Img" id="top100Img_1" onclick="showVideo01()">
+<<<<<<< HEAD
 >>>>>>> INUS/NY
+=======
+>>>>>>> origin/NY
+>>>>>>> 0a014d3e67b573cf40038f956ac28498088ee2b6
 					<p>KoreaTop100</p>
 					<!-- https://music.youtube.com/playlist?list=PLX_q1hyeET2TQLU4PzpVoSVYxsUnhzKaW&feature=share -->
 				</li>
@@ -59,7 +67,11 @@
 					<img src="ny/img/PageImg/koreaMVTOP100.png" class="top100Img" id="top100Img_2" onclick="showVideo02()">
 =======
 					<img src="NY/img/PageImg/koreaMVTOP100.png" class="top100Img" id="top100Img_2" onclick="showVideo02()">
+<<<<<<< HEAD
 >>>>>>> INUS/NY
+=======
+>>>>>>> origin/NY
+>>>>>>> 0a014d3e67b573cf40038f956ac28498088ee2b6
 					<p>KoreaMVTop100</p>
 					<!-- https://music.youtube.com/playlist?list=PLX_q1hyeET2Tbwcw6_aMvbCgv4HRtsaOh&feature=share -->
 				</li>
@@ -68,7 +80,11 @@
 					<img src="ny/img/PageImg/globalTOP100.png" class="top100Img" id="top100Img_3" onclick="showVideo03()" >
 =======
 					<img src="NY/img/PageImg/globalTOP100.png" class="top100Img" id="top100Img_3" onclick="showVideo03()" >
+<<<<<<< HEAD
 >>>>>>> INUS/NY
+=======
+>>>>>>> origin/NY
+>>>>>>> 0a014d3e67b573cf40038f956ac28498088ee2b6
 					<p>GlobalTop100</p>
 					<!-- https://music.youtube.com/playlist?list=PLX_q1hyeET2TyTOUo2FFLNG8H3xk5f5mP&feature=share -->
 				</li>
@@ -77,7 +93,11 @@
 					<img src="ny/img/PageImg/globalMVTOP100.png" class="top100Img" id="top100Img_4" onclick="showVideo04()">
 =======
 					<img src="NY/img/PageImg/globalMVTOP100.png" class="top100Img" id="top100Img_4" onclick="showVideo04()">
+<<<<<<< HEAD
 >>>>>>> INUS/NY
+=======
+>>>>>>> origin/NY
+>>>>>>> 0a014d3e67b573cf40038f956ac28498088ee2b6
 					<p>GlobalMVTop100</p>
 					<!-- https://music.youtube.com/playlist?list=PLX_q1hyeET2Q1s--AgeUE0vSOxJBQn1L0&feature=share -->
 				</li>
@@ -624,7 +644,11 @@
 						</ul>
 					</div>
 				</div>	
+<<<<<<< HEAD
 >>>>>>> INUS/NY
+=======
+>>>>>>> origin/NY
+>>>>>>> 0a014d3e67b573cf40038f956ac28498088ee2b6
 		</div>
 	
 	

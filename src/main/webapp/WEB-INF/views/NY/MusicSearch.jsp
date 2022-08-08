@@ -171,7 +171,11 @@
 			</li>
 		</ul>
 	</div>
+<<<<<<< HEAD
 >>>>>>> INUS/NY
+=======
+>>>>>>> origin/NY
+>>>>>>> 0a014d3e67b573cf40038f956ac28498088ee2b6
  <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script type="text/javascript">

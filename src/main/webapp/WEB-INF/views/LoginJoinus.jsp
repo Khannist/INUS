@@ -8,7 +8,11 @@
 <link  rel="stylesheet" type="text/css" href="ny/css/LoginJoinus.css">
 =======
 <link  rel="stylesheet" type="text/css" href="NY/css/LoginJoinus.css">
+<<<<<<< HEAD
 >>>>>>> INUS/NY
+=======
+>>>>>>> origin/NY
+>>>>>>> 0a014d3e67b573cf40038f956ac28498088ee2b6
 <title>Insert title here</title>
 </head>
 <body>

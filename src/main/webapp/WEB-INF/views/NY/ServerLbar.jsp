@@ -8,7 +8,11 @@
 <link href="ny/css/ServerLbar.css" rel="stylesheet">
 =======
 <link href="NY/css/ServerLbar.css" rel="stylesheet">
+<<<<<<< HEAD
 >>>>>>> INUS/NY
+=======
+>>>>>>> origin/NY
+>>>>>>> 0a014d3e67b573cf40038f956ac28498088ee2b6
 <title>왼쪽 바</title>
 </head>
 <body>
@@ -28,7 +32,11 @@
 				</a>
 			</li>
 		</ul>
+<<<<<<< HEAD
 >>>>>>> INUS/NY
+=======
+>>>>>>> origin/NY
+>>>>>>> 0a014d3e67b573cf40038f956ac28498088ee2b6
 		</div>
 	</div>
 	<div class="ChatAndFriendList">
@@ -42,7 +50,11 @@
 =======
 						<img class="ChatAndFriend_Icon" id="chatIcon" src="NY/img/icon/ChatListIcon.png" onclick="F_openrReplace()">
 						<img class="ChatAndFriend_Icon" id="chatIcon_2" style="display: none;" src="NY/img/icon/ChatListIcon_2.png" onclick="F_closeReplace()">
+<<<<<<< HEAD
 >>>>>>> INUS/NY
+=======
+>>>>>>> origin/NY
+>>>>>>> 0a014d3e67b573cf40038f956ac28498088ee2b6
 				</div>
 				<!-- 채팅방이름 7자 이내 -->
 				
@@ -79,7 +91,11 @@
 						<img id="setIcon"src="ny/img/icon/set_1.png">
 =======
 						<img id="setIcon"src="NY/img/icon/set_1.png">
+<<<<<<< HEAD
 >>>>>>> INUS/NY
+=======
+>>>>>>> origin/NY
+>>>>>>> 0a014d3e67b573cf40038f956ac28498088ee2b6
 					</a>
 				</div>
 			</div>	

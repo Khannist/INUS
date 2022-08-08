@@ -8,7 +8,11 @@
 <link href="ny/css/ServerHeader.css" rel="stylesheet">
 =======
 <link href="NY/css/ServerHeader.css" rel="stylesheet">
+<<<<<<< HEAD
 >>>>>>> INUS/NY
+=======
+>>>>>>> origin/NY
+>>>>>>> 0a014d3e67b573cf40038f956ac28498088ee2b6
 <title>Insert title here</title>
 </head>
 <body>
@@ -18,7 +22,11 @@
     	<img id="logo" src="ny/img/icon/letter-m.png">
 =======
     	<img id="logo" src="NY/img/icon/letter-m.png">
+<<<<<<< HEAD
 >>>>>>> INUS/NY
+=======
+>>>>>>> origin/NY
+>>>>>>> 0a014d3e67b573cf40038f956ac28498088ee2b6
     </a>
 </header>
 </body>
