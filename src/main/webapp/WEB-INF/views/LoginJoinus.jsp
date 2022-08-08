@@ -4,7 +4,11 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
 <link  rel="stylesheet" type="text/css" href="ny/css/LoginJoinus.css">
+=======
+<link  rel="stylesheet" type="text/css" href="NY/css/LoginJoinus.css">
+>>>>>>> origin/NY
 <title>Insert title here</title>
 </head>
 <body>
@@ -26,14 +30,14 @@
                         <div class="section text-center">
                           <h4 class="mb-4 pb-3">Log In</h4>
                           <div class="form-group">
-                            <input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
+                            <input type="text" name="logemail" class="form-style" placeholder="Your Id" id="logemail" autocomplete="off" required="required">
                             <i class="input-icon uil uil-at"></i>
                           </div>  
                           <div class="form-group mt-2">
-                            <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+                            <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off" required="required">
                             <i class="input-icon uil uil-lock-alt"></i>
                           </div>
-                          <a href="" class="btn mt-4">submit</a>
+                          <a href="#" class="btn mt-4">submit</a>
                                         <p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your password?</a></p>
                             </div>
                           </div>
@@ -43,27 +47,24 @@
                         <div class="section text-center">
                           <h4 class="mb-4 pb-3">Sign Up</h4>
                           <div class="form-group">
-                            <input type="text" name="logname" class="form-style" placeholder="Your Full Name" id="logname" autocomplete="off">
+                            <input type="text" name="logname" class="form-style" placeholder="Your Full Name" id="logname" autocomplete="off" required="required">
                             <i class="input-icon uil uil-user"></i>
-                          </div>  
-                          <div class="form-group mt-2">
-                            <input type="email" name="logemail" class="form-style" placeholder="Your NickName" id="logemail" autocomplete="off">
-                            <i class="input-icon uil uil-at"></i>
-                          </div>  
-                          <div class="form-group mt-2">
-                            <input type="id" name="logpass" class="form-style" placeholder="Your Id" id="logpass" autocomplete="off">
-                            <i class="input-icon uil uil-lock-alt"></i>
-                          </div>
-                          <div class="form-group mt-2">
-                            <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
-                            <i class="input-icon uil uil-lock-alt"></i>
-                          </div>
-                          <div class="form-group mt-2">
-                            <input type="password" name="logpass" class="form-style" placeholder="Check Password" id="logpass" autocomplete="off">
-                            <i class="input-icon uil uil-lock-alt"></i>
                           </div>
                           <div class="form-group mt-2">
                             <input type="text" name="logpass" class="form-style" placeholder="Your Email" id="logpass" autocomplete="off">
+                            <i class="input-icon uil uil-lock-alt"></i>
+                          </div>
+                          </div>  
+                          <div class="form-group mt-2">
+                            <input type="text" name="logpass" class="form-style" placeholder="Your Id(UP TO 7)" id="logpass" autocomplete="off" required="required">
+                            <i class="input-icon uil uil-lock-alt"></i>
+                          </div>
+                          <div class="form-group mt-2">
+                            <input type="password" name="logpass" class="form-style" placeholder="Your Password(UP TO 10)" id="logpass" autocomplete="off" required="required">
+                            <i class="input-icon uil uil-lock-alt"></i>
+                          </div>
+                          <div class="form-group mt-2">
+                            <input type="password" name="logpass" class="form-style" placeholder="Check Password" id="logpass" autocomplete="off" required="required">
                             <i class="input-icon uil uil-lock-alt"></i>
                           </div>
                           <a href="#" class="btn mt-4">submit</a>

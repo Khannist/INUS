@@ -4,14 +4,31 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
 <link href="ny/css/ServerLbar.css" rel="stylesheet">
+=======
+<link href="NY/css/ServerLbar.css" rel="stylesheet">
+>>>>>>> origin/NY
 <title>왼쪽 바</title>
 </head>
 <body>
 
 	<div class="ServerList">
 		<div id="serverCount">	<!-- 필요없어보인다고 지우면 안됌 -->
+<<<<<<< HEAD
 			<jsp:include page="../ch/roomchannel/roomChannel.jsp"></jsp:include>
+=======
+		<ul>
+			<li>
+				<img class="serverImg" src="https://source.unsplash.com/random">	
+			</li>
+			<li>
+				<a href="/AddServer">
+				<img class="serverImg" id="plusServerImg" src="NY/img/icon/plus2.png">
+				</a>
+			</li>
+		</ul>
+>>>>>>> origin/NY
 		</div>
 	</div>
 	<div class="ChatAndFriendList">
@@ -19,8 +36,13 @@
 			<div class="ChatList">
 				<div class="headerP" >
 						<p id="ChatName">채팅방이름</p>
+<<<<<<< HEAD
 						<img class="ChatAndFriend_Icon" id="chatIcon" src="ny/img/icon/ChatListIcon.png" onclick="F_openrReplace()">
 						<img class="ChatAndFriend_Icon" id="chatIcon_2" style="display: none;" src="ny/img/icon/ChatListIcon_2.png" onclick="F_closeReplace()">
+=======
+						<img class="ChatAndFriend_Icon" id="chatIcon" src="NY/img/icon/ChatListIcon.png" onclick="F_openrReplace()">
+						<img class="ChatAndFriend_Icon" id="chatIcon_2" style="display: none;" src="NY/img/icon/ChatListIcon_2.png" onclick="F_closeReplace()">
+>>>>>>> origin/NY
 				</div>
 				<!-- 채팅방이름 7자 이내 -->
 				
@@ -41,7 +63,7 @@
 					</div>
 				</div>
 		
-				<!-- <div class="fixProifle">
+				<div class="fixProifle">
 					<p id="fixProfile_1">
 						<img src="https://source.unsplash.com/random">
 					</p>
@@ -53,9 +75,13 @@
 					
 					
 					<a href="/SET">
+<<<<<<< HEAD
 						<img id="setIcon"src="ny/img/icon/set_1.png">
+=======
+						<img id="setIcon"src="NY/img/icon/set_1.png">
+>>>>>>> origin/NY
 					</a>
-				</div> -->
+				</div>
 			</div>	
 	 </div>
 

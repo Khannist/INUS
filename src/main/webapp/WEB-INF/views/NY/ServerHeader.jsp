@@ -4,13 +4,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<<<<<<< HEAD
 <link href="ny/css/ServerHeader.css" rel="stylesheet">
+=======
+<link href="NY/css/ServerHeader.css" rel="stylesheet">
+>>>>>>> origin/NY
 <title>Insert title here</title>
 </head>
 <body>
 <header>
     <a href="#" id="Logo">			<!-- 메인으로 이동 -->
+<<<<<<< HEAD
     	<img id="logo" src="ny/img/icon/letter-m.png">
+=======
+    	<img id="logo" src="NY/img/icon/letter-m.png">
+>>>>>>> origin/NY
     </a>
 </header>
 </body>
