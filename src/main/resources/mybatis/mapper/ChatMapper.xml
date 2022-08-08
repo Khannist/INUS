@@ -71,6 +71,23 @@
  		WHERE roomCode = #{roomCode}
  	</delete>
  	
+ 	<!-- 룸 삭제후 번호 재정렬 -->
+ 	<select id="selectDelRoomList" parameterType="com.inus.ch.server.room.vo.Room" resultType="com.inus.ch.server.room.vo.Room">
+ 		SELECT roomList, roomCode
+ 		FROM roomUser_dt
+ 		WHERE channelCode = #{channelCode}
+ 		ORDER BY length(roomList) ASC,roomList ASC
+ 	</select>
+ 	
+ 	<update id="updateDelRoomList" parameterType="com.inus.ch.server.room.vo.Room">
+ 		UPDATE roomUser_dt
+ 		SET roomList = #{roomList}
+ 		WHERE channelCode = #{channelCode} AND roomCode = #{roomCode}
+ 	</update>
+ 	
+ 
+ 	
+ 	
  	
  	
  	
@@ -105,6 +122,31 @@
  	</select>
  	
  	
+ 	<!-- 채널 삭제 -->
+ 	<delete id="delChannelUser" parameterType="com.inus.ch.server.room.vo.Channel">
+ 		DELETE FROM ChannelHasUser_dt
+ 		WHERE channelCode = #{channelCode}
+ 	</delete>
+ 	<delete id="delChannel" parameterType="com.inus.ch.server.room.vo.Channel">
+ 		DELETE FROM Channel_dt
+ 		WHERE channelCode = #{channelCode}
+ 	</delete>
+ 	
+ 	<select id="selectChannelList" parameterType="com.inus.ch.server.room.vo.Channel" resultType="com.inus.ch.server.room.vo.Channel">
+ 		SELECT channelList, channelCode
+ 		FROM ChannelHasUser_dt
+ 		WHERE userId = #{userId}
+ 		ORDER BY length(channelList) ASC,channelList ASC
+ 	</select>
+ 	
+ 	
+ 	<update id="updateDelChnList" parameterType="com.inus.ch.server.room.vo.Channel">
+ 		UPDATE ChannelHasUser_dt
+ 		SET channelList = #{channelList}
+ 		WHERE channelCode = #{channelCode} AND userId = #{userId}
+ 	</update>
+ 	
+ 	
  	<!-- 채팅 쿼리 -->
  	<select id="getChat" parameterType="com.inus.ch.server.room.vo.Chat" resultType="com.inus.ch.server.room.vo.Chat">
  		SELECT * FROM chat_dt
@@ -117,7 +159,11 @@
  		VALUES(#{roomCode}, #{username}, #{userId}, #{channelCode}, #{chatData}, #{chatDate})
  	</insert>
  	
- 	
+ 	<!-- 채팅내역 삭제 -->
+ 	<delete id="delRoomChat" parameterType="com.inus.ch.server.room.vo.Room">
+ 		DELETE FROM chat_dt
+ 		WHERE roomCode = #{roomCode}
+ 	</delete>
  	
  	
  	

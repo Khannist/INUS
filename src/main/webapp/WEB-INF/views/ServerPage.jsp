@@ -61,6 +61,7 @@
 <script type="text/javascript" src="/ch/js/channel/channel.js"></script>
 <script type="text/javascript" src="/ch/js/room/room.js"></script>
 <script type="text/javascript" src="/ch/js/room/roomdel.js"></script>
+<script type="text/javascript" src="/ch/js/channel/channeldel.js"></script>
 <script type="text/javascript" src="/ch/js/stomp/stompChat.js"></script>
 <script type="text/javascript">
 

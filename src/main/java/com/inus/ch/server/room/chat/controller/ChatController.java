@@ -62,8 +62,6 @@ public class ChatController {
 				}				
 			}
 			room.setRoomList(room.getChannelCode()+"_"+num);
-			System.out.println();
-			System.out.println();
 			ss.insert("ChatMapper.AddChatRoom", room);
 			mav.addObject("room", room);
 			
@@ -81,19 +79,13 @@ public class ChatController {
 	 */
 	@RequestMapping("/getRoom")
 	public @ResponseBody void getRoom(HttpServletResponse res, Room room) throws Exception{
-		System.out.println("g1");
 		Gson gson = new Gson();
 		Map<String, Object> data = new HashMap<String, Object>();
-		System.out.println("g2");
-		System.out.println("g =" + room);
 		List<Room> list = ss.selectList("ChatMapper.getChatRoom", room);
-		System.out.println("g3");
 		// channel_dt 테이블 조회후 채널이름 데이터 가져와서 서버이름에 삽입
 		if(list.size() > 0) {
-			System.out.println("g4");
 			data.put("list", list);
 		}
-		System.out.println("g5");
 		res.getWriter().print(gson.toJson(data));
 	}
 	/**
@@ -143,6 +135,20 @@ public class ChatController {
 			ModelAndView mav = new ModelAndView();
 			ss.delete("ChatMapper.delRoom", room);
 			ss.delete("ChatMapper.delRoomCh", room);
+			ss.delete("ChatMapper.delRoomChat", room);
+			
+			
+			List<Room> delList = ss.selectList("ChatMapper.selectDelRoomList", room);
+			if(delList.size() > 1) {
+				for(int i = 0; i < delList.size(); i++) {
+					String tempList = delList.get(i).getRoomList().substring(0, room.getChannelCode().length()+1) + i;
+					delList.get(i).setRoomList(tempList);
+					delList.get(i).setChannelCode(room.getChannelCode());
+					Room temproom = delList.get(i);
+					ss.update("ChatMapper.updateDelRoomList", temproom);
+				}				
+			}
+			
 			mav.addObject("room", room);
 			mav.setViewName("forward:/getRoom");
 			return mav;
@@ -155,10 +161,8 @@ public class ChatController {
 	@RequestMapping("/createChannel")
 	public @ResponseBody ModelAndView createChannel(Channel chn){
 		ModelAndView mav = new ModelAndView();
-		System.out.println(1);
 		if(chn.getChannelName() != null && !chn.getChannelName().trim().equals("")) {
 			String channelCode = "";
-			System.out.println(2);
 			
 			//동일한 코드가 있는지 계속 반복
 			Boolean flag = true;
@@ -169,22 +173,16 @@ public class ChatController {
 					flag = false;			
 				}
 			}
-			System.out.println(3);
 			
 			chn.setChannelCode(channelCode);
-			System.out.println("chn = " + chn);
-			System.out.println(4);
 			ss.insert("ChatMapper.createChatChannel", chn);
-			System.out.println(5);
 			List<Channel> chnList = ss.selectList("ChatMapper.checkSameChannelList", chn);
-			System.out.println(6);
 			
 			// 채널 리스트 순서 로직
 			int num = 0;
 			System.out.println(7);
 			if(chnList.toString().length() > 0) {
 				for(Channel tempListnum : chnList) {
-					System.out.println(7.5);
 					int tnum = Integer.parseInt(tempListnum.getChannelList().substring(chn.getUserId().toString().length()+1));
 					if(tnum == num) {
 						num++;
@@ -193,14 +191,11 @@ public class ChatController {
 					}
 				}				
 			}
-			System.out.println(8);
 			chn.setChannelList(chn.getUserId()+"_"+num);
 			ss.insert("ChatMapper.AddChatChannel", chn);
-			System.out.println(9);
 			mav.addObject("chn", chn);
 		
 		}
-		System.out.println(10);
 		mav.setViewName("forward:getChannel");
 		return mav;
 	}
@@ -221,6 +216,46 @@ public class ChatController {
 		}
 		res.getWriter().print(gson.toJson(data));
 	}
+	
+	
+	/*
+	 * 채널 삭제
+	 * 
+	 */
+		@RequestMapping("/delChan")
+		public ModelAndView delChannel(Channel chn){
+			ModelAndView mav = new ModelAndView();
+			ss.delete("ChatMapper.delChannelUser", chn);
+			
+			List<Channel> delList = ss.selectList("ChatMapper.selectChannelList", chn);
+			if(delList.size() > 1) {
+				for(int i = 0; i < delList.size(); i++) {
+					String tempList = delList.get(i).getChannelList().substring(0, chn.getUserId().length()+1) + i;
+					delList.get(i).setChannelList(tempList);
+					delList.get(i).setUserId(chn.getUserId());
+					Channel temproom = delList.get(i);
+					System.out.println("리스트 출력 = " + temproom);
+					ss.update("ChatMapper.updateDelChnList", temproom);
+				}				
+			}
+			
+			
+			
+			
+			
+			mav.addObject("chn", chn);
+			mav.setViewName("forward:getChannel");
+			return mav;
+		}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	/**
 	 * 채팅방
 	 * @return
@@ -229,11 +264,8 @@ public class ChatController {
 	public void moveRoom(HttpServletResponse res, Channel chn,@RequestParam HashMap<Object, Object> params)throws Exception {
 		Gson gson = new Gson();
 		Map<String, Object> data = new HashMap<String, Object>();
-		System.out.println("호");
 		int roomNumber = Integer.parseInt((String) params.get("roomNumber"));
-		System.out.println("roomnum = " + roomNumber);
 		String channelCode = chn.getChannelCode();
-		
 		List<Channel> chnList = ss.selectList("ChatMapper.getChatChannel", chn.getUserId());
 		List<Channel> new_list = chnList.stream().filter(o->o.getChannelCode().equals(channelCode)).collect(Collectors.toList());
 		if(new_list != null && new_list.size() > 0) {
@@ -244,44 +276,21 @@ public class ChatController {
 			data.put("userId", chn.getUserId());
 			
 		}
-		
-		System.out.println();
-		System.out.println();
-		System.out.println("data = " + data);
-		System.out.println();
 		res.getWriter().print(gson.toJson(data));
 	}
 	
-	
-	
 	/*
-	 * @RequestMapping("/moveRoom") public ModelAndView moveRoom(Channel chn) {
-	 * ModelAndView mv = new ModelAndView(); System.out.println("userId = " +
-	 * chn.getuserId()); String channelCode = chn.getChannelCode(); List<Channel>
-	 * chnList = ss.selectList("ChatMapper.checkSameChannelList", chn.getuserId());
-	 * List<Channel> new_list =
-	 * chnList.stream().filter(o->o.getChannelCode()==channelCode).collect(
-	 * Collectors.toList()); if(new_list != null && new_list.size() > 0) {
-	 * mv.addObject("channelName", chn.getChannelName());
-	 * mv.addObject("channelCode", chn.getChannelCode());
-	 * System.out.println("모델뷰 = " + mv); mv.setViewName("room/room"); }else {
-	 * mv.addObject("userId", chn.getuserId());
-	 * mv.setViewName("forward:/serverPage"); } return mv; }
+	 * 채팅 목록 불러오기 
+	 * 
 	 */
-	
 	@RequestMapping("/getChat")
 	public @ResponseBody void getChat(HttpServletResponse res, Chat chat) throws Exception{
 		Gson gson = new Gson();
 		Map<String, Object> data = new HashMap<String, Object>();
-		System.out.println("1");
-		System.out.println("chat = " + chat);
 		List<Chat> list = ss.selectList("ChatMapper.getChat", chat);
-		System.out.println("1-2");
 		if(list.size() > 0) {
 			data.put("list", list);
 		}
-		
-		System.out.println("Json 값 = " + gson.toJson(data));
 		res.getWriter().print(gson.toJson(data));
 	}
 	
