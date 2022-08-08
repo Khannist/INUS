@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.inus.board"> 
+		<!-- 게시판 출력 -->
+	    <select id="getBoard" resultType="com.inus.bs.vo.BoardVo" parameterType="int">
+       			SELECT
+       			*
+       			FROM boardTbl
+       			ORDER BY inus_boardNum DESC
+    	</select>
+    	<!-- 게시글 조회하기 -->
+    	<select id="getView" resultType="com.inus.bs.vo.BoardVo" parameterType="com.inus.bs.vo.BoardVo">
+    			SELECT 
+    			inus_boardNum, inus_subject, inus_userName, inus_Date, inus_content 
+    			FROM boardTbl 
+    			WHERE inus_boardNum = #{inus_boardNum}
+    	</select>
+    	<!-- 게시글 등록하기 -->
+    	<insert id="boardInsert" parameterType="com.inus.bs.vo.BoardVo">
+    		INSERT INTO boardTbl 
+    		(
+    			inus_boardNum,inus_userName,inus_subject, inus_content , inus_Date
+    		)
+    		VALUES
+    		( 
+    			boardTbl_seq.NEXTVAL,#{inus_userName},#{inus_subject}, #{inus_content} , sysDate
+    		)	
+    	</insert>
+    	
+    	<!-- 조회수 증가 -->
+    	<update id="boardCount" parameterType="com.inus.bs.vo.BoardVo">
+    		UPDATE
+    			boardTbl
+    		SET 
+    			boardCount = boardCount + 1
+    		WHERE
+    			inus_boardNum = #{inus_boardNum}
+    	</update>
+    	
+    	
+    	<!-- 게시글 수정 -->
+    	<update id="boardUpdate" parameterType="com.inus.bs.vo.BoardVo">
+    		UPDATE 
+    			boardTbl
+    		SET
+    			inus_subject = #{inus_subject},
+    			inus_content = #{inus_content},
+    			inus_Date = sysDate
+    		WHERE
+    			inus_boardNum = #{inus_boardNum}
+    	</update>
+    	
+    	<!-- 게시글 삭제 -->
+    	<delete id="boardDelete" parameterType="com.inus.bs.vo.BoardVo">
+    		DELETE 
+    		FROM boardTbl
+    		WHERE
+    			inus_boardNum = #{inus_boardNum}
+    	</delete>
+</mapper>
