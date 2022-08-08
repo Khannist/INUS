@@ -32,9 +32,17 @@ public class BoardController {
 		sqlSession.update("com.inus.board.boardCount",bVo);
 		return "bs/boardList";
 	}
+	
+	// 로그인 화면
 	@RequestMapping("/login")
 	public String login() {
 		return "bs/login";
+	}
+	
+	//회원가입 화면
+	@RequestMapping("/joinMembership")
+	public String joinMembership() {
+		return "bs/joinMembership";
 	}
 	
 	// 게시글 상세보기

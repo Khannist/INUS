@@ -4,72 +4,49 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<link type="text/css" rel="stylesheet" href="css/rainbow.css">
+<title>Inus</title>
+<link type="text/css" rel="stylesheet" href="bs/css/index.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 <body>
-<a id="rainbow-btn" href="/login" target="_blank">Music InUs</a>
-<a href="https://monokai.pro/" id="monokai-link" target="_blank">Credits: Monokai Color Scheme</a>
-
+  <div data-aos="fade-up"
+     data-aos-duration="3000">
+    <div data-aos="fade-up"
+     data-aos-duration="3000">
+    <section>
+      <h1 data-scroll data-scroll-speed="3">Music Inus</h1>
+      <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fG11c2ljJTIwYW5kJTIwY2hhdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="">      
+    </section>
+    <div class="line">
+    	<h2>Scroll</h2>
+    </div>
+    <div>
+    <h2></h2>
+    </div>
+    </div>
+    <div data-aos="fade-right"
+    data-aos-duration="3000">
+    <section><img src="https://images.unsplash.com/photo-1610737241336-371badac3b66?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8bGlzdGVuaW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+      <h2>친구들과 음악을 공유하고 함께 들어보세요</h2>
+    </section>
+	</div>
+	<div data-aos="fade-left"
+    data-aos-duration="3000">
+    <section>
+    <h2>음악을 들으며 친구들과 소통해보세요</h2>
+    <img src="https://images.unsplash.com/photo-1616960371261-12f51dccb852?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGNoYXR0aW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">  
+    </section>
+    </div>
+    <div data-aos="fade-down"
+     data-aos-duration="3000">
+    <section ><img src="https://images.pexels.com/photos/4791474/pexels-photo-4791474.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+      <h1 id="login"><a href="/login" style="color: #03e9f4">Login &rarr;</a></h1>
+    </section>
+    </div>
+  </div>
 <script type="text/javascript">
-const ASCII_CHARS = "abcdefghijklmnñopqrstuvwxyz0123456789!#$%&/?'_-"
-	const COLORS = ["#ff6188", "#fc9867", "#ffd866", "#a9dc76", "#78dce8", "#ab9df2"]
-
-	class RainbowButton {
-	    constructor(_btn) {
-	        this.el = _btn
-	        this.txt = this.el.innerText
-	        this.overColor = COLORS[0]
-	        this.fps = 24
-	        this.events()
-	    }
-
-	    events() {
-	        this.el.addEventListener("mouseenter", () => this.onMouseEnter(), false)
-	        this.el.addEventListener("mouseleave", () => this.onMouseLeave(), false)
-	    }
-
-	    onMouseEnter() {
-	        this.over_active = true
-	        this.el.innerHTML = ""
-	        this.rainbow()
-	    }
-
-	    rainbow() {
-	        let letters = this.txt.split("")
-	        for (let i = 0; i < letters.length; i++) {
-	            const span = document.createElement("span")
-	            this.el.appendChild(span)
-	            const letter = letters[i]
-	            span.innerText = letter
-	            if (letter != " ") {
-	              let idx = ASCII_CHARS.indexOf(letter.toLowerCase())
-	              let initChar = idx > 10 ? ASCII_CHARS[idx - 9] : ASCII_CHARS[0]
-	              setTimeout(() => this.letterTo(span, initChar, letter), 60 * i)
-	            }
-	        }
-	    }
-
-	    onMouseLeave() {
-	        this.over_active = false
-	        this.el.innerHTML = this.txt
-	    }
-
-	    letterTo(span, from, to) {
-	        let char = to
-	        let color = this.overColor
-	        if (from != to.toLowerCase() && this.over_active) {
-	            const idx = ASCII_CHARS.indexOf(from.toLowerCase())
-	            color = COLORS[~~(Math.random() * COLORS.length)]
-	            char = Math.random() > .5 ? from : from.toUpperCase()
-	            setTimeout(() => this.letterTo(span, ASCII_CHARS[idx + 1], to), 1000 / this.fps)
-	        }
-	        span.style.color = color
-	        span.innerText = char
-	    }
-	}
-
-	const _btn = new RainbowButton(document.querySelector("#rainbow-btn"))
+  AOS.init();
 </script>
 </body>
 </html>

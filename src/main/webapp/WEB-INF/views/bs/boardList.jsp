@@ -7,18 +7,50 @@
 <head>
 <meta charset="UTF-8">
 <title>메인화면</title>
-<link type="text/css" rel="stylesheet" href="css/inus.css">
+<link type="text/css" rel="stylesheet" href="bs/css/inus.css">
 </head>
 <body>
-<div class = "box">
+<header>
+</header>
 <c:forEach items="${boardList}" var="boardList">
-<p><a href="boardView?inus_boardNum=${boardList.inus_boardNum}">${boardList.inus_subject}</a></p>
-<p>이슈 &nbsp;|&nbsp; 
-<fmt:formatDate value="${boardList.inus_Date}" type="date" dateStyle="short"/> &nbsp;|&nbsp; 
-${boardList.inus_userName} &nbsp;|&nbsp; ${boardList.inus_boardNum} &nbsp;|&nbsp; 조회수:${boardList.boardCount}</p><hr>
-</c:forEach>
-</div>
-<input type="button" value="게시물 작성하기" onclick="location.href='boardWrite'" >
+<section class="article-list">
+                <article class="article-list-item">
+            <div class="article-list-item__vote">
+                                    <img src="https://s-talk.op.gg/images/icon-vote-up.png" alt="">
+                    <div>${boardList.boardCount}</div>
+                            </div>
+            <div class="article-list-item__content">
+                <a href="boardView?inus_boardNum=${boardList.inus_boardNum}" class="article-list-item__info">
+                    <div class="article-list-item__title">
+                        <span class="post-title">${boardList.inus_subject}</span>
 
+                                                <em></em>                   </div>
+                </a>
+                <div class="article-list-item-meta">
+                                            <div class="article-list-item-meta__item">자유</div>
+                                        <div class="article-list-item-meta__item">
+                        <span><fmt:formatDate value="${boardList.inus_Date}" type="date" dateStyle="short"/></span>
+                    </div>
+                    <div class="article-list-item-meta__item article-list-item-meta__item--author">
+                          ${boardList.inus_userName}
+                    </div>
+                </div>
+                <a href="https://talk.op.gg/s/lol/free/5348406/%EB%A1%A4%ED%95%98%EB%A9%B4%EC%84%9C-%EC%9E%90%EB%9E%91%ED%95%A0%EB%A7%8C%ED%95%9C%EA%B1%B0%EC%9E%88%EC%9D%8C%3F" class="article-list-item__mobile-link"></a>
+            </div>
+                            <div class="article-list-item-thumbnail">
+                    <a href="https://talk.op.gg/s/lol/free/5348406/%EB%A1%A4%ED%95%98%EB%A9%B4%EC%84%9C-%EC%9E%90%EB%9E%91%ED%95%A0%EB%A7%8C%ED%95%9C%EA%B1%B0%EC%9E%88%EC%9D%8C%3F">
+                                                    <img src="https://opgg-com-image.akamaized.net/attach/images/20220807220907.262684.jpg?image=w_200" class="article-list-item__thumbnail" alt="">
+                                            </a>
+                </div>
+                    </article>
+
+</section>
+
+</c:forEach>
+<div class="writeBtn">
+<a onclick="location.href='boardWrite'"><img src="https://s-talk.op.gg/images/icon-write@2x.png"></a>
+</div>
+<footer>
+</footer>
 </body>
 </html>

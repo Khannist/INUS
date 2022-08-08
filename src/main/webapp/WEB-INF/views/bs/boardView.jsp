@@ -36,6 +36,6 @@
 </c:forEach>
 <%@ include file="comment.jsp"%>
 <%-- <script type="text/javascript" src="/js/comment.js"></script> --%>
-<script type="text/javascript" src="/js/reply.js"></script>
+<script type="text/javascript" src="bs/js/reply.js"></script>
 </body>
 </html>
