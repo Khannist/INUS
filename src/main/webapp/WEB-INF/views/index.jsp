@@ -1,52 +1,98 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="javax.servlet.*"%>
+<%@page session="true" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Inus</title>
-<link type="text/css" rel="stylesheet" href="bs/css/index.css">
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="jquery/jquery-3.6.0.min.js"></script>
+<script src="jquery/jquery-migrate-1.4.1.min.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merienda+One&family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+<link href="ny/css/IndexCss.css" rel="stylesheet">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   
+<title>인덱스 화면(로그인화면)</title>
 </head>
 <body>
-  <div data-aos="fade-up"
-     data-aos-duration="3000">
-    <div data-aos="fade-up"
-     data-aos-duration="3000">
-    <section>
-      <h1 data-scroll data-scroll-speed="3">Music Inus</h1>
-      <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fG11c2ljJTIwYW5kJTIwY2hhdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="">      
-    </section>
-    <div class="line">
-    	<h2>Scroll</h2>
-    </div>
-    <div>
-    <h2></h2>
-    </div>
-    </div>
-    <div data-aos="fade-right"
-    data-aos-duration="3000">
-    <section><img src="https://images.unsplash.com/photo-1610737241336-371badac3b66?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8bGlzdGVuaW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
-      <h2>친구들과 음악을 공유하고 함께 들어보세요</h2>
-    </section>
-	</div>
-	<div data-aos="fade-left"
-    data-aos-duration="3000">
-    <section>
-    <h2>음악을 들으며 친구들과 소통해보세요</h2>
-    <img src="https://images.unsplash.com/photo-1616960371261-12f51dccb852?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGNoYXR0aW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">  
-    </section>
-    </div>
-    <div data-aos="fade-down"
-     data-aos-duration="3000">
-    <section ><img src="https://images.pexels.com/photos/4791474/pexels-photo-4791474.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
-      <h1 id="login"><a href="/login" style="color: #03e9f4">Login &rarr;</a></h1>
-    </section>
-    </div>
-  </div>
-<script type="text/javascript">
-  AOS.init();
+<!-- <p><a href="/MAIN">메인페이지로(임시문구)</a></p>
+<p><a href="/MUSIC">음악출력(임시문구)</a></p> -->
+<!-- <script type="text/javascript">
+	setTimeout(function() {
+	    $('.companyIcon').animate({top : '40px'}, 600);
+	  }, 2200);
+  
+	$(document).ready(function() {
+	var mouseWheelEvent = 0;
+    var idx_lgth = $(".slider>li").length;
+    var srt = 0;
+
+	//첫페이지 이동
+	function moveOnePage(){
+     console.log('page 1 start');
+     //페이지 위치 저장
+     var offsetTop = $('#page1').offset().top;
+     //페이지 이동
+     moveScroll(offsetTop);
+     $("section>a:first-of-type").addClass('on').siblings().removeClass('on');
+    }
+	//두번째 페이지 이동
+    function moveTwoPage(){
+      console.log('page 2 start');
+      var offsetTop = $('#page2').offset().top;
+      moveScroll(offsetTop);
+      effectScroll('#productHeadLine', '#productMore', '#productTitle');
+      $("section>a:nth-of-type(2)").addClass('on').siblings().removeClass('on');
+    }
+
+
+  	
+  	//스크롤 이동
+    function moveScroll(location) {
+      $('html, body').animate({
+        scrollTop: location
+      }, 400);
+    }
+
+  	
+  	
+  	
+</script> -->
+<input type="button" value="서버이동" onclick="location.href='SERVER'">
+<div class="container">
+	<img src="/img/icon/NY/logo_2.png" class="icon" id="logoIcon" onclick="location.href='/MAIN'">
+
+<!--       페이지1-------------------------------->
+        <div class="page" id="page1">
+            <p class="headLine" id="introHeadLine">
+                지금 듣고싶은
+                <br>
+                음악은
+                <br>
+                무엇인가요?
+                <br>
+                <input type="button" value="CIRCLE" id="ToLeft" style="border: none; background: transparent;">
+                <!-- <span id="submit-button" class="bdText" onclick="Toleft()">LOG IN</span> -->
+            	<br>
+            </p>
+            
+        </div>
+        
+        
+</div>
+
+<script>
+$(function( ) {
+   $("#ToLeft").click(function(){
+		 $("#ToLeft").parent.next().css({"position":"absolute"},
+				 					  {"left":"20%"});
+	 });
+
+});
 </script>
+    
 </body>
 </html>

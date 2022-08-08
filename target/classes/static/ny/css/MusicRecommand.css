@@ -1,0 +1,84 @@
+@charset "EUC-KR";
+
+
+    .ToIMG{
+	width: 35px;
+	position: absolute;
+	right: 10px;
+	top: 3px;
+	}
+
+
+	.firstvideo, #ifrmaeID{
+		margin-top:50px;
+		margin-left: 60px;
+		float:left;
+	}
+	.iframeClass{
+		display: none;
+		margin-top:50px;
+		margin-left: 60px;
+		float:left;
+	}
+	
+	
+	/* 음악 추천리스트 큰 div */
+	.RecommandPlayList{
+		margin-left: 15px;
+	}
+
+	.RecommandPlayList li{
+		float: left;
+		margin-right: 20px;
+	} 
+	.RecommandPlayList img{
+		width: 120px;
+	}
+	.Command{	/*각 테마 위에 텍스트*/
+		color: white;
+		font-size: 25px;
+		font-weight: bold;
+		margin-bottom: 9px;
+	}
+	
+
+	
+	
+	
+
+
+	/* [음악 추천리스트] top100 추천리스트*/
+	.top100List{
+		float:left;
+	}
+	#top100_Title{
+		margin-top: 10px;
+	}
+	
+	.top100List li p{
+		font-size: 15px;
+		color: white;
+	}
+	
+	
+	
+	
+	/* [음악 추천리스트] 키워드 추천리스트*/
+	.keywordList{
+		clear: both;
+		float: left;
+	}
+
+    .keywordList{
+		margin-top: 30px;
+	}
+	.keyword_Text{
+		margin-bottom: 15px;
+	}
+	.keywordList li p{
+		font-size: 12px;
+		color: white;
+	}
+	.keywordList li span{
+		font-size: 16px;
+	}

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="ChatMapper">
+	
+	<!-- 유저 리스트 -->
+	<select id="getMember" resultType="com.inus.ch.db.vo.MemberVO">
+		SELECT *
+		FROM user_dt
+	</select>
+ 	
+ 	<!-- 회원가입 검증 -->
+ 	<select id="checkRegi" parameterType="String" resultType="String">
+ 		SELECT userId
+ 		FROM user_dt
+ 		WHERE userId = #{userId}
+ 	</select>
+ 	
+ 	<!-- 회원가입 -->
+ 	<insert id="insertMember" parameterType="com.inus.ch.db.vo.MemberVO">
+ 		INSERT INTO user_dt(userId, userPw, username)
+ 		VALUES(#{userId},#{userPw},#{username})
+ 	</insert>
+ 	
+ 	<!-- 로그인 체크 -->
+ 	<select id="loginCheck" parameterType="com.inus.ch.db.vo.MemberVO" resultType="com.inus.ch.db.vo.MemberVO">
+ 		SELECT *
+ 		FROM user_dt
+ 		WHERE userId = #{userId}
+ 	</select>
+ 	
+ 	<!-- 룸 쿼리 -->
+ 	<select id="checkSameRoomCode" parameterType="String" resultType="String">
+ 		SELECT roomCode FROM roomChannel
+ 		WHERE roomCode = #{roomCode}
+ 	</select>
+ 	
+ 	<select id="checkSameRoomList" parameterType="com.inus.ch.server.room.vo.Room" resultType="com.inus.ch.server.room.vo.Room">
+ 		SELECT roomList
+ 		FROM roomUser_dt
+ 		WHERE channelCode = #{channelCode}
+ 		ORDER BY length(roomList) ASC,roomList ASC
+ 	</select>
+ 	
+ 	<insert id="insertChatRoom" parameterType="com.inus.ch.server.room.vo.Room">
+ 		INSERT INTO roomChannel
+ 		VALUES(#{roomCode},#{roomName},#{channelCode})
+ 	</insert>
+ 	
+ 	<insert id="AddChatRoom" parameterType="com.inus.ch.server.room.vo.Room">
+ 		INSERT INTO roomUser_dt
+ 		VALUES(#{roomList},#{roomName},#{roomCode},#{channelCode})
+ 	</insert>
+ 	
+ 	<select id="getChatRoom" parameterType="com.inus.ch.server.room.vo.Room" resultType="com.inus.ch.server.room.vo.Room">
+ 		SELECT * FROM roomUser_dt
+ 		WHERE channelCode = #{channelCode}
+ 		ORDER BY length(roomList) ASC,roomList ASC
+ 	</select>
+ 	
+ 	<delete id="delRoom" parameterType="com.inus.ch.server.room.vo.Room">
+ 		DELETE FROM roomUser_dt
+ 		WHERE roomCode = #{roomCode}
+ 	</delete>
+ 	
+ 	<delete id="delRoomCh" parameterType="com.inus.ch.server.room.vo.Room">
+ 		DELETE FROM roomChannel
+ 		WHERE roomCode = #{roomCode}
+ 	</delete>
+ 	
+ 	<!-- 룸 삭제후 번호 재정렬 -->
+ 	<select id="selectDelRoomList" parameterType="com.inus.ch.server.room.vo.Room" resultType="com.inus.ch.server.room.vo.Room">
+ 		SELECT roomList, roomCode
+ 		FROM roomUser_dt
+ 		WHERE channelCode = #{channelCode}
+ 		ORDER BY length(roomList) ASC,roomList ASC
+ 	</select>
+ 	
+ 	<update id="updateDelRoomList" parameterType="com.inus.ch.server.room.vo.Room">
+ 		UPDATE roomUser_dt
+ 		SET roomList = #{roomList}
+ 		WHERE channelCode = #{channelCode} AND roomCode = #{roomCode}
+ 	</update>
+ 	
+ 
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	<!-- 채널 -->
+ 	<select id="checkSameChannelCode" parameterType="String" resultType="String">
+ 		SELECT channelCode FROM channel_dt
+ 		WHERE channelCode = #{channelCode}
+ 	</select>
+ 	<select id="selectChannelDt" parameterType="String" resultType="com.inus.ch.server.room.vo.Channel">
+ 		SELECT * FROM channel_dt
+ 		WHERE channelCode = #{channelCode}
+ 	</select>
+ 	<select id="checkSameChannelList" parameterType="com.inus.ch.server.room.vo.Channel" resultType="com.inus.ch.server.room.vo.Channel">
+ 		SELECT channelList
+ 		FROM ChannelHasUser_dt
+ 		WHERE userId = #{userId}
+ 		ORDER BY length(channelList) ASC,channelList ASC
+ 	</select>
+ 	
+ 	<insert id="createChatChannel" parameterType="com.inus.ch.server.room.vo.Channel">
+ 		INSERT INTO channel_dt
+ 		VALUES(#{channelCode},#{channelName})
+ 	</insert>
+ 	<insert id="AddChatChannel" parameterType="com.inus.ch.server.room.vo.Channel">
+ 		INSERT INTO ChannelHasUser_dt
+ 		VALUES(#{channelList},#{channelCode}, #{userId}, #{channelName})
+ 	</insert>
+ 	<select id="getChatChannel" parameterType="com.inus.ch.server.room.vo.Channel" resultType="com.inus.ch.server.room.vo.Channel">
+ 		SELECT * FROM ChannelHasUser_dt
+ 		WHERE  userId = #{userId}
+ 		ORDER BY length(channelList) ASC,channelList ASC
+ 	</select>
+ 	
+ 	
+ 	<!-- 채널 삭제 -->
+ 	<delete id="delChannelUser" parameterType="com.inus.ch.server.room.vo.Channel">
+ 		DELETE FROM ChannelHasUser_dt
+ 		WHERE channelCode = #{channelCode}
+ 	</delete>
+ 	<delete id="delChannel" parameterType="com.inus.ch.server.room.vo.Channel">
+ 		DELETE FROM Channel_dt
+ 		WHERE channelCode = #{channelCode}
+ 	</delete>
+ 	
+ 	<select id="selectChannelList" parameterType="com.inus.ch.server.room.vo.Channel" resultType="com.inus.ch.server.room.vo.Channel">
+ 		SELECT channelList, channelCode
+ 		FROM ChannelHasUser_dt
+ 		WHERE userId = #{userId}
+ 		ORDER BY length(channelList) ASC,channelList ASC
+ 	</select>
+ 	
+ 	
+ 	<update id="updateDelChnList" parameterType="com.inus.ch.server.room.vo.Channel">
+ 		UPDATE ChannelHasUser_dt
+ 		SET channelList = #{channelList}
+ 		WHERE channelCode = #{channelCode} AND userId = #{userId}
+ 	</update>
+ 	
+ 	
+ 	<!-- 채팅 쿼리 -->
+ 	<select id="getChat" parameterType="com.inus.ch.server.room.vo.Chat" resultType="com.inus.ch.server.room.vo.Chat">
+ 		SELECT * FROM chat_dt
+ 		WHERE channelCode = #{channelCode}
+ 		AND roomCode = #{roomCode}
+ 	</select>
+ 	
+ 	<insert id="chattiing" parameterType="com.inus.ch.server.room.vo.Chat">
+ 		INSERT INTO chat_dt
+ 		VALUES(#{roomCode}, #{username}, #{userId}, #{channelCode}, #{chatData}, #{chatDate})
+ 	</insert>
+ 	
+ 	<!-- 채팅내역 삭제 -->
+ 	<delete id="delRoomChat" parameterType="com.inus.ch.server.room.vo.Room">
+ 		DELETE FROM chat_dt
+ 		WHERE roomCode = #{roomCode}
+ 	</delete>
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+</mapper>

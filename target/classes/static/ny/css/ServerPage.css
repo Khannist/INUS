@@ -1,0 +1,148 @@
+@charset "UTF-8";
+*{padding: 0; margin: 0;}
+ul{list-style: none;}
+a{text-decoration: none; cursor: pointer;}
+li{list-style: none;}
+p{
+	font-family: 'Archivo Black', sans-serif;
+	font-size: 20px;
+} 
+body{
+	width: 100%;
+	height: 100vh;
+	background-color: #37393f;
+}  
+
+
+     
+     
+     
+     
+ .ServerLbar{
+     	clear: both;
+   		float: left;
+   		width: 16%;
+   		height: 97vh;
+   		border: 0.1px;
+    	border-top-left-radius: 19px;
+    	border-top-right-radius: 19px;
+ }
+    
+    
+    
+    
+     .Midbar{
+     	 width: 1385px;
+         height: 97vh;
+         float: right;
+         background-color: #37393f; 
+    }
+    .ChatPage{
+    	position: relative;
+    	float:right;
+    	width: 1450px;		/*수정해야함*/
+     	height: 97vh;
+
+    }
+    .pageIcon{
+    	position:absolute;
+    	top:330px;
+    	width: 35px;
+    }
+    #CloseMusic{
+    	display: none;
+    }
+    .MusicPage, .MusicSearch{
+    	display: none;
+    	width: 50%;
+     	height: 97vh;
+     	float: left;
+     	
+    }
+    
+    /*ChatPage*/
+    
+    .ChatPage{
+    	position: relative;
+    }
+
+    .ChatInput{
+   	    position: absolute;
+    	bottom: 3px;
+    	margin: auto;
+    	height: 42px;
+    	border: 1px solid #202225;
+    	border-radius: 12px;
+    	background-color: #40444b;
+    	margin-left: 10px;
+    }
+    
+    #chatRealInput, #chatRealsubmit{
+    	border: none;
+    	background-color: #40444b;
+    }
+    
+    .ChatInput #chatRealInput{
+    	margin-top:5px;
+    	margin-left:20px;
+    	width: 700px;
+    	height: 30px;
+    }
+    
+    .ChatInput img{
+    	float: right;
+    	width: 27px;
+    	height: 27px;
+    	margin-top: 7px;
+    	margin-right: 12px;
+    }
+    .ChatSubmit{
+    	position: absolute;
+    	bottom: 3px;
+    	right:6px;
+    	margin-top:5px;
+    	margin-left:20px;
+    	height: 42px;
+    	border: 1px solid #202225;
+    	border-radius: 12px;
+    }
+    
+    
+    #chatRealsubmit{
+    	width: 160px;
+    	height: 42px;
+    	border: 1px;
+    	border-radius: 12px;
+		color: #a0a2a5;
+    }
+    
+    
+    
+    
+    
+    .MusicPage{
+    	position:relative;
+    }
+        
+        
+        /*프로필 하단 고정*/
+    .fixProifle{
+    	width: 100%;
+    	height: 43px;
+    	position: absolute;
+    	bottom: 3px;
+    	background-color: #292b2f;
+    }
+    
+    
+    
+    
+    
+    
+    /*검색아이콘, 돌아오는 아이콘 위치*/
+	    .ToIMG{
+		width: 35px;
+		position: absolute;
+		right: 10px;
+		top: 3px;
+		}
