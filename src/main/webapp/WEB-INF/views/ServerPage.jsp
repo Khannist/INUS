@@ -4,12 +4,16 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.4.0/sockjs.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
 <link  rel="stylesheet" type="text/css" href="ny/css/ServerPage.css">
 <link  rel="stylesheet" type="text/css" href="ch/css/chat/chat.css">
 <link  rel="stylesheet" type="text/css" href="ch/css/room/room.css">
+=======
+<link  rel="stylesheet" type="text/css" href="NY/css/ServerPage.css">
+>>>>>>> INUS/NY
 
 <title>Insert title here</title>
 </head>
@@ -29,11 +33,22 @@
 		
 
       <div class="Midbar">
-      	<jsp:include page="NY/MusicRecommand.jsp"></jsp:include>
-	    <jsp:include page="NY/MusicSearch.jsp"></jsp:include>
+		      <div class="MusicPart">
+		      	<div class="MusicRecommand">
+		      		<jsp:include page="NY/MusicRecommand.jsp"></jsp:include>
+		      	</div>
+		      	<div class="MusicSearch">
+		      		<jsp:include page="NY/MusicSearch.jsp"></jsp:include>
+		      	</div>
+		    	<div class="ServerFriendList">
+		      		<jsp:include page="NY/ServerFriendList.jsp"></jsp:include>
+		      	</div>
+		      </div>
+	      	
 	      	<!--.ChatPage 여기에 채팅 jsp 넣으면 된담 -->
 	      	<div class="ChatPage">
 	      		<!-- 뮤직페이지 열고 닫는 아이콘 -->
+<<<<<<< HEAD
 	      		<img src="ny/img/icon/gogoIcon.png" class="pageIcon" id="OpenMusic" onclick="FMusicPage()">
 	      		<img src="ny/img/icon/closeMusicIcon.png" class="pageIcon" id="CloseMusic" onclick="FC_MusicPage()">
 	      		<div>
@@ -49,6 +64,19 @@
 	       			<div class="ChatSubmit">
 	       				<input id="chatRealsubmit" type="button" value="보내기" onclick="sendChatSc()">
 	       			</div>	
+=======
+	      		<img src="NY/img/icon/gogoIcon.png" class="pageIcon" id="OpenMusic" onclick="FMusicRecommand()">
+	      		<img src="NY/img/icon/closeMusicIcon.png" class="pageIcon" id="CloseMusic" onclick="FC_MusicRecommand()">
+
+	      		<div class="inputFix">	<!-- css아직 없음 -->
+	      			<div class="ChatInput">
+		        		<input id="chatRealInput" type="text" placeholder="채팅">
+		        		<img src="NY/img/icon/chatIcon/ghostIcon.png">
+		        		<img src="NY/img/icon/chatIcon/smilIecon.png">
+	       			</div>
+	       			<input id="chatRealsubmit" type="submit" value="보내기">
+	       			
+>>>>>>> INUS/NY
 	      		</div>
 	      	</div>
 	      	
@@ -68,13 +96,19 @@
 //서버 수정 페이지 나타남
 function F_openrReplace(){
     document.querySelector('.ServerReplace').style.display = "block";   //서버 수정 페이지 나타남
+<<<<<<< HEAD
     document.querySelector('#chatIcon_2').style.display = "block";   //닫히는 아이콘 나타남
     document.querySelector('#chatIcon').style.display = "none";   //열리는 아이콘 없어짐
+=======
+    document.querySelector('#chatIcon_2').style.display = "block";	//닫히는 아이콘 나타남
+    document.querySelector('#chatIcon').style.display = "none";	//열리는 아이콘 없어짐
+>>>>>>> INUS/NY
 
 }
 //서버 수정 페이지 없어짐
 function F_closeReplace(){
     document.querySelector('.ServerReplace').style.display = "none";   //서버 수정 페이지 없어짐
+<<<<<<< HEAD
     document.querySelector('#chatIcon_2').style.display = "none";         //열리는 아이콘 나타남
     document.querySelector('#chatIcon').style.display = "block";      //닫히는 아이콘 없어짐  
 }
@@ -95,14 +129,32 @@ function FMusicPage(){
     document.querySelector('.ChatPage').style.width = "50%";    	//채팅방 사이즈 줄여짐
     document.querySelector('.ChatInput').style.width = "400px";
     document.querySelector('#chatRealsubmit').style.width = "30px";
+=======
+    document.querySelector('#chatIcon_2').style.display = "none";		   //열리는 아이콘 나타남
+    document.querySelector('#chatIcon').style.display = "block";	   //닫히는 아이콘 없어짐  
+>>>>>>> INUS/NY
 }
 //채팅 옆으로 밀고 뮤직 페이지 등장
-function FC_MusicPage(){
-	//document.querySelector('.CloseMusic').style.display = "none"; 
-    document.querySelector('.MusicPage').style.display = "none";   
-    document.querySelector('#CloseMusic').style.display = "none";	//닫히는 아이콘 나타남
-    document.querySelector('#OpenMusic').style.display = "block";	//열리는 아이콘 없어짐
-    document.querySelector('.ChatPage').style.width = "100%";    
+function FMusicRecommand(){
+    document.querySelector('.MusicRecommand').style.display = "block";   	//뮤직 페이지 나타남
+    document.querySelector('.MusicSearch').style.display = "none"; 		//검색 페이지 없어짐*/
+    document.querySelector('#CloseMusic').style.display = "block";			//닫히는 아이콘 나타남
+    document.querySelector('#OpenMusic').style.display = "none";			//열리는 아이콘 없어짐*/
+    document.querySelector('.ChatPage').style.width = "943px";    		
+    document.querySelector('.ChatInput').style.width = "700px";   			//채팅방 사이즈 줄여짐
+    document.querySelector('#chatRealInput').style.width = "550px";			//채팅인풋 크기조절*/
+    document.querySelector('#chatRealsubmit').style.width = "150px";			//채팅 보내기 크기조절
+}
+//뮤직 페이지 밀고 채팅 크게
+function FC_MusicRecommand(){
+    document.querySelector('.MusicRecommand').style.display = "none";   //뮤직 페이지 없어짐
+    document.querySelector('.MusicSearch').style.display = "none"; 		//검색 페이지 없어짐
+    document.querySelector('#CloseMusic').style.display = "none";		//닫히는 아이콘 나타남
+    document.querySelector('#OpenMusic').style.display = "block";		//열리는 아이콘 없어짐
+    document.querySelector('.ChatPage').style.width = "1543px";    		
+    document.querySelector('.ChatInput').style.width = "1200px";   			//채팅방 사이즈 줄여짐
+    document.querySelector('#chatRealInput').style.width = "900px";			//채팅인풋 크기조절*/
+    document.querySelector('#chatRealsubmit').style.width = "220px";			//채팅 보내기 크기조절
 }
 
 
@@ -110,17 +162,18 @@ function FC_MusicPage(){
 //뮤직페이지 없애고 음악검색 페이지 생김
 function F_ToSearch(){
     document.querySelector('.MusicSearch').style.display = "block";	// 검색페이지 열림
-    document.querySelector('.MusicPage').style.display = "none";    // 음악페이지 닫힘
+    document.querySelector('.MusicRecommand').style.display = "none";    // 음악페이지 닫힘
+    document.querySelector('.ServerFriendList').style.display = "none";    // 서버에 속한 친구리스트  닫힘
     document.querySelector('#ToSearch').style.display = "none";	//검색 아이콘 없어짐
-    document.querySelector('#ToMusic').style.display = "none";	//뮤직 아이콘 나타남
+    document.querySelector('#ToMusic').style.display = "block";	//뮤직 아이콘 나타남
 
 }
-function F_ToMusicList(){
-
-    document.querySelector('.MusicPage ').style.display = "block";	//음악페이지 열림
+function F_ToFriendList(){
+    document.querySelector('.ServerFriendList').style.display = "block";	//서버에 속한 친구리스트 열림
     document.querySelector('.MusicSearch').style.display = "none";   //검색페이지 사라짐
+    document.querySelector('.MusicRecommand').style.display = "none";   //뮤직페이지 사라짐
     document.querySelector('#ToMusic').style.display = "none";	//뮤직 아이콘 없어짐
-    document.querySelector('#ToSearch').style.display = "none";	//검색 아이콘 나타남
+    document.querySelector('#ToSearch').style.display = "block";	//검색 아이콘 나타남
 
 }
 

@@ -12,7 +12,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Merienda+One&family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+<<<<<<< HEAD
 <link href="ny/css/IndexCss.css" rel="stylesheet">
+=======
+<link href="NY/css/IndexCss.css" rel="stylesheet">
+>>>>>>> INUS/NY
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
    
 <title>인덱스 화면(로그인화면)</title>
@@ -63,7 +67,7 @@
 </script> -->
 <input type="button" value="서버이동" onclick="location.href='SERVER'">
 <div class="container">
-	<img src="/img/icon/NY/logo_2.png" class="icon" id="logoIcon" onclick="location.href='/MAIN'">
+	<img src="NY/img/icon/logo_2.png" class="icon" id="logoIcon" onclick="location.href='/MAIN'">
 
 <!--       페이지1-------------------------------->
         <div class="page" id="page1">
