@@ -1,0 +1,128 @@
+@charset "EUC-KR";
+
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-color: #36393F;
+}
+ul{
+	list-style: none;
+}
+.container{
+	margin: auto;
+	/* width: 990px; */
+	height: 950px;
+	
+}
+
+
+/*왼쪽 바*/
+.SetLbar{
+	background-color: #2F3136;
+	float: left;
+	width: 	680px;
+	max-height: 968px;
+	height: 968px;
+	color: #B9BBBE;
+	position: relative;
+}
+.SetLbar h4{
+	font-size: 12px;
+	font-weight: normal;
+	margin-bottom: 8px;
+}
+
+.UlList{
+	position: absolute;
+	right:20px;
+	top: 100px;
+	width: 220px;
+	height: 968px;
+	overflow-y: auto; 
+}
+
+.SetLbar p{
+	margin: 10px;
+	cursor: pointer;
+}
+.SetScrollBar{
+	height: 1100px;
+	overflow-y: auto; 
+} 
+.UlList::-webkit-scrollbar{
+    display: none; 
+}
+.SetList{
+	margin: 10px 10px 10px 25px;
+	border-top: 0.5px solid #B9BBBE;
+	padding-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*미드바*/
+.SetMidbar{
+	background-color:#36393F;
+	float: left;
+	width: 	1143px;
+	height: 968px;
+	position: relative;
+}
+
+#Back{
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 90px;
+	right: 380px;
+}
+
+
+
+
+
+
+
+.MidSetList{
+	background-color: pink;
+	width: 800px;
+	height: 968px;
+	display: none;
+}
+#AccountSet{
+	display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

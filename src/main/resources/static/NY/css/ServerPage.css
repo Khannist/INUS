@@ -1,0 +1,132 @@
+@charset "UTF-8";
+*{padding: 0; margin: 0;}
+ul{list-style: none;}
+a{text-decoration: none; cursor: pointer;}
+img{
+	cursor: pointer;
+}
+li{list-style: none;}
+p{
+	font-family: 'Archivo Black', sans-serif;
+	font-size: 20px;
+} 
+body{
+	width: 1800px;
+	height: 100vh;
+	background-color: #37393f;
+}  
+
+
+     
+     
+     
+     
+ .ServerLbar{
+     	clear: both;
+   		float: left;
+   		width: 257px;
+   		height: 96.7vh;
+   		border: 0.1px;
+    	border-top-left-radius: 19px;
+    	border-top-right-radius: 19px;
+ }
+    
+    
+    
+    
+     .Midbar{
+     	 width: 1543px;
+         height: 96.7vh;
+         float: left;
+         background-color: #37393f; 
+    }
+    .MusicPart{
+    	float: left;
+    	height: 96.7vh;
+    }
+    .ChatPage{
+    	position: relative;
+    	float: left;
+    	width: 1543px;		/*수정*/
+     	height: 96.7vh;
+    }
+    .pageIcon{
+    	position:absolute;
+    	top:330px;
+    	width: 35px;
+    }
+    #CloseMusic{
+    	display: none;
+    }
+    .MusicRecommand, .MusicSearch, .ServerFriendList{
+    	display: none;
+    	width: 600px;
+     	height: 905px;
+     	float: left;
+     	position: relative;
+    }
+    .MusicSearch li{
+    	height: 120px;
+    	padding: 10px 0px 0px 7px;
+    	margin: 5px;
+    }
+    /*ChatPage*/
+    
+    .ChatInput{
+            width: 1200px;
+            height: 42px;
+            border: 1px;
+            border: 1px solid #202225;
+            border-radius: 12px;
+            background-color: #40444b;
+            display: inline-block;
+        }
+        .inputFix{
+        	margin-left:4%;
+        	position:absolute;
+        	bottom: 25px;
+        }
+        #chatRealInput, #chatRealsubmit{
+            border: none;
+            background-color: #40444b;
+        }
+        #chatRealInput{	
+            margin: 7px 0px 0px 20px;	/*수정*/
+            width: 900px;
+            height: 34px;
+            margin-left: 10px;
+            border: 1px ;
+            border-radius: 12px;
+        }
+        
+        .inputFix img{
+            float: right;
+            width: 27px;
+            height: 27px;
+            margin-top: 7px;
+            margin-right: 12px;
+        }
+        input[type=submit]{
+            list-style: none;
+        }
+        #chatRealsubmit{ 
+            margin-left:20px;
+            border: 1px solid #202225;
+            border-radius: 12px;
+            width: 220px;
+            height: 42px;
+            color: #a0a2a5;
+            cursor: pointer;
+            display: inline-block;
+            appearance: none;
+        }
+    
+
+    /*검색아이콘, 돌아오는 아이콘 위치*/
+	    .ToIMG{
+		    width: 36px;
+		    height: 36px;
+		    position: absolute;
+		    right: 10px;
+		    top: 17px;
+		}

@@ -1,0 +1,185 @@
+@charset "UTF-8";
+*{
+     padding: 0;
+     margin: 0;
+ }
+ p{
+     text-align: center;
+ }
+
+ .Lbar img{
+     width: 100px;
+     
+ }
+ .Lbar ul{
+     list-style: none;
+ }
+ .Lbar ul li{
+     background-color: bisque;
+     border: 1px solid green;
+
+ }
+ .Lbar ul a{
+ 	list-style: none;
+ 	color: black;
+ }
+        
+.ServerList{
+     	width: 62px;			/*수정*/
+     	height: 96.7vh;	/*수정*/
+    	background-color: #202225;
+    	float: left;
+    }
+    #serverCount{
+    	margin-left: 5px;	/*수정*/
+    	margin-top: 18px;
+    	font-size: 50px;
+    	width: 46px;
+    	height: 46px;
+    }
+    
+
+    .serverImg{
+    	width: 46px;
+    	height: 46px;
+    	border: 2px solid white;
+    	border-radius: 50%;
+   	}
+    .serverImg:hover{
+    	border-radius: 20%;
+    }
+    
+    .ChatAndFriendList{
+     	width: 195px;
+     	height: 96.7vh;	/*수정*/
+    	background-color: #2f3136;
+    	border: 1px;	/*수정*/
+    	border-top-right-radius: 19px;	/*수정*/
+    	float: left;
+    	position: relative;
+    }
+    
+    
+    .chatAndFriendheader{
+    	color: white;
+    	text-align:left;
+    	width: 195px;	/*수정*/
+    	height:96.7vh;	/*수정*/
+    	position: relative;
+    	
+    }
+    .headerP{
+    	width: 193px;
+    	background-color: #37393f;
+    	border: 1.5px solid #202225;
+    	border-top-right-radius: 19px;		/*수정*/
+    }
+    
+    .headerP:hover{
+    	background-color: #2f3136;
+    }
+    
+    #ChatName {
+    	font-size: 20px;
+    	margin-top: 10px;
+    	margin-left:8px;		/*수정*/
+    	text-align: left;		/*수정*/
+    }	
+    
+    .ChatAndFriend_Icon{
+    	position:absolute;
+    	right: 5px;
+    	top:19px;
+    	width: 14px;
+    }
+	.chatAndFriendheader ul{
+		margin-top: 10px;
+		margin-left: 6px;
+	}
+     .chatAndFriendheader ul li img{
+    	width: 30px;
+    	height:30px;
+    	float: left;
+    	border: 1px;
+    	border-radius: 50%;
+    }
+    
+    .chatAndFriendheader li p{
+    	font-size: 15.5px;
+    	float: left;
+    	margin-top: 9px;
+    	margin-left: 5px;
+    	cursor: pointer;
+    }
+    
+    .chatAndFriendheader li {
+    	clear: both;
+		margin-top: 10px;
+    }   
+        
+        
+        
+        
+     .ServerReplace{
+     	position: absolute;
+		top: 47px;
+		width: 182px;
+		height: 71px;
+		background-color: #202225;
+		margin-left: 5px;
+		display: none;
+     }
+        
+        
+        
+        
+
+        /*프로필 하단 고정*/
+    .fixProifle{
+    	width: 195px;		/*수정*/
+    	height: 46px;		/*수정*/
+    	position: absolute;
+    	bottom: 0px;
+    	background-color: #292b2f;
+    }
+    .fixProifle img{
+    	width: 34px;
+    	height: 34px;
+    	border: 1px;
+    	border-radius: 50%;
+    	margin-top: 5px;
+    	margin-right: 9px;
+    	margin-left: 7px;
+    }
+    #ProfileFixText{
+    	margin-top: 7px;
+    }
+    #fixProfile_1, #fixProfile_2{
+    	float: left;
+    	font-size: 14px;
+    }
+    #fixProfile_2 span{
+    	font-size: 12px;
+    }
+    .fixProifle #setIcon{
+    	width: 29px;
+    	height: 29px;
+    	float: right;
+    	margin-top: 2px;
+    }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
