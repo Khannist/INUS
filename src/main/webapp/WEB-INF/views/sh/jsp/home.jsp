@@ -16,7 +16,7 @@
 	 	</a>
 	 </div>
 	 <div>
-	 	<a href="/myInfo">
+	 	<a href="sh/jsp/myInfo">
 	 		회원정보수정
 	 	</a>
 	 </div>

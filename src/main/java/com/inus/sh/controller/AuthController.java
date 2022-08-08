@@ -24,13 +24,11 @@ public class AuthController {
 	
 	@GetMapping("/signin")
 	public String signin() {
-		return "/signin";
 		return "/sh/jsp/signin";
 	}
 	
 	@GetMapping("/signup")
 	public String signup() {
-		return "/signup";
 		return "/sh/jsp/signup";
 	}
 	
@@ -59,14 +57,12 @@ public class AuthController {
 			}
 			
 			// 사용자로부터 입력받은 데이터와 에러메시지를 가지고 회원가입 페이지로 다시이동
-			return "signup";
 			return "/sh/jsp/signup";
 		}
 		
 		//username이 이미 존재할시 키값에 오류메시지 저장
 		if(authService.usernameChk(signupDto.getUsername()) != 0) {
 			model.addAttribute("valid_username" ,"이미 등록된 아이디입니다.");
-			return "signup";
 			return "/sh/jsp/signup";
 		}
 		
