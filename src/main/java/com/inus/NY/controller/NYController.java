@@ -20,7 +20,7 @@ public class NYController {
 
 	   @RequestMapping("/LOG_JOIN")
 	   public String LOGINController() {
-	      return "LoginLoinus";
+	      return "LoginJoinus";
 	   }
 	   @RequestMapping("/INUS")
 	   public String INUSController() {	//이너스 소개페이지
@@ -38,7 +38,7 @@ public class NYController {
 
 	   @RequestMapping("/SET")
 	   public String SetController() {
-	      return "set";
+	      return "Set";
 	   }
 }
 
