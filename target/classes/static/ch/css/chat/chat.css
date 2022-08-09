@@ -11,12 +11,40 @@
 	margin-left: 40px;
 	height: 92vh;
 	overflow: auto;
+	padding-bottom: 80px;
 }
-.chating .me{
-	color: #F6F6F6;
-	text-align: right;
+
+.chating ul {
+	width: 100%;
+	list-style: none;
 }
-.chating .others{
-	color: #FFE400;
+
+.chating ul li {
+	width: 100%;
+	font-size: 13px;
+}
+
+.chating ul .left {
 	text-align: left;
 }
+
+.chating ul .right {
+	text-align: right;
+}
+.chating ul li > .sender {
+	margin: 10px 20px 0 20px;
+	font-weight: bold;
+}
+.chating ul li > .message {
+	display: inline-block;
+	word-break: breeak-all;
+	margin: 5px 20px;
+	max-width: 75%;
+	border: 1px solid #888;
+	border-radius: 5px;
+	background-color: #FCFCFC;
+	color: #555;
+	text-align: left;
+}
+
+

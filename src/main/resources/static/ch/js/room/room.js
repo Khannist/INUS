@@ -93,22 +93,33 @@ function createChat(res) {
 		//console.log("res = " + JSON.stringify(res));
 		var tag = "";
 		if(res.list) {
+			tag += "<ul>";
 			if(res.list.length >= 0) {
 				res.list.forEach(function(d, idx){
 					if(d.userId == $("#userId").val()){
-						tag +=  "<p class='me'>나 :" + d.chatData + "</p>";
+						tag +=  "<li class='right'>" +  
+								"<p class='message'>" + d.chatData + "</p>" +
+								"</li>";
 					}else {
-						tag += "<p class='others'>" + d.username + " :" + d.chatData + "</p>";
+						tag += "<li class='left'>" +
+								"<div class='sender'>" + d.username + "</div>" +
+								"<p class='message'>" + d.chatData + "</p>" +
+								"</li>";
 					}
 				});			
 			}else {
-				var d = res.list;
-				if(d.userId == $("#userId").val()){
-					tag +=  "<p class='me'>나 :" + d.chatData + "</p>";
+				if(res.list.userId == $("#userId").val()){
+					tag += "<li class='right'>" +  
+							"<p class='message'>" + res.list.chatData + "</p>" +
+							"</li>";
 				}else {
-					tag += "<p class='others'>" + d.username + " :" + d.chatData + "</p>";
+					tag += "<li class='left'>" +
+								"<div class='sender'>" + res.list.username + "</div>" +
+								"<p class='message'>" + res.list.chatData + "</p>" +
+								"</li>";
 				}
 			}		
+			tag += "</ul>";
 		}
 		
 		if($("ul#channelSpace").children().length == 1) {
@@ -116,8 +127,7 @@ function createChat(res) {
 			connect();
 		}
 		$("#chating").append(tag);
-		let chat = document.querySelector('#chating');
-        chat.scrollTop = chat.scrollHeight;
+         $('#chating').scrollTop($('#chating').prop('scrollHeight'));
 	}
 }
 
