@@ -50,7 +50,7 @@
 				
 	      		<div class="inputFix">
 	      			<div class="ChatInput">
-		        		<input id="chatRealInput" type="text" placeholder="채팅">
+		        		<input id="chatRealInput" type="text" placeholder="채팅" onkeydown="send(event)">
 		        		<img src="NY/img/icon/chatIcon/ghostIcon.png">
 		        		<img src="NY/img/icon/chatIcon/smilIecon.png">
 	       			</div>
