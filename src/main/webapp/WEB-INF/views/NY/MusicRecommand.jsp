@@ -171,7 +171,7 @@
 							<li>
 								<img src="NY/img/recommandImg/popstar/PopArtistImg_4.jpg" class="KeyImg" id="PopArtistList_4">
 								<p><span>AJR</span><br>YouTube Music</p>
-							<!-- https://music.youtube.com/playlist?list=PLFTljmaaq3TJrktMrwZIouPbvJvpRdeHC&feature=share -->
+							<!-- https://music.youtube.com/playlist?list=PLFTljmaaq3TJrktMrwZIouPbvJvpRdeHC -->
 							</li> 
 							<li>
 								<img src="NY/img/recommandImg/popstar/PopArtistImg_5.jpg" class="KeyImg" id="PopArtistList_5">
@@ -203,7 +203,7 @@
 							<li>
 								<img src="NY/img/recommandImg/Relax/RelaxImg_3.jpg" class="KeyImg" id="RelaxList_3">
 								<p><span>데이먼스 이어</span><br>YouTube Music</p>
-							<!-- https://music.youtube.com/playlist?list=PLiB2ZlOTzp-BRf3SYu8w5wGlCvGoisuMi&feature=share -->
+							<!-- https://music.youtube.com/playlist?list=PLiB2ZlOTzp-BRf3SYu8w5wGlCvGoisuMi -->
 							</li> 
 							<li>
 								<img src="NY/img/recommandImg/Relax/RelaxImg_4.jpg" class="KeyImg" id="RelaxList_4">
@@ -259,8 +259,8 @@
 							</li> 
 							<li>
 								<img src="NY/img/recommandImg/AniOST/AniOSTImg_6.jpg" class="KeyImg" id="AniOSTList_7">
-								<p><span>추천좀 제발</span><br>YouTube Music</p>
-							<!-- https://music.youtube.com/playlist?list=RDCLAK5uy_mL0lDqxdKwRtBbzva3yVjVy-BZ9L7KX5I -->
+								<p><span>사진 추가</span><br>YouTube Music</p>
+							<!-- https://music.youtube.com/playlist?list=PLoNu5qsBDaYCQ2U6Hswqu-1TA6aXdmC73 -->
 							</li>
 						</ul>
 						<ul class="ExerciseList" style="display: none;">
@@ -298,7 +298,7 @@
 								<img src="NY/img/recommandImg/Exercise/ExerciseImg_7.jpg" class="KeyImg" id="ExerciseList_7">
 								<p><span>ENFP 모이자.</span><br>엔프피세상</p>
 							<!-- https://music.youtube.com/playlist?list=PLiwzbJb9V5yDy7k4vDG-cZBoy7slX-sNR -->
-							</li><!-- https://music.youtube.com/playlist?list=PLJ9y6MY8l9DirjA8ptVi2pwQkxrb0X2jD//기분좋고 산뜻한 무 -->
+							</li>
 						</ul>
 						<ul class="leaveworkList" style="display: none;">
 							<li>

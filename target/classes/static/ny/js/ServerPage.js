@@ -40,8 +40,28 @@ function FC_MusicPage(){
 
 
 
-/*
+//iframe 각 재생목록 별 영상 출력
  var linkFront = "https://www.youtube.com/embed/videoseries?list=";
  var linkBack= "&feature=share";
  var linka = "";
- $("#abc").empty().attr("src",linkFront + linka +linkBack);*/
+ $("#abc").empty().attr("src",linkFront + linka +linkBack);
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
