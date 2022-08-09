@@ -21,15 +21,12 @@ crossorigin="anonymous"></script>
 								<li><p onclick="F_AccountSet()">내 계정</p></li>
 								<li><p onclick="F_ProfileSet()">프로필</p></li>
 								<li><p onclick="F_SecuritySet()">개인정보 보호 및 보안</p></li>
-								<li><p onclick="F_ConnectSet()">연결</p></li>
-								<li><p onclick="F_FreindSet()">친구관리</p></li>
+								<li><p onclick="F_FreindSet()">친구요청</p></li>
 							</ul>
 					</div>
 					<div class="SetList" id="ServerSet">
 					<h4>서버 설정</h4>
 						<ul>
-							<li><p onclick="F_ServerBoostSet()">서버 부스트</p></li>
-							<li><p onclick="F_MidServerSet()">서버 관리</p></li>
 							<li><p onclick="F_GiftSet()">선물 인벤토리</p></li>
 						</ul>
 					</div>
@@ -37,20 +34,7 @@ crossorigin="anonymous"></script>
 					<h4>앱 설정</h4>
 						<ul>
 							<li><p onclick="F_DisplaySet()">디스플레이</p></li>
-							<li><p onclick="F_AccessibilitySet()">접근성</p></li>
-							<li><p onclick="F_VideoSet()">비디오</p></li>
-							<li><p onclick="F_TextPicSet()">텍스트 및 사진</p></li>
 							<li><p onclick="F_NoticeSet()">알림</p></li>
-							<li><p onclick="F_ShortcutSet()">단축키</p></li>
-						</ul>
-					</div>
-					<div class="SetList" id="MusicSet">
-					<h4>음악 설정</h4>
-						<ul>
-							<li><p  onclick="F_SoundSet()">사운드</p></li>
-							<li><p  onclick="F_PlayListSet()">플레이리스트</p></li>
-							<li><p  onclick="F_RecommandVideoSet()">추천 영상 여부</p></li>
-							<li><p  onclick="F_AutoplaySet()">자동재생</p></li>
 						</ul>
 					</div>
 					<div class="SetList" id="AddSet">
@@ -144,27 +128,54 @@ crossorigin="anonymous"></script>
 			
 			
 			<div class="MidSetList" id="SecuritySet">SecuritySet</div>
-			<div class="MidSetList" id="ConnectSet">ConnectSet</div>
-			<div class="MidSetList" id="FreindSet">FreindSet</div>
 			
-			<div class="MidSetList" id="ServerBoostSet"></div>
-			<div class="MidSetList" id="MidServerSet"></div>
-			<div class="MidSetList" id="GiftSet"></div>
+			<div class="MidSetList" id="FreindSet">
+				<h3>친구 요청</h3>
+				<p id="FreindSet_p">친구요청을 보낼 수 있는 사람</p>
+				<div class="friendRequire" id="Anyone">
+					<label>누구나</label>
+					<input type="checkbox" class="checkBoxCss" id="Anyonecheckbox">
+				</div>
+				<div class="friendRequire" id="FtoF">
+					<label>친구의 친구</label>
+					<input type="checkbox" class="checkBoxCss" id="FtoFcheckbox">
+				</div>
+				<div class="friendRequire" id="Server">
+					<label>서버 멤버</label>
+					<input type="checkbox" class="checkBoxCss" id="Servercheckbox">
+				</div>
+
+			</div>
 			
-			<div class="MidSetList" id="DisplaySet"></div>
-			<div class="MidSetList" id="AccessibilitySet"></div>
-			<div class="MidSetList" id="VideoSet"></div>
-			<div class="MidSetList" id="TextPicSet"></div>
+			
+			<div class="MidSetList" id="DisplaySet">
+				<h3>디스플레이</h3>
+				<div class="theme">
+					<p>테마</p>
+					<div class="themeList" id="themeBlack">
+						<input type="radio">
+						<label>어두운 테마</label>
+					</div>
+					<div class="themeList" id="themeWhite">
+						<input type="radio">
+						<label>밝은 테마</label>
+					</div>
+				</div>
+			</div>
 			<div class="MidSetList" id="NoticeSet"></div>
-			<div class="MidSetList" id="ShortcutSet"></div>
-			
-			<div class="MidSetList" id="SoundSet"></div>
-			<div class="MidSetList" id="PlayListSet"></div>
-			<div class="MidSetList" id="RecommandVideoSet"></div>
-			<div class="MidSetList" id="AutoplaySet"></div>
-			
+
+
 			<div class="MidSetList" id="NewSkillSet"></div>
-			<div class="MidSetList" id="LogOutSet"></div>
+			<div class="MidSetList" id="LogOutSet" onclick="F_LogOut()">
+				<div id="Logoutdiv">
+					<h3>로그아웃</h3>
+					<p>정말로 로그아웃 하시겠어요?</p>
+					<div id="CheckLogout">
+						<button class="logOutClass" id="LogOutFake">취소</button>
+						<button class="logOutClass" id="LogOutReal">로그아웃</button>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	

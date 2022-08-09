@@ -160,7 +160,11 @@ function F_ServerProfile(){
 
 
 
-
+//로그아웃
+Logoutdiv
+function F_LogOut(){
+	document.querySelector(':not(#Logoutdiv)').style.backgroundcolor = "#171616";   
+}
 
 
 
