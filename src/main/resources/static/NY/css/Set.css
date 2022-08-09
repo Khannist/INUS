@@ -313,9 +313,9 @@ h3{
 	background-color: #36393F;
 	border: none;
 	font-size: 18px;
-	margin-top: 5px;
+	margin-top: 13px;
 }
-#ProfileSet button:hover{
+#ProfileSet .button:hover{
 	color: white;
 }
 #ProfileSet_btn01{
@@ -330,13 +330,13 @@ h3{
 	float: left;
 	width: 328px;
 	height: 750px;
-	border: 1px solid black;
+	
 }
 .RightPart{
 	float: left;
 	width: 328px;
 	height: 750px;
-	border: 1px solid black;
+
 }
 #ServerProfile{
 	clear: both;
@@ -348,19 +348,19 @@ h3{
 	left: 30px;
 	width: 310px;
 	height: 100px;
-	border-bottom: 0.3px solid #B9BBBE;
+	border-bottom: 0.1px solid #B9BBBE;
 }
 
 .AbataDiv h3{
 	position: absolute;
-    top: -95px;
+    top: -77px;
     left: -70px;
     font-size: 15px;
 }
 #LeftBtn{
 	position: absolute;
     font-size: 15px;
-    top: 40px;
+    top: 60px;
     left:10px;
     width: 120px;
     height: 30px;
@@ -372,7 +372,7 @@ h3{
 #RightBtn{
 	position: absolute;
     font-size: 15px;
-    top: 40px;
+    top: 60px;
     left: 160px;
     width: 120px;
     height: 30px;
@@ -381,9 +381,295 @@ h3{
     border: 1px;
     border-radius: 3px;
 }
+#RightBtn:hover{
+	color: #5068F2;
+}
+
+.ColorDiv{
+	position: absolute;
+	top: 300px;
+	width: 309px;
+	height: 230px;
+	margin-left: 10px;
+	border-bottom: 0.1px solid #B9BBBE;
+}
+.ColorDiv h3{
+	font-size: 14px;
+	position: absolute;
+	top: -110px;
+	left: -70px;
+}
+.ColorDiv p{
+	font-size: 14px;
+	position: absolute;
+	top: 110px;
+	left: 10px;
+}
+.ColorDiv span{
+	font-size: 14px;
+	font-weight: bold;
+	position: absolute;
+	top: -7px;
+}
+
+.ColorDiv button{
+	width: 130px;
+	height: 30px;
+	background-color: #2D7D46;
+	border: 1px;
+    border-radius: 3px;
+    color: white;
+    position: absolute;
+	top: 190px;
+	left: 10px;
+}
+
+.smallProfile{
+	background-color: pink;
+	width: 280px;
+	height: 200px;
+	margin-left: 26px;
+	position: absolute;
+	top: 240px;
+	border: 1px;
+    border-radius: 3px;
+}
+.smallProfile h3{
+	position: absolute;
+	top: -145px;
+	left: -80px;
+	font-size: 14px;
+}
+.smallprofileMID{
+	margin-top: 60px;
+	background-color: #2F3136;
+	border: 1px;
+    border-radius: 4px;
+	width: 280px;
+	height: 165px;
+}
+.smallprofileMID img{
+	position: absolute;
+	top: 30px;
+	left: 20px;
+	width: 70px;
+	height: 70px;
+	border: 1px;
+    border-radius: 50%;
+}
+.smallprofileMID #smallname{
+	position: absolute;
+	top: 105px;
+	left: 20px;
+	font-size: 21px;
+	color: white;
+}
+#smallAly{
+	font-size: 11px;
+	position: absolute;
+	top: 155px;
+	left: 20px;
+}
+
+#ServerProfile{
+	margin-top: 10px;
+	width: 700px;
+	height: 770px;
+}
+.serverP01{
+	margin-top:10px;
+	width: 700px;
+	height: 140px;
+	border-bottom: 0.1px solid #B9BBBE;
+}
+.serverP01 #serverP_01{
+	color: white;
+	font-size: 15px;
+	margin-left: 20px;
+}
+#serverP_01 a{
+	text-decoration: none;
+	color: aqua;
+}
+#serverP_02{
+	position: absolute;
+	top: 45px;
+	left: 20px;
+	color: #B9BBBE;
+	font-size: 13px;
+}
+.serverP01 select{
+	width: 650px;
+	height: 45px;
+	color: white;
+	font-size: 20px;
+	background-color: #2F3136;
+	border: 1px;
+    border-radius: 3px;
+    position: absolute;
+	top: 72px;
+	left: 20px;
+}
+.serverP01 select option img{
+	width: 30px;
+	height: 30px;
+}
+.serverP02{
+	width: 300px;
+	height: 130px;
+	border-bottom: 0.1px solid #B9BBBE;
+}
+.serverP02 p{
+	position: absolute;
+	top: 172px;
+	left: 20px;
+	font-size: 13px;
+}
+.serverP02 input{
+	position: absolute;
+	top: 199px;
+	left: 20px;
+	width: 270px;
+	height: 40px;
+	background-color: #2F3136;
+	border: 1px;
+    border-radius: 3px;
+}
+.serverPNext{
+	width: 750px;
+	height: 640px;
+}
+.SleftPart{
+	margin-left: 10px;
+	float: left;
+	width: 340px;
+	height: 640px;
+}
 
 
+.serverP03{
+	width: 300px;
+	height: 430px;
+}
 
+.serverP03Inner{
+	width: 290px;
+	height: 120px;
+	background-color: #2F3136;
+	border: 1px;
+    border-radius: 3px;
+    margin-top: 20px;
+    margin-left: 4px;
+    max-width: 290px;
+}
+.serverP03Inner p{
+	margin: 10px;
+	color: white;
+	font-size: 13px;
+	position: absolute;
+	top: 300px;
+}
+.serverP03Inner button{
+	margin: 10px;
+	width: 130px;
+	height: 30px;
+	background-color: #2D7D46;
+	border: 1px;
+    border-radius: 3px;
+    color: white;
+    position: absolute;
+	top: 350px;
+}
+
+.SRightPart{
+	float: left;
+	width: 340px;
+	height: 640px;
+}
+
+.SRightPart h3{
+	position: absolute;
+	top: -165px;
+}
+
+
+/*정보 보안*/
+#SecuritySet{
+	width: 660px;
+	height: 850px;
+	margin-top: 100px;
+	margin-left: 40px;
+}
+
+.SecuritySet01 h2{
+	color: white;
+	font-size: 20px;
+	font-weight: normal;
+	margin: -10px auto 30px auto;
+}
+.SecuritySet01 span{
+	font-size: 12px;
+	margin-bottom: 15px;
+}
+.SecuritySet01 p{
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+.SecuritySet01 li div{
+	width: 600px;
+	height: 60px;
+	background-color: #2F3136;
+	border: 1px;
+    border-radius: 3px;
+	margin-bottom: 14px;
+	
+}
+#radio01{
+	border-left: 4px solid green;
+}
+#radio02{
+	border-left: 4px solid yellow;
+}
+#radio03{
+	border-left: 4px solid red;
+}
+.SecuritySet01 li input{
+	margin: 13px 10px 10px 13px;
+	float: left;
+	width: 30px;
+	height: 30px;
+}
+.SecuritySet01 li p{
+	float: left;
+	font-size: 16px;
+	margin: 6px;
+}
+.SecuritySet01 li p span{
+	font-size: 12px;
+}
+.SecuritySet01 li{
+	clear: both;
+}
+
+.SecsubText{
+	width: 660px;
+	height: 100px;
+	border-bottom: 0.1px solid #B9BBBE;
+}
+
+.SecsubText h3{
+	font-size: 16px;
+	font-weight: normal;
+	color: white;
+	position: absolute;
+	top: 340px;
+	left: -40px;
+}
+#Sec_seP{
+	position: absolute;
+	top: 480px;
+	left: 40px;
+}
 
 
 
@@ -477,21 +763,22 @@ input#chk_top:checked + label:before{
 #DisplaySet .theme{
 	margin:40px;
 	width: 660px;
-	height: 200px;
-	background-color: pink;
-	border-bottom: 0.3px solid #B9BBBE;
+	height: 180px;
+	border-bottom: thin solid #B9BBBE;
 }
 
 .theme p{
 	font-size: 14px;
 }
-.themeList{
-	margin-top: 20px;
-	width: 660px;
-	height: 60px;
-	background-color: #ccc;
-}
 
+.themeList{
+	margin-top: 5px;
+	width: 660px;
+	height: 50px;
+	background-color: #2F3136;
+	border: 1px;
+	border-radius: 3px;
+}
 #themeBlack{
 	position: absolute;
 	top: 200px;
@@ -499,21 +786,13 @@ input#chk_top:checked + label:before{
 .theme input{
 	margin: 20px 20px 20px 20px;
 }
+.theme label:hover{
+	color: white;
+}
 #themeWhite{
 	position: absolute;
-	top: 270px;
+	top: 265px;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -524,16 +803,23 @@ input#chk_top:checked + label:before{
 
 
 /*로그아웃*/
-#LogOutSet #Logoutdiv{
+
+
+/**/
+
+#Logoutdiv{
+	/*display: none;*/
+	z-index: 500;
 	width: 440px;
 	height: 210px;
 	background-color: #36393F;
-	border: 1px ;
+	border: 1px solid;
     border-radius: 3px;
     padding-left: 20px;
     margin:auto;
     margin-top: 300px;
 }
+
 #LogOutSet h3{
 	margin: 0px;
 	margin-top: 10px;
@@ -585,18 +871,3 @@ input#chk_top:checked + label:before{
 #LogOutReal:hover {
 	background-color: #a32e2f;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
