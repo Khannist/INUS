@@ -54,10 +54,10 @@ function goRoom(code, id, room){
 		userId : id,
 		roomCode : room
 	}
-	
 	commonAjax('/moveChating', msg , 'post', function(result){
 		getChat(result);
 	});
+	console.log("1");
 	disconnect();
 	connect();
 	$("#chatInput").focus();
@@ -97,6 +97,11 @@ function createChat(res) {
 					tag += "<p class='others'>" + d.username + " :" + d.chatData + "</p>";
 				}
 			}		
+		}
+		
+		if($("ul#channelSpace").children().length == 1) {
+			disconnect();
+			connect();
 		}
 		$("#chating").append(tag);
 		let chat = document.querySelector('#chating');

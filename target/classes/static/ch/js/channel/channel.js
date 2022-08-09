@@ -13,11 +13,9 @@ function getChannel(){
 	});
 }
 
-function createServer(){
-	$("#addChannel").click(function(){		
-		var con = document.getElementById("channelNameInput");
-	    con.style.display = (con.style.display != 'none') ? "none" : "inline-block";
-	});
+function createServer(){	
+	var con = document.getElementById("channelNameInput");
+    con.style.display = (con.style.display != 'none') ? "none" : "inline-block";
 }
 		
 function channelCreateName(){
@@ -32,7 +30,6 @@ function channelCreateName(){
 	con.style.display = "none";
 	$("input#channelName").val("");
 }
-		
 
 
 function goChannel(code, name, id){
@@ -72,6 +69,13 @@ function createChatingChannel(res){
 			
 			$("#channelSpace").empty().append(tag);
 		}
+		if(Object.keys(res).length === 0) {
+			$("#channelSpace").empty();
+			$("#roomList").empty();
+			$("#ChatName").empty().text("채팅방이름");
+			$("#chating").empty();
+			disconnect();
+		}
 		if($("#roomList").children().length == 0) {
 			$("ul#channelSpace").children(":eq(0)").trigger("click");		
 		}else {
@@ -79,6 +83,7 @@ function createChatingChannel(res){
 			
 		}
 	}
+	
 }
 
 function commonAjax(url, parameter, type, calbak, contentType){
