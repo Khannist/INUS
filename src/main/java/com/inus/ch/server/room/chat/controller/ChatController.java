@@ -180,7 +180,6 @@ public class ChatController {
 			
 			// 채널 리스트 순서 로직
 			int num = 0;
-			System.out.println(7);
 			if(chnList.toString().length() > 0) {
 				for(Channel tempListnum : chnList) {
 					int tnum = Integer.parseInt(tempListnum.getChannelList().substring(chn.getUserId().toString().length()+1));
@@ -234,7 +233,6 @@ public class ChatController {
 					delList.get(i).setChannelList(tempList);
 					delList.get(i).setUserId(chn.getUserId());
 					Channel temproom = delList.get(i);
-					System.out.println("리스트 출력 = " + temproom);
 					ss.update("ChatMapper.updateDelChnList", temproom);
 				}				
 			}

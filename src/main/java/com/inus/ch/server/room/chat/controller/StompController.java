@@ -35,7 +35,6 @@ public class StompController {
 	
 	@MessageMapping("/user")
 	public void user(Chat chat) throws Exception{
-		System.out.println("스톰프 구현단");
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Date now = new Date();
@@ -43,8 +42,6 @@ public class StompController {
 		
 		
 		chat.setChatDate(tstp);
-		
-		System.out.println("chat = " + chat);
 		ss.insert("ChatMapper.chattiing", chat);
 		HashMap<String, Object> payload = new HashMap<>();
 		payload.put("list", chat);

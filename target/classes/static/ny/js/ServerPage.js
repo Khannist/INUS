@@ -35,6 +35,7 @@ function FC_MusicPage(){
     document.querySelector('#OpenMusic').style.display = "block";	//열리는 아이콘 없어짐
     document.querySelector('.ChatPage').style.width = "100%";    
 }
- 
- 
- 
+ var linkFront = "https://www.youtube.com/embed/videoseries?list=";
+ var linkBack= "&feature=share";
+ var linka = "";
+ $("#abc").empty().attr("src",linkFront + linka +linkBack);

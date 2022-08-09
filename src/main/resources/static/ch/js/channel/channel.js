@@ -3,8 +3,7 @@
  */
  var ws;
 window.onload = function() {
-	getChannel();	
-	getRoom();
+	getChannel();
 }
 
 function getChannel(){
@@ -60,11 +59,10 @@ function createChatingChannel(res){
 		var tag = "";
 		if(res.list) {
 			res.list.forEach(function(d, idx){
-				console.log("채널 코드 생성");
 				$("#channelCode").val(d.channelCode);
 				var cn = d.channelName;
 				tag += "<li onclick='goChannel(\""+d.channelCode+"\", \""+cn+"\",\""+d.userId+"\",\""+d.channelList+"\")' "+
-				" oncontextmenu='channelEvent(event)' name='"+ d.channelList +"'>"+
+				" oncontextmenu='channelEvent(event)' name='"+ d.channelList +"' class='channel'>"+
 							"<p type='hidden' name='hiddenChannelCode' value='"+d.channelCode+"'>"+
 								"<img class='serverImg' src='https://source.unsplash.com/random'>"+
 							"</p>" +
@@ -72,7 +70,13 @@ function createChatingChannel(res){
 			});
 			checkRoom(res);
 			
-			$("#channelSpace").empty().append(tag);			
+			$("#channelSpace").empty().append(tag);
+		}
+		if($("#roomList").children().length == 0) {
+			$("ul#channelSpace").children(":eq(0)").trigger("click");		
+		}else {
+			$("ul#channelSpace").children(":eq(" + ($("ul#channelSpace").children().length-1) + ")").trigger("click");
+			
 		}
 	}
 }

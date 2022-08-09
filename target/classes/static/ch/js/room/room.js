@@ -14,7 +14,6 @@ function getRoom(res){
 	}
 	if(res.roomNumber == 1) {
 		numTrigger = 1;
-		console.log("트리거 on");
 	}
 	commonAjax('/getRoom', msg , 'post', function(result){
 		createChatingRoom(result);
@@ -114,12 +113,14 @@ function createChatingRoom(res){
 				$("#ChatName").innerText = (res.list[0].channelName);
 				res.list.forEach(function(d, idx){
 					var rn = d.roomName;
-					tag += "<li onclick='goRoom(\""+d.channelCode+"\",\""+d.userId+"\",\""+d.roomCode+"\")'" + 
-					"id='connect' name='connect'>"+
+					tag += "<li>"+
+								"<span onclick='goRoom(\""+d.channelCode+"\",\""+d.userId+"\",\""+d.roomCode+"\")'" + 
+					"id='connect' name='connect'>" +
 								"<img src='https://source.unsplash.com/random'>"+
 								"<p class='go' value='"+d.roomCode+"'>"+
 									rn +
 								"</p>"+
+								"</span>"+
 								"<span class='roomdel' name='roomdel' value='"+d.roomCode+"' onclick='delRoom(\""+d.roomCode+"\",\""+d.roomName+"\")'>X</span>" + 
 							"</li>";
 				});
