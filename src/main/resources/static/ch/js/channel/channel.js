@@ -32,7 +32,7 @@ function channelCreateName(){
 }
 
 
-function goChannel(code, name, id){
+function goChannel(code, name, id, chanName){
 	
 	$("#roomList").empty();
 	$("#ChatName").empty().text(name);
@@ -49,6 +49,8 @@ function goChannel(code, name, id){
 		getRoom(result);
 	});
 	$(".ServerReplace ul").children('li:eq(2)').attr("onclick","delChannel(\""+ code +"\")");
+	$(".serverImg").css({"border":"2px solid white"});
+	$("#"+chanName + " .serverImg").css({"border":"2px solid yellow"});
 }
 
 function createChatingChannel(res){
@@ -59,7 +61,7 @@ function createChatingChannel(res){
 				$("#channelCode").val(d.channelCode);
 				var cn = d.channelName;
 				tag += "<li onclick='goChannel(\""+d.channelCode+"\", \""+cn+"\",\""+d.userId+"\",\""+d.channelList+"\")' "+
-				" oncontextmenu='channelEvent(event)' name='"+ d.channelList +"' class='channel'>"+
+				" id='"+ d.channelList +"' class='channel'>"+
 							"<p type='hidden' name='hiddenChannelCode' value='"+d.channelCode+"'>"+
 								"<img class='serverImg' src='https://source.unsplash.com/random'>"+
 							"</p>" +

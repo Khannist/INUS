@@ -57,7 +57,18 @@ function goRoom(code, id, room){
 	commonAjax('/moveChating', msg , 'post', function(result){
 		getChat(result);
 	});
-	console.log("1");
+	
+	$("#roomList li").css({
+		"background":"none",
+		"height" : "45px"
+		
+		});
+	$("#" + room).css({
+		"background":"#5c5c5c",
+		"height" : "45px"
+		});
+	
+	
 	disconnect();
 	connect();
 	$("#chatInput").focus();
@@ -118,7 +129,7 @@ function createChatingRoom(res){
 				$("#ChatName").innerText = (res.list[0].channelName);
 				res.list.forEach(function(d, idx){
 					var rn = d.roomName;
-					tag += "<li>"+
+					tag += "<li id=" + d.roomCode + ">"+
 								"<span onclick='goRoom(\""+d.channelCode+"\",\""+d.userId+"\",\""+d.roomCode+"\")'" + 
 					"id='connect' name='connect'>" +
 								"<img src='https://source.unsplash.com/random'>"+
