@@ -7,7 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link  rel="stylesheet" type="text/css" href="ny/css/MusicSearch.css">
+
+<link href="NY/css/MusicSearch.css" rel="stylesheet">
 </head>
 <body>
 	<div class="SearchHeader">

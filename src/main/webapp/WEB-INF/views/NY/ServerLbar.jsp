@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="ny/css/ServerLbar.css" rel="stylesheet">
+<link href="NY/css/ServerLbar.css" rel="stylesheet">
 <title>왼쪽 바</title>
 </head>
 <body>
@@ -19,8 +19,8 @@
 			<div class="ChatList">
 				<div class="headerP" >
 						<p id="ChatName">채팅방이름</p>
-						<img class="ChatAndFriend_Icon" id="chatIcon" src="ny/img/icon/ChatListIcon.png" onclick="F_openrReplace()">
-						<img class="ChatAndFriend_Icon" id="chatIcon_2" style="display: none;" src="ny/img/icon/ChatListIcon_2.png" onclick="F_closeReplace()">
+						<img class="ChatAndFriend_Icon" id="chatIcon" src="NY/img/icon/ChatListIcon.png" onclick="F_openrReplace()">
+						<img class="ChatAndFriend_Icon" id="chatIcon_2" style="display: none;" src="NY/img/icon/ChatListIcon_2.png" onclick="F_closeReplace()">
 				</div>
 				<!-- 채팅방이름 7자 이내 -->
 				
@@ -35,13 +35,13 @@
 						<li onclick="createRoom()">채팅방 만들기</li>
 						<li>서버 나가기</li>
 					</ul>
-					<div id="inputNameSpace" style="display:none;">
+					<div id="inputNameSpace" style="display:none;"><!-- 확인 -->
 						<input type="text" id="roomName"><br>
 						<input type="button" value="생성" onclick="createRoomName()">
 					</div>
 				</div>
 		
-				<!-- <div class="fixProifle">
+				<div class="fixProifle">
 					<p id="fixProfile_1">
 						<img src="https://source.unsplash.com/random">
 					</p>
@@ -53,9 +53,9 @@
 					
 					
 					<a href="/SET">
-						<img id="setIcon"src="ny/img/icon/set_1.png">
+						<img id="setIcon"src="NY/img/icon/set_1.png">
 					</a>
-				</div> -->
+				</div>
 			</div>	
 	 </div>
 
