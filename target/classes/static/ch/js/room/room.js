@@ -41,6 +41,7 @@ function createRoomName() {
 		});
 	document.getElementById("inputNameSpace").style.display = "none";;
 	document.querySelector(".ServerReplace").style.display = "none";
+	numTrigger = 2;
 	$("input#roomName").val("");
 	F_closeReplace();
 }
@@ -146,7 +147,11 @@ function createChatingRoom(res){
 		if(numTrigger == 1) {
 			goRoom($("#channelCode").val(), $("#userId").val(), $("#roomCode").val());
 			numTrigger = 0;
+		}else if(numTrigger == 2) {
+			goRoom($("#channelCode").val(), $("#userId").val(), res.list[res.list.length-1].roomCode);
+			numTrigger = 0;
 		}
+		
 	}
 }
 
