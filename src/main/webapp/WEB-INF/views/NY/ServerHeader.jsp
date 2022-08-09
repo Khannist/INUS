@@ -13,7 +13,6 @@
 <header>
     <a href="#" id="Logo">			<!-- 메인으로 이동 -->
 
-    	<img id="logo" src="ny/img/icon/letter-m.png">
     	<img id="logo" src="NY/img/icon/letter-m.png">
     </a>
 </header>
