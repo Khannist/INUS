@@ -9,5 +9,6 @@ public class HomeController {
 	@GetMapping({"/","/home"})
 	public String signin() {
 		return "home";
+		return "/sh/jsp/home";
 	}
 }
