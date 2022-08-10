@@ -62,7 +62,7 @@ function createChatingChannel(res){
 				$("#channelCode").val(d.channelCode);
 				var cn = d.channelName;
 				tag += "<li onclick='goChannel(\""+d.channelCode+"\", \""+cn+"\",\""+d.userId+"\",\""+d.channelList+"\")' "+
-				" oncontextmenu='channelEvent(event)' name='"+ d.channelList +"' class='channel'>"+
+				"name='"+ d.channelList +"' class='channel'>"+
 							"<p type='hidden' name='hiddenChannelCode' value='"+d.channelCode+"'>"+
 								"<img class='serverImg' src='https://source.unsplash.com/random'>"+
 							"</p>" +

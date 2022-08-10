@@ -55,6 +55,10 @@ function goRoom(code, id, room){
 		roomCode : room
 	}
 	
+	console.log("이곳인듯");
+	console.log(JSON.stringify(msg));
+	
+	
 	commonAjax('/moveChating', msg , 'post', function(result){
 		getChat(result);
 	});
