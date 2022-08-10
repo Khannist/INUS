@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+#addChannel {
+	display: inline-block;
+	
+}
+#channelNameInput {	
+    display: none;
+    z-index: 100;
+    transform: translate(500px, -800px);
+    width: 500px;
+    height: 500px;
+    background: #7e7e7e;
+}
+#channelNameInput h2 {
+	text-align: center;
+    color: #2c2c2c;
+    margin-top: 5px;
+}
+#channelNameInput #channelThumbFrame {
+	width: 450px;
+    height: 150px;
+    border: 2px solid white;
+    margin: 10px 0;
+    transform: translate(20px, 35px);
+}
+#channelNameInput #channelThumbFrame .channelThumb{
+	width: 80px;
+    height: 80px;
+    border: 2px solid yellow;
+    border-radius: 50%;
+    transform: translate(25px, 30px);
+	
+}
+#channelNameInput #channelThumbFrame .chnThumbFile{
+	padding: 6px 25px;
+    background-color: #FF6600;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    transform: translate(60px, -10px);
+    display: inline-block;
+    width: 86px;
+}
+
+input#channelName {
+	width: 350px;
+    height: 25px;
+    transform: translate(20px, 100px);
+}
+input#inputChannelName {
+	    width: 100px;
+    height: 50px;
+    transform: translate(-160px, 220px);
+    background: #E3334F;
+    color: white;
+    border: none;
+    border-radius: 5%;
+}
+#channelSpace li{
+	overflow: hidden;
+}
+
+
+
+
+
+
+
+

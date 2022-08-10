@@ -70,8 +70,13 @@
  		SELECT channelCode FROM channel_dt
  		WHERE channelCode = #{channelCode}
  	</select>
- 	<select id="selectChannelDt" parameterType="String" resultType="com.inus.ch.server.room.vo.Channel">
- 		SELECT * FROM channel_dt
+ 	<select id="selectChannelDt" parameterType="com.inus.ch.server.room.vo.Channel" resultType="String">
+ 		SELECT channelName FROM channel_dt
+ 		WHERE channelCode = #{channelCode}
+ 	</select>
+
+ 	<select id="selectListChannelDt" parameterType="com.inus.ch.server.room.vo.Channel" resultType="com.inus.ch.server.room.vo.Channel">
+ 		SELECT * FROM ChannelHasUser_dt
  		WHERE channelCode = #{channelCode}
  	</select>
  	<select id="checkSameChannelList" parameterType="com.inus.ch.server.room.vo.Channel" resultType="com.inus.ch.server.room.vo.Channel">
@@ -119,6 +124,7 @@
  		SET channelList = #{channelList}
  		WHERE channelCode = #{channelCode} AND userId = #{userId}
  	</update>
+
  	
  	
  	<!-- 채팅 쿼리 -->

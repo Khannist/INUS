@@ -48,6 +48,7 @@ function goChannel(code, name, id, chanName){
 	commonAjax('/moveRoom', msg, 'post', function(result){
 		getRoom(result);
 	});
+	$(".ServerReplace ul").children('li:eq(0)').attr("onclick","inviteUser(\""+ code +"\")");
 	$(".ServerReplace ul").children('li:eq(2)').attr("onclick","delChannel(\""+ code +"\")");
 	$(".serverImg").css({"border":"2px solid white"});
 	$("#"+chanName + " .serverImg").css({"border":"2px solid yellow"});

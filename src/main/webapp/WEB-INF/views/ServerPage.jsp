@@ -10,15 +10,16 @@
 <link  rel="stylesheet" type="text/css" href="ny/css/ServerPage.css">
 <link  rel="stylesheet" type="text/css" href="ch/css/chat/chat.css">
 <link  rel="stylesheet" type="text/css" href="ch/css/room/room.css">
+<link  rel="stylesheet" type="text/css" href="ch/css/channel.css">
 
 <title>Insert title here</title>
 </head>
 <body>
 <div class="container"> 
-	<input type="hidden" name="userId" id="userId" value="A">
+	<input type="hidden" name="userId" id="userId" value="B">
 	<input type="hidden" name="roomCode" id="roomCode">
 	<input type="hidden" name="channelCode" id="channelCode">
-	<input type="hidden" name="username" id="username" value="에이">
+	<input type="hidden" name="username" id="username" value="비">
 	<jsp:include page="NY/ServerHeader.jsp"></jsp:include>
 
 	<div class="ServerLbar">
@@ -62,6 +63,16 @@
 	
 		
 	</div>
+	<div id="channelNameInput" style="display: none;">
+		<h2>새 채널 생성하기</h2>
+		<div id="channelThumbFrame">
+			<img class="channelThumb">
+			<input type="file" id="chnThumbFile" style="display:none;"  disabled="disabled">
+			<label for="chnThumbFile" class="chnThumbFile" onclick="alert('업데이트 예정입니다.')">파일 업로드</label>
+		</div>
+		<input type="text" name="channelName" id="channelName" placeholder="채널 이름 입력">
+		<input type="button" name="inputChannelName" id="inputChannelName" value="채널 생성" onclick="channelCreateName();">
+	</div>
 </div>
 <script type="text/javascript" src="/NY/js/ServerPage.js"></script>
 <script type="text/javascript" src="/NY/js/MusicRecommand.js"></script>
@@ -70,6 +81,7 @@
 <script type="text/javascript" src="/ch/js/channel/channel.js"></script>
 <script type="text/javascript" src="/ch/js/room/room.js"></script>
 <script type="text/javascript" src="/ch/js/room/roomdel.js"></script>
+<script type="text/javascript" src="/ch/js/room/roomInvite.js"></script>
 <script type="text/javascript" src="/ch/js/channel/channeldel.js"></script>
 <script type="text/javascript" src="/ch/js/stomp/stompChat.js"></script>
 

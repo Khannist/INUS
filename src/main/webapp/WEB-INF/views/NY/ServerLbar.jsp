@@ -35,8 +35,14 @@
 						<li onclick="createRoom()">채팅방 만들기</li>
 						<li>서버 나가기</li>
 					</ul>
+					<div id="inputInviteSpace" style="display:none;"><!-- 확인 -->
+						<h2>초대하기</h2>
+						<input type="text" id="FUserId" placeholder="초대할 친구 ID"><br>
+						<input type="button" value="초대" class="FuserIdSend">
+					</div>
 					<div id="inputNameSpace" style="display:none;"><!-- 확인 -->
-						<input type="text" id="roomName"><br>
+						<h2>채팅방 생성</h2>
+						<input type="text" id="roomName" placeholder="채팅방 이름 입력"><br>
 						<input type="button" value="생성" onclick="createRoomName()">
 					</div>
 				</div>

@@ -7,25 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<style type="text/css">
-	#addChannel {
-		display: inline-block;
-	}
-	#channelNameInput {
-		width: 100px;
-		border: 1px solid black;
-		display: none;
-	}
-	input#channelName {
-		width: 100px;
-	}
-	#channelSpace li{
-		overflow: hidden;
-	}
-}
 
-
-</style>
 </head>
 <body>
 	<ul id="channelSpace">
@@ -38,10 +20,7 @@
 			</a>
 		</p>
 	</div>
-	<div id="channelNameInput" style="display: none;">
-		<input type="text" name="channelName" id="channelName">
-		<input type="button" name="inputChannelName" id="inputChannelName" value="입력" onclick="channelCreateName();">
-	</div>
+	
 	
 
 	

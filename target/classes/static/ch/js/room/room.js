@@ -21,6 +21,7 @@ function getRoom(res){
 }
 
 function createRoom(){
+	document.getElementById("inputInviteSpace").style.display = "none";
 	var con = document.getElementById("inputNameSpace");
 	con.style.display = (con.style.display != 'none') ? "none" : "inline-block";
 }
@@ -39,7 +40,7 @@ function createRoomName() {
 		commonAjax('/createRoom', msg, 'post', function(result){
 			createChatingRoom(result);
 		});
-	document.getElementById("inputNameSpace").style.display = "none";;
+	document.getElementById("inputNameSpace").style.display = "none";
 	document.querySelector(".ServerReplace").style.display = "none";
 	numTrigger = 2;
 	$("input#roomName").val("");
@@ -102,7 +103,7 @@ function createChat(res) {
 								"</li>";
 					}else {
 						tag += "<li class='left'>" +
-								"<div class='sender'>" + d.username + "</div>" +
+								"<div class='sender' style='color:white;'>" + d.username + "</div>" +
 								"<p class='message'>" + d.chatData + "</p>" +
 								"</li>";
 					}
@@ -114,7 +115,7 @@ function createChat(res) {
 							"</li>";
 				}else {
 					tag += "<li class='left'>" +
-								"<div class='sender'>" + res.list.username + "</div>" +
+								"<div class='sender' style='color:white;'>" + res.list.username + "</div>" +
 								"<p class='message'>" + res.list.chatData + "</p>" +
 								"</li>";
 				}
