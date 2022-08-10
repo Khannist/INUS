@@ -41,6 +41,7 @@ function createRoomName() {
 		});
 	document.getElementById("inputNameSpace").style.display = "none";;
 	document.querySelector(".ServerReplace").style.display = "none";
+	numTrigger = 2;
 	$("input#roomName").val("");
 	F_closeReplace();
 }
@@ -54,14 +55,21 @@ function goRoom(code, id, room){
 		userId : id,
 		roomCode : room
 	}
-	
-	console.log("이곳인듯");
-	console.log(JSON.stringify(msg));
-	
-	
 	commonAjax('/moveChating', msg , 'post', function(result){
 		getChat(result);
 	});
+	
+	$("#roomList li").css({
+		"background":"none",
+		"height" : "45px"
+		
+		});
+	$("#" + room).css({
+		"background":"#5c5c5c",
+		"height" : "45px"
+		});
+	
+	
 	disconnect();
 	connect();
 	$("#chatInput").focus();
@@ -85,26 +93,41 @@ function createChat(res) {
 		//console.log("res = " + JSON.stringify(res));
 		var tag = "";
 		if(res.list) {
+			tag += "<ul>";
 			if(res.list.length >= 0) {
 				res.list.forEach(function(d, idx){
 					if(d.userId == $("#userId").val()){
-						tag +=  "<p class='me'>나 :" + d.chatData + "</p>";
+						tag +=  "<li class='right'>" +  
+								"<p class='message'>" + d.chatData + "</p>" +
+								"</li>";
 					}else {
-						tag += "<p class='others'>" + d.username + " :" + d.chatData + "</p>";
+						tag += "<li class='left'>" +
+								"<div class='sender'>" + d.username + "</div>" +
+								"<p class='message'>" + d.chatData + "</p>" +
+								"</li>";
 					}
 				});			
 			}else {
-				var d = res.list;
-				if(d.userId == $("#userId").val()){
-					tag +=  "<p class='me'>나 :" + d.chatData + "</p>";
+				if(res.list.userId == $("#userId").val()){
+					tag += "<li class='right'>" +  
+							"<p class='message'>" + res.list.chatData + "</p>" +
+							"</li>";
 				}else {
-					tag += "<p class='others'>" + d.username + " :" + d.chatData + "</p>";
+					tag += "<li class='left'>" +
+								"<div class='sender'>" + res.list.username + "</div>" +
+								"<p class='message'>" + res.list.chatData + "</p>" +
+								"</li>";
 				}
 			}		
+			tag += "</ul>";
+		}
+		
+		if($("ul#channelSpace").children().length == 1) {
+			disconnect();
+			connect();
 		}
 		$("#chating").append(tag);
-		let chat = document.querySelector('#chating');
-        chat.scrollTop = chat.scrollHeight;
+         $('#chating').scrollTop($('#chating').prop('scrollHeight'));
 	}
 }
 
@@ -117,7 +140,7 @@ function createChatingRoom(res){
 				$("#ChatName").innerText = (res.list[0].channelName);
 				res.list.forEach(function(d, idx){
 					var rn = d.roomName;
-					tag += "<li>"+
+					tag += "<li id=" + d.roomCode + ">"+
 								"<span onclick='goRoom(\""+d.channelCode+"\",\""+d.userId+"\",\""+d.roomCode+"\")'" + 
 					"id='connect' name='connect'>" +
 								"<img src='https://source.unsplash.com/random'>"+
@@ -134,7 +157,11 @@ function createChatingRoom(res){
 		if(numTrigger == 1) {
 			goRoom($("#channelCode").val(), $("#userId").val(), $("#roomCode").val());
 			numTrigger = 0;
+		}else if(numTrigger == 2) {
+			goRoom($("#channelCode").val(), $("#userId").val(), res.list[res.list.length-1].roomCode);
+			numTrigger = 0;
 		}
+		
 	}
 }
 

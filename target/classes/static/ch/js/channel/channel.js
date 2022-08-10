@@ -13,11 +13,9 @@ function getChannel(){
 	});
 }
 
-function createServer(){
-	$("#addChannel").click(function(){		
-		var con = document.getElementById("channelNameInput");
-	    con.style.display = (con.style.display != 'none') ? "none" : "inline-block";
-	});
+function createServer(){	
+	var con = document.getElementById("channelNameInput");
+    con.style.display = (con.style.display != 'none') ? "none" : "inline-block";
 }
 		
 function channelCreateName(){
@@ -32,10 +30,9 @@ function channelCreateName(){
 	con.style.display = "none";
 	$("input#channelName").val("");
 }
-		
 
 
-function goChannel(code, name, id){
+function goChannel(code, name, id, chanName){
 	
 	$("#roomList").empty();
 	$("#ChatName").empty().text(name);
@@ -52,6 +49,8 @@ function goChannel(code, name, id){
 		getRoom(result);
 	});
 	$(".ServerReplace ul").children('li:eq(2)').attr("onclick","delChannel(\""+ code +"\")");
+	$(".serverImg").css({"border":"2px solid white"});
+	$("#"+chanName + " .serverImg").css({"border":"2px solid yellow"});
 }
 
 function createChatingChannel(res){
@@ -62,7 +61,7 @@ function createChatingChannel(res){
 				$("#channelCode").val(d.channelCode);
 				var cn = d.channelName;
 				tag += "<li onclick='goChannel(\""+d.channelCode+"\", \""+cn+"\",\""+d.userId+"\",\""+d.channelList+"\")' "+
-				"name='"+ d.channelList +"' class='channel'>"+
+				" id='"+ d.channelList +"' class='channel'>"+
 							"<p type='hidden' name='hiddenChannelCode' value='"+d.channelCode+"'>"+
 								"<img class='serverImg' src='https://source.unsplash.com/random'>"+
 							"</p>" +
@@ -72,6 +71,13 @@ function createChatingChannel(res){
 			
 			$("#channelSpace").empty().append(tag);
 		}
+		if(Object.keys(res).length === 0) {
+			$("#channelSpace").empty();
+			$("#roomList").empty();
+			$("#ChatName").empty().text("채팅방이름");
+			$("#chating").empty();
+			disconnect();
+		}
 		if($("#roomList").children().length == 0) {
 			$("ul#channelSpace").children(":eq(0)").trigger("click");		
 		}else {
@@ -79,6 +85,7 @@ function createChatingChannel(res){
 			
 		}
 	}
+	
 }
 
 function commonAjax(url, parameter, type, calbak, contentType){

@@ -49,9 +49,9 @@ public class NYController {
 	   }
 
 	   @RequestMapping("/SET")
-	   public String SetController() {
-	      return "set";
-	   }
+      public String SetController() {
+         return "Set";
+      }
 //	   @RequestMapping("/MAIN")
 //	   public String MAINController(ModelAndView modelAndView, profilelistVO pVo) {
 //		   sqlsession.insert("profile_test.ImgInsert", pVo);
