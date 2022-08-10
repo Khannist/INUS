@@ -32,6 +32,12 @@
 #connect {
 	position: relative;
 }
+#connect img {
+	transform: translate(1px,8px);
+}
+#connect p {
+    transform: translate(5px, 1px);
+}
 .go {
 	display: inline-block;
 }
@@ -39,7 +45,8 @@
 	padding: 0;
 	position: absolute;
 	display: inline-block;
-	right: 0;
+	right: 5px;
+	transform: translate(-2px, 12px);
 	color: white;
 	font-size: 12px;
 	
