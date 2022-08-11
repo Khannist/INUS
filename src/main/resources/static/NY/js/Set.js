@@ -141,31 +141,47 @@ function F_LogOutSet(){
 
 
 
+//여기까지 Lbar누르면 페이지 이동 끝남
+
+
+function F_UserProfile(){
+	document.querySelector('#UserProfile').style.display = "block";   
+    document.querySelector('#ServerProfile').style.display = "none";
+}
+
+function F_ServerProfile(){
+	document.querySelector('#UserProfile').style.display = "none";   
+    document.querySelector('#ServerProfile').style.display = "block";
+    document.querySelector('#ProfileSet_btn01').style.color = "#B9BBBE";
+}
 
 
 
 
 
 
+//로그아웃
 
+$(function(){
+	
+	// 	이미지 클릭시 해당 이미지 모달
+	$("#LogOutSet").click(function(){
+		$("#Logoutdiv").show();
+		
+	
+	//.modal안에 button을 클릭하면 .modal닫기
+	$("#LogOutFake").click(function(){
+		$("#Logoutdiv").hide();
+	});
+	
+	//.modal밖에 클릭시 닫힘
+	$("#Logoutdiv").click(function (e) {
+    if (e.target.className != "#Logoutdiv") {
+      return false;
+    } else {
+      $("#Logoutdiv").hide();
+    }
+  });
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+})

@@ -3,8 +3,7 @@
  */
  var ws;
 window.onload = function() {
-	getChannel();	
-	getRoom();
+	getChannel();
 }
 
 function getChannel(){
@@ -14,29 +13,33 @@ function getChannel(){
 	});
 }
 
-function createServer(){
-	$("#addChannel").click(function(){		
-		var con = document.getElementById("channelNameInput");
-	    con.style.display = (con.style.display != 'none') ? "none" : "inline-block";
-	});
+function createServer(){	
+	var con = document.getElementById("channelNameInput");
+    con.style.display = (con.style.display != 'none') ? "none" : "inline-block";
 }
 		
 function channelCreateName(){
-	var msg = {
+	if($("#channelName").val() == null || $('#channelName').val() == ""){
+		$("#channelName").attr("placeholder", "이름을 입력해주세요!");
+		$("#channelName").focus();
+	}else {
+		var msg = {
 		channelName : $('input#channelName').val(),
 		userId : $('#userId').val()
-	};
-	commonAjax('/createChannel', msg, 'post', function(result){
-		createChatingChannel(result);
-	});
-	var con = document.getElementById("channelNameInput");
-	con.style.display = "none";
-	$("input#channelName").val("");
+		};
+		commonAjax('/createChannel', msg, 'post', function(result){
+			createChatingChannel(result);
+		});
+		var con = document.getElementById("channelNameInput");
+		con.style.display = "none";
+		$("input#channelName").val("");
+		$("#channelName").attr("placeholder", "채널 이름 입력");
+	}
+	
 }
-		
 
 
-function goChannel(code, name, id){
+function goChannel(code, name, id, chanName){
 	
 	$("#roomList").empty();
 	$("#ChatName").empty().text(name);
@@ -52,7 +55,10 @@ function goChannel(code, name, id){
 	commonAjax('/moveRoom', msg, 'post', function(result){
 		getRoom(result);
 	});
+	$(".ServerReplace ul").children('li:eq(0)').attr("onclick","inviteUser(\""+ code +"\")");
 	$(".ServerReplace ul").children('li:eq(2)').attr("onclick","delChannel(\""+ code +"\")");
+	$(".serverImg").css({"border":"2px solid white"});
+	$("#"+chanName + " .serverImg").css({"border":"2px solid yellow"});
 }
 
 function createChatingChannel(res){
@@ -60,11 +66,10 @@ function createChatingChannel(res){
 		var tag = "";
 		if(res.list) {
 			res.list.forEach(function(d, idx){
-				console.log("채널 코드 생성");
 				$("#channelCode").val(d.channelCode);
 				var cn = d.channelName;
 				tag += "<li onclick='goChannel(\""+d.channelCode+"\", \""+cn+"\",\""+d.userId+"\",\""+d.channelList+"\")' "+
-				" oncontextmenu='channelEvent(event)' name='"+ d.channelList +"'>"+
+				" id='"+ d.channelList +"' class='channel'>"+
 							"<p type='hidden' name='hiddenChannelCode' value='"+d.channelCode+"'>"+
 								"<img class='serverImg' src='https://source.unsplash.com/random'>"+
 							"</p>" +
@@ -72,9 +77,23 @@ function createChatingChannel(res){
 			});
 			checkRoom(res);
 			
-			$("#channelSpace").empty().append(tag);			
+			$("#channelSpace").empty().append(tag);
+		}
+		if(Object.keys(res).length === 0) {
+			$("#channelSpace").empty();
+			$("#roomList").empty();
+			$("#ChatName").empty().text("채팅방이름");
+			$("#chating").empty();
+			disconnect();
+		}
+		if($("#roomList").children().length == 0) {
+			$("ul#channelSpace").children(":eq(0)").trigger("click");		
+		}else {
+			$("ul#channelSpace").children(":eq(" + ($("ul#channelSpace").children().length-1) + ")").trigger("click");
+			
 		}
 	}
+	
 }
 
 function commonAjax(url, parameter, type, calbak, contentType){

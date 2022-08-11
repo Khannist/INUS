@@ -20,7 +20,7 @@ crossorigin="anonymous"></script>
 							<ul>
 								<li><p onclick="F_AccountSet()">내 계정</p></li>
 								<li><p onclick="F_ProfileSet()">프로필</p></li>
-								<li><p onclick="F_SecuritySet()">개인정보 보호, 보안</p></li>
+								<li><p onclick="F_SecuritySet()">개인정보 보호 및 보안</p></li>
 								<li><p onclick="F_ConnectSet()">연결</p></li>
 								<li><p onclick="F_FreindSet()">친구관리</p></li>
 							</ul>
@@ -71,33 +71,78 @@ crossorigin="anonymous"></script>
 		<div class="SetMidbar">
 			<img src="NY/img/icon/SetToBack.png" id="Back">
 			<div class="MidSetList" id="AccountSet">
-				<div class="profile">
-					<img src="https://source.unsplash.com/random" id="BigProfile">
-					<p>${list.name}</p>
-					<button type="submit" id="userProfileReplace" onclick="F_ProfileSet()">사용자 프로필 편집</button>
-					<div class="profileInpo">
-						<ul>
-							<li>
-								<div class="profileBottom">
-									<div id="profileName">
-										<p>사용자명</p>
-										<p>${list.name}</p>
-										<button type="submit">수정</button>
-									</div>
-									<div id="profileName">
-										<p>이메일</p>
-										<p>${list.email}</p>
-										<button type="submit">수정</button>
+				<div class="Scrolldiv">
+					<div class="ScrollDiv2">
+						<h3>내 계정</h3>
+						<div class="profile">
+							<div class="midProfile">
+								<img src="https://source.unsplash.com/random" id="BigProfile">
+								<p id="BiguserName">list.name</p>
+								<button type="submit" id="userProfileReplace" onclick="F_ProfileSet()">사용자 프로필 편집</button>
+							</div>
+							<div class="profileInpo">
+										<div class="profileBottom">
+											<div id="profileName">
+												<p id="nameTitle">사용자명</p>
+												<p id="nameReal">list.name</p>
+												<button type="submit" class="replaceP" id="nameRe">수정</button>
+											</div>
+											<div class="bottomEmail">
+											</div>
+												<div id="profileEmail">
+													<p id="nameTitle">이메일</p>
+													<p id="nameReal">list.email</p>
+													<button type="submit" class="replaceP" id="emailRe">수정</button>
+												</div>
+										</div>
+								<div class="ProfileSet02">
+									<div>
+										<h2>비밀번호와 인증</h2>
+										<button id="btn01">비밀번호 변경하기</button>
+										<p id="PWtext">2단계 인증<br>
+										MusicInus 계정을 보호하기 위해 2단계 인증을 활성화 할 수 있어요. 이 기능을 사용하면, 로그인 시 핸드폰에 있는 인증코드를 입력해야 MusicInus 이용이 가능해요. 
+										</p>
+										<button id="btn02">2단계 인증 활성화하기</button>
 									</div>
 								</div>
-							</li>
-							<li></li>
-							<li></li>
-						</ul>
+								<div class="ProfileSet03">
+									<h3>계정 제거</h3>
+									<div id="ProfileSet03Text">
+										<p>계정을 비활성하면 언제든 복구할 수 있어요.</p>
+										<button id="Fbtn03">계정 비활성화</button>
+										<button id="Sbtn03">계정 삭제하기</button>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
+		</div>
+			<div class="MidSetList" id="ProfileSet">
+				<h3>프로필</h3>
+				<button id="ProfileSet_btn01" class="button" onclick="F_UserProfile">사용자 프로필</button>
+				<button id="ProfileSet_btn02" class="button" onclick="F_ServerProfile">서버 프로필</button>
+				<div class="MOProfile" id="UserProfile">
+					<div class="LeftPart">
+						<div class="AbataDiv">
+							<h3>아바타</h3>
+							<button class="ProfileBtn" id="LeftBtn">아바타 변경하기</button>
+							<button class="ProfileBtn" id="RightBtn">아바타 제거</button>
+						</div>
+					</div>
+					<div class="RightPart"></div>
+				</div>
+				<div class="MOProfile" id="ServerProfile"></div>
 			</div>
-			<div class="MidSetList" id="ProfileSet">ProfileSet</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			<div class="MidSetList" id="SecuritySet">SecuritySet</div>
 			<div class="MidSetList" id="ConnectSet">ConnectSet</div>
 			<div class="MidSetList" id="FreindSet">FreindSet</div>

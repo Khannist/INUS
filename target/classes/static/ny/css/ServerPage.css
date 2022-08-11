@@ -12,6 +12,7 @@ p{
 } 
 body{
 	width: 1800px;
+	max-width: 1800px;
 	height: 100vh;
 	background-color: #37393f;
 }  
@@ -64,6 +65,9 @@ body{
      	height: 905px;
      	float: left;
      	position: relative;
+    }
+    .ServerFriendList{
+    	height: 800px;
     }
     .MusicSearch li{
     	height: 120px;

@@ -161,6 +161,7 @@ public class ChatController {
 	@RequestMapping("/createChannel")
 	public @ResponseBody ModelAndView createChannel(Channel chn){
 		ModelAndView mav = new ModelAndView();
+		// 채널 이름을 입력했을때만 동작
 		if(chn.getChannelName() != null && !chn.getChannelName().trim().equals("")) {
 			String channelCode = "";
 			
@@ -180,7 +181,6 @@ public class ChatController {
 			
 			// 채널 리스트 순서 로직
 			int num = 0;
-			System.out.println(7);
 			if(chnList.toString().length() > 0) {
 				for(Channel tempListnum : chnList) {
 					int tnum = Integer.parseInt(tempListnum.getChannelList().substring(chn.getUserId().toString().length()+1));
@@ -222,35 +222,56 @@ public class ChatController {
 	 * 채널 삭제
 	 * 
 	 */
-		@RequestMapping("/delChan")
-		public ModelAndView delChannel(Channel chn){
-			ModelAndView mav = new ModelAndView();
-			ss.delete("ChatMapper.delChannelUser", chn);
-			
-			List<Channel> delList = ss.selectList("ChatMapper.selectChannelList", chn);
-			if(delList.size() > 1) {
-				for(int i = 0; i < delList.size(); i++) {
-					String tempList = delList.get(i).getChannelList().substring(0, chn.getUserId().length()+1) + i;
-					delList.get(i).setChannelList(tempList);
-					delList.get(i).setUserId(chn.getUserId());
-					Channel temproom = delList.get(i);
-					System.out.println("리스트 출력 = " + temproom);
-					ss.update("ChatMapper.updateDelChnList", temproom);
-				}				
-			}
-			
-			
-			
-			
-			
-			mav.addObject("chn", chn);
-			mav.setViewName("forward:getChannel");
-			return mav;
+	@RequestMapping("/delChan")
+	public ModelAndView delChannel(Channel chn){
+		ModelAndView mav = new ModelAndView();
+		ss.delete("ChatMapper.delChannelUser", chn);
+		
+		List<Channel> delList = ss.selectList("ChatMapper.selectChannelList", chn);
+		if(delList.size() > 1) {
+			for(int i = 0; i < delList.size(); i++) {
+				String tempList = delList.get(i).getChannelList().substring(0, chn.getUserId().length()+1) + i;
+				delList.get(i).setChannelList(tempList);
+				delList.get(i).setUserId(chn.getUserId());
+				Channel temproom = delList.get(i);
+				ss.update("ChatMapper.updateDelChnList", temproom);
+			}				
 		}
+		mav.addObject("chn", chn);
+		mav.setViewName("forward:getChannel");
+		return mav;
+	}
 	
 	
-	
-	
+	/*
+	 *	유저 초대
+	 * 
+	 */
+	@RequestMapping("/InviteUser")
+	public @ResponseBody void InviteUser(HttpServletResponse res, Channel chn)throws Exception{
+		Gson gson = new Gson();
+		Map<String, Object> data = new HashMap<String, Object>();
+		chn.setChannelName(ss.selectOne("ChatMapper.selectChannelDt", chn));
+		List<Channel> chnList = ss.selectList("ChatMapper.checkSameChannelList", chn);
+		
+		// 채널 리스트 순서 로직
+		int num = 0;
+		if(chnList.toString().length() > 0) {
+			for(Channel tempListnum : chnList) {
+				int tnum = Integer.parseInt(tempListnum.getChannelList().substring(chn.getUserId().toString().length()+1));
+				if(tnum == num) {
+					num++;
+				}else {
+					break;						
+				}
+			}				
+		}
+		chn.setChannelList(chn.getUserId()+"_"+num);
+		ss.insert("ChatMapper.AddChatChannel", chn);
+		List<Channel> userList = ss.selectList("ChatMapper.selectListChannelDt", chn);
+		data.put("list", userList);
+		res.getWriter().print(gson.toJson(data));
+	}
 	
 	
 	

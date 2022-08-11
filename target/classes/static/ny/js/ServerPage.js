@@ -1,9 +1,7 @@
 /**
  * 
  */
- var token = $("meta[name='_csrf']").attr("content");
-var header = $("meta[name='_csrf_header']").attr("content");
-$(document).ajaxSend(function(e, xhr, options) { xhr.setRequestHeader(header, token); });
+ 
 //서버 수정 페이지 나타남
 function F_openrReplace(){
     document.querySelector('.ServerReplace').style.display = "block";   //서버 수정 페이지 나타남
@@ -20,7 +18,7 @@ function F_closeReplace(){
  
  
  
- //채팅 옆으로 밀고 뮤직 페이지 등장
+//채팅 옆으로 밀고 뮤직 페이지 등장
 function FMusicPage(){
     document.querySelector('.MusicPage').style.display = "block";   //뮤직 페이지 나타남
     document.querySelector('#CloseMusic').style.display = "block";	//닫히는 아이콘 나타남
@@ -38,6 +36,15 @@ function FC_MusicPage(){
     document.querySelector('#OpenMusic').style.display = "block";	//열리는 아이콘 없어짐
     document.querySelector('.ChatPage').style.width = "100%";    
 }
+
+
+
+
+//iframe 각 재생목록 별 영상 출력
+ var linkFront = "https://www.youtube.com/embed/videoseries?list=";
+ var linkBack= "&feature=share";
+ var linka = "";
+ $("#abc").empty().attr("src",linkFront + linka +linkBack);
  
  
  

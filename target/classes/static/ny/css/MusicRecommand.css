@@ -75,7 +75,7 @@ p{
 	}
 	.keywordList{
 		width: 590px;
-		height: 337px;
+		height: 160px;
 		clear: both;
 		float: left;
 		margin-top: 27px;
@@ -95,15 +95,11 @@ p{
 	
 	
 	.sideScroller_2{
-		height: 175px;
+		height: 170px;
 		overflow-y: scroll;
 	}
 	
 	.sideScroller_2::-webkit-scrollbar{
     display: none; 
 }
-	
-	
-	
-	
 	

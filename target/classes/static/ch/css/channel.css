@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+#addChannel {
+	display: inline-block;
+	
+}
+#channelNameInput {	
+    display: none;
+    z-index: 100;
+    transform: translate(500px, -800px);
+    width: 500px;
+    height: 500px;
+    background: #7e7e7e;
+}
+#channelNameInput h2 {
+	text-align: center;
+    color: rgb(18, 18, 18);
+    margin-top: 5px;
+    padding: 24px 24px 0;
+    
+}
+#channelNameInput #channelThumbFrame {
+    width: 500px;
+    height: 200px;
+    border: none;
+    margin: 10px 0;
+    transform: translate(0px, 65px);
+}
+#channelSpace {
+	width: 50px;
+}
+#channelNameInput #channelThumbFrame .channelThumb{
+    width: 150px;
+    height: 150px;
+    border: 4px dashed #101010eb;
+    border-radius: 50%;
+    background: #7e7e7e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+	
+}
+#channelNameInput #channelThumbFrame .chnThumbFile{
+    color: white;
+    cursor: pointer;
+    width: 500px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    font-weight: 800;
+}
+#textchannel {
+    font-size: 13px;
+    font-weight: bold;
+    transform: translate(25px, 80px);
+}
+
+input#channelName {
+	width: 455px;
+    height: 45px;
+    transform: translate(20px, 90px);
+    font-size: 24px;
+}
+input#inputChannelName {
+    width: 100px;
+    height: 50px;
+    transform: translate(195px, 100px);
+    background: #E3334F;
+    color: white;
+    border: none;
+    border-radius: 5%;
+}
+#channelSpace li{
+	overflow: hidden;
+}
+
+
+
+
+
+
+
+
