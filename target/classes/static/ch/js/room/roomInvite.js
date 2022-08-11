@@ -12,6 +12,7 @@
 function inviteSend(data) {
 	var FUserId = $("#FUserId").val(); 
 	if(FUserId == null || FUserId == "") {
+		$("#FUserId").attr("placeholder", "친구 ID를 입력해주세요!");
 		$("#FUserId").focus();
 	}else {
 		var param = {
@@ -37,6 +38,7 @@ function inviteSend(data) {
 		}
 	});
 		$("#FUserId").empty();
+		$("#FUserId").attr("placeholder", "초대할 친구 ID");
 		inviteUser();
 	}
 }

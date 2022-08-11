@@ -19,16 +19,23 @@ function createServer(){
 }
 		
 function channelCreateName(){
-	var msg = {
+	if($("#channelName").val() == null || $('#channelName').val() == ""){
+		$("#channelName").attr("placeholder", "이름을 입력해주세요!");
+		$("#channelName").focus();
+	}else {
+		var msg = {
 		channelName : $('input#channelName').val(),
 		userId : $('#userId').val()
-	};
-	commonAjax('/createChannel', msg, 'post', function(result){
-		createChatingChannel(result);
-	});
-	var con = document.getElementById("channelNameInput");
-	con.style.display = "none";
-	$("input#channelName").val("");
+		};
+		commonAjax('/createChannel', msg, 'post', function(result){
+			createChatingChannel(result);
+		});
+		var con = document.getElementById("channelNameInput");
+		con.style.display = "none";
+		$("input#channelName").val("");
+		$("#channelName").attr("placeholder", "채널 이름 입력");
+	}
+	
 }
 
 
