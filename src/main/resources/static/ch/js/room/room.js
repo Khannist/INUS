@@ -29,10 +29,16 @@ function createRoom(){
 
 function createRoomName() {
 	var roomName;
-	if($('input#roomName').val() == null || $('input#roomName').val() == "") roomName = "main";
-	else roomName = $('input#roomName').val(); 
-	
-	var msg = {
+	if($('input#roomName').val() == null || $('input#roomName').val() == ""){
+		$("input#roomName").attr("placeholder","이름을 입력해주세요!");
+		$('input#roomName').focus();
+	}else {
+		if($("#roomList").children().length == 0) {
+			roomName = "main";
+		} else {
+			roomName = $('input#roomName').val();
+		}
+		var msg = {
 			channelCode : $('#channelCode').val(),	
 			roomName : roomName ,
 			userId : $('#userId').val()	
@@ -40,11 +46,14 @@ function createRoomName() {
 		commonAjax('/createRoom', msg, 'post', function(result){
 			createChatingRoom(result);
 		});
-	document.getElementById("inputNameSpace").style.display = "none";
-	document.querySelector(".ServerReplace").style.display = "none";
-	numTrigger = 2;
-	$("input#roomName").val("");
-	F_closeReplace();
+		document.getElementById("inputNameSpace").style.display = "none";
+		document.querySelector(".ServerReplace").style.display = "none";
+		numTrigger = 2;
+		$("input#roomName").val("");
+		$("input#roomName").attr("placeholder","채팅방 이름 입력");
+		F_closeReplace();
+	}
+
 }
 
 
@@ -133,6 +142,7 @@ function createChat(res) {
 }
 
 function createChatingRoom(res){
+	
 	if(res != null){
 		var tag = "";
 		if(res.list){

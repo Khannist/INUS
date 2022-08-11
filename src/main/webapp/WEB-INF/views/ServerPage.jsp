@@ -70,10 +70,11 @@
 			<input type="file" id="chnThumbFile" style="display:none;"  disabled="disabled">
 			<label for="chnThumbFile" class="chnThumbFile" onclick="alert('업데이트 예정입니다.')">파일 업로드</label>
 		</div>
-		<input type="text" name="channelName" id="channelName" placeholder="채널 이름 입력">
+		<input type="text" name="channelName" id="channelName" placeholder="채널 이름 입력" maxlength="20">
 		<input type="button" name="inputChannelName" id="inputChannelName" value="채널 생성" onclick="channelCreateName();">
 	</div>
 </div>
+<script type="text/javascript" src="/ch/js/event/event.js"></script>
 <script type="text/javascript" src="/NY/js/ServerPage.js"></script>
 <script type="text/javascript" src="/NY/js/MusicRecommand.js"></script>
 <script type="text/javascript" src="/NY/js/Set.js"></script>
