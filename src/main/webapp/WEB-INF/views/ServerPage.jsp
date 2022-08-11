@@ -7,7 +7,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.4.0/sockjs.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
-<link  rel="stylesheet" type="text/css" href="ny/css/ServerPage.css">
+<link  rel="stylesheet" type="text/css" href="NY/css/ServerPage.css">
 <link  rel="stylesheet" type="text/css" href="ch/css/chat/chat.css">
 <link  rel="stylesheet" type="text/css" href="ch/css/room/room.css">
 <link  rel="stylesheet" type="text/css" href="ch/css/channel.css">
@@ -64,12 +64,14 @@
 		
 	</div>
 	<div id="channelNameInput" style="display: none;">
-		<h2>새 채널 생성하기</h2>
+		<h2>서버 커스터마이징</h2>
 		<div id="channelThumbFrame">
-			<img class="channelThumb">
-			<input type="file" id="chnThumbFile" style="display:none;"  disabled="disabled">
-			<label for="chnThumbFile" class="chnThumbFile" onclick="alert('업데이트 예정입니다.')">파일 업로드</label>
+			<div class="channelThumb">
+				<input type="file" id="chnThumbFile" style="display:none;"  disabled="disabled">
+				<label for="chnThumbFile" class="chnThumbFile" onclick="alert('업데이트 예정입니다.')">파일 업로드</label>
+			</div>
 		</div>
+		<p id="textchannel">서버 이름</p>
 		<input type="text" name="channelName" id="channelName" placeholder="채널 이름 입력" maxlength="20">
 		<input type="button" name="inputChannelName" id="inputChannelName" value="채널 생성" onclick="channelCreateName();">
 	</div>

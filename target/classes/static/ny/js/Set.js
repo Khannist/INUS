@@ -160,22 +160,28 @@ function F_ServerProfile(){
 
 
 
+//로그아웃
 
+$(function(){
+	
+	// 	이미지 클릭시 해당 이미지 모달
+	$("#LogOutSet").click(function(){
+		$("#Logoutdiv").show();
+		
+	
+	//.modal안에 button을 클릭하면 .modal닫기
+	$("#LogOutFake").click(function(){
+		$("#Logoutdiv").hide();
+	});
+	
+	//.modal밖에 클릭시 닫힘
+	$("#Logoutdiv").click(function (e) {
+    if (e.target.className != "#Logoutdiv") {
+      return false;
+    } else {
+      $("#Logoutdiv").hide();
+    }
+  });
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+})

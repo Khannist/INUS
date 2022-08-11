@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="NY/css/ServerLbar.css" rel="stylesheet">
+<link  rel="stylesheet" type="text/css" href="NY/css/ServerLbar.css">
 <title>왼쪽 바</title>
 </head>
 <body>
