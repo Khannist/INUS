@@ -1,187 +1,403 @@
 @charset "UTF-8";
-article-list {
-  background: #f8f9fa;
-  margin-top: 8px;
-  line-height: 18px;
-  font-size: 14px;
-  color: #7b858e;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .15)
+
+* {
+    box-sizing: border-box;   
+    padding: 0;
+    margin: 0;
+}
+p{ text-align: left;
+}
+ul{list-style: none; 
+ }
+.Lbar img{
+     width: 100px;
+     
+ }
+ul{
+     list-style: none;
+ }
+ .Lbar ul li{	/*얘 줘야해*/
+     background-color: bisque;
+ }
+ .Lbar ul a{
+ 	list-style: none;
+ 	color: black;
+ }
+body {
+	background: linear-gradient(#141e30, #243b55);
+}
+.ServerList{
+    width: 62px;			/*수정*/
+    height: 96.7vh;	/*수정*/
+    background-color: #202225;
+    float: left;
+}
+#serverCount{
+    margin-left: 5px;	/*수정*/
+    margin-top: 18px;
+    font-size: 50px;
+    width: 46px;
+    height: 46px;
+}
+#serverCount .li {
+    list-style:none;
+}
+.serverImg{
+    width: 46px;
+    height: 46px;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+.serverImg:hover{
+    border-radius: 20%;
+}
+.ChatAndFriendList{
+     width: 195px;
+     height: 96.7vh;	/*수정*/
+     background-color: #2f3136;
+     border: 1px;	/*수정*/
+     border-top-right-radius: 19px;	/*수정*/
+     float: left;
+     position: relative;
+}
+    
+    
+    .chatAndFriendheader{
+    	color: white;
+    	text-align:left;
+    	width: 195px;	/*수정*/
+    	height:96.7vh;	/*수정*/
+    	position: relative;
+    	
+    }
+    .headerP{
+    	width: 193px;
+    	background-color: #37393f;
+    	border: 1.5px solid #202225;
+    	border-top-right-radius: 19px;		/*수정*/
+    }
+    
+    .headerP:hover{
+    	background-color: #2f3136;
+    }
+    
+    #ChatName {
+    	font-size: 20px;
+    	margin-top: 10px;
+    	margin-left:8px;		/*수정*/
+    	text-align: left;		/*수정*/
+    }	
+    
+    .ChatAndFriend_Icon{
+    	position:absolute;
+    	right: 5px;
+    	top:19px;
+    	width: 14px;
+    }
+	.chatAndFriendheader ul{
+		margin-top: 10px;
+		margin-left: 6px;
+	}
+     .chatAndFriendheader ul li img{
+    	width: 30px;
+    	height:30px;
+    	float: left;
+    	border: 1px;
+    	border-radius: 50%;
+    }
+    
+    .chatAndFriendheader li p{
+    	font-size: 15.5px;
+    	float: left;
+    	margin-top: 9px;
+    	margin-left: 5px;
+    	cursor: pointer;
+    }
+    
+    .chatAndFriendheader li {
+    	clear: both;
+		margin-top: 10px;
+    }   
+        
+        
+        
+        
+     .ServerReplace{
+     	position: absolute;
+		top: 47px;
+		width: 182px;
+		height: 100px;
+		background-color: #202225;
+		margin-left: 5px;
+		display: none;
+     }
+ /*프로필 하단 고정*/
+    .fixProifle{
+       width: 195px;      /*수정*/
+       height: 46px;      /*수정*/
+       position: absolute;
+       bottom: 0px;
+       background-color: #292b2f;
+    }
+    .fixProifle img{
+       width: 34px;
+       height: 34px;
+       border: 1px;
+       border-radius: 50%;
+       margin-top: 5px;
+       margin-right: 9px;
+       margin-left: 7px;
+    }
+    #ProfileFixText{
+       margin-top: 7px;
+    }
+    #fixProfile_1, #fixProfile_2{
+       float: left;
+       font-size: 14px;
+    }
+    #fixProfile_2 span{
+       font-size: 12px;
+    }
+    .fixProifle #setIcon{
+       width: 29px;
+       height: 29px;
+       float: right;
+       margin-top: 2px;
+    }
+    
+.post {
+	box-shadow: 3px 3px 3px 3px #000;;
+	background: #fff;
+	margin:0 auto;
+}
+.instagram {
+    width: 700px;
+    height: 900px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    
+    
 }
 
-.article-list+.article-list {
-  margin-top: 0;
-  border-top: 1px solid #ebeef1
+/* layout principal */
+.instagram .bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 44px;
+    padding: .4em;
+}
+.instagram .scroll {
+    width: 100%;
+    flex-grow: 1;
+    overflow: auto;
+    overflow-x: hidden;
+	scrollbar-width: none;
+	background: linear-gradient(#141e30, #243b55);
+	width: 800px;
+	height: 900px;
+	overflow-y: scroll;
+	-ms-overflow-style: none;
+}
+.instagram .scroll::-webkit-scrollbar{
+  display:none;
+}
+.instagram .bottom {
+    box-shadow: 0 -2px 2px rgba(0,0,0,.1);
 }
 
-.comment-wrap+.article-list {
-  margin-top: 16px
+
+/* layout footer */
+.instagram .bottom .footer-btn {
+    width: 20%;
+    text-align: center;
+}
+.instagram .bottom .footer-btn span {
+    background-image: url(https://storage.googleapis.com/mkts/insta-sprite.png);
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+}
+.instagram .bottom .footer-btn .home {
+    background-size: 270px 235px;
+    background-position: -50px -161px;
+}
+.instagram .bottom .footer-btn .search {
+    background-size: 270px 235px;
+    background-position: 0 -211px;
+}
+.instagram .bottom .footer-btn .add {
+    background-size: 270px 235px;
+    background-position: -75px -186px;
+}
+.instagram .bottom .footer-btn .like {
+    background-size: 270px 235px;
+    background-position: -25px -161px;
+}
+.instagram .bottom .footer-btn .profile {
+    background-size: 270px 235px;
+    background-position: -196px 0;
 }
 
-.article-list-title {
-  background: #fff;
-  border-bottom: 1px solid #ebeef1;
-  position: relative
+/* stories layout */
+.instagram .stories {
+    min-height: 103px;
+    width: 100%;
+    padding: .4em 0;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #e9e9e9;
+    overflow: hidden;
+}
+.instagram .stories .scroll-stories {
+    width: 100%;
+    overflow: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+.instagram .stories .scroll-stories::-webkit-scrollbar {
+    width: 0;
+}
+.instagram .stories .scroll-stories .storie {
+    margin: 0 0 0 1em;
+    text-align: center;
+    width: 66px;
+}
+.instagram .stories .scroll-stories .storie .photo {
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    border: 2px solid deeppink;
+    display: inline-block;
+}
+.instagram .stories .scroll-stories .storie .photo img {
+    width: calc(66px - 4px);
+    height: calc(66px - 4px);
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background-color: #e9e9e9;
+}
+.instagram .stories .scroll-stories .storie .name {
+    font-size: .75em;
+    color: #000;
 }
 
-.article-list-title__text {
-  padding: 24px 16px;
-  line-height: 21px;
-  font-size: 18px;
-  font-weight: 700;
-  color: #1e2022
+/* post layout */
+.instagram .content .post {
+	margin:50px;
+	border:1px solid #ccc;
+    width: 90%;
+    margin-bottom: 1em;
+    border-radius: 5px;
 }
-
-.article-list-title__button {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin-top: 18px;
-  margin-right: 16px;
-  line-height: 15px;
-  font-size: 12px;
-  padding: 8px 15px 7px
+.instagram .content .post:last-child {
+    /*margin-bottom: 0;*/
 }
-
-.article-list__link {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%
+.instagram .content .post .post-header {
+    width: 100%;
+    min-height: 60px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: .4em;
 }
-
-.article-list-item {
-  position: relative;
-  display: table;
-  table-layout: fixed;
-  width: 100%;
-  min-height: 78px;
-  box-sizing: border-box;
-  border-top: 1px solid #ebeef1;
-  background-color: #fff;
-  padding: 8px 0
+.instagram .content .post .post-header .user-thumb {
+    width: 30px;
+    min-width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid deeppink;
 }
-
-.article-list--compact .article-list-item {
-  border-left: 3px solid transparent;
-  padding-left: 0
+.instagram .content .post .post-header .user-details {
+    font-size: .95em;
+    line-height: 1em;
+    flex-grow: 1;
+    padding: 0 .5em;
 }
-
-.article-list--compact .article-list-item--current {
-  border-left-color: #46cfa7;
-  background: #f8f9fa
+.instagram .content .post .post-header .user-details strong, .instagram .content .post .post-header .user-details span {
+    display: block;
 }
-
-.article-list-item:first-child {
-  border-top: none
+.instagram .content .post .post-header .post-menu {
+    min-width: 40px;
 }
-
-.article-list-item--notice,
-.article-list-item--notice:hover {
-  background-color: #ecf8ff
+.instagram .content .post .post-header .post-menu .menu {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-size: 270px 235px;
+    background-position: -50px -186px;
+    background-image: url(https://storage.googleapis.com/mkts/insta-sprite.png);
 }
-
-.article-list-item__vote {
-  display: table-cell;
-  width: 48px;
-  vertical-align: middle;
-  text-align: center
+.instagram .content .post .post-photo {
+    width: 100%;
+    height:500px;
 }
-
-.article-list-item__vote>div {
-  margin-top: 5px;
-  line-height: 17px;
-  font-size: 14px;
-  color: #7b858e
+.instagram .content .post .post-footer .buttons {
+    width: 100%;
+    padding: .4em 1em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
-
-.article-list-item__content {
-  display: table-cell;
-  vertical-align: middle
+.instagram .content .post .post-footer .buttons .spacer {
+    flex-grow: 1;
 }
-
-.article-list-item__title {
-  display: flex;
-  overflow: auto;
-  vertical-align: top;
-  line-height: 15px;
-  font-size: 14px;
-  color: #1e2022;
-  word-break: break-all
+.instagram .content .post .post-footer .buttons .post-btn {
+    text-align: center;
+    min-width: 40px;
 }
-
-.article-list-item__title>em {
-  color: #16ae81
+.instagram .content .post .post-footer .buttons .post-btn span {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-image: url(https://storage.googleapis.com/mkts/insta-sprite.png);
 }
-
-.article-list-item__title>img {
-  padding-right: 5px
+.instagram .content .post .post-footer .buttons .post-btn .like {
+    background-size: 270px 235px;
+    background-position: -25px -161px;
 }
-
-.article-list-item__title .post-title {
-  display: block;
-  max-width: 80%;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  padding-right: 5px
+.instagram .content .post .post-footer .buttons .post-btn .comn {
+    background-size: 270px 235px;
+    background-position: -142px -103px;
 }
-
-.article-list-item__title-icon {
-  color: #1ea1f7;
-  padding-right: 5px
+.instagram .content .post .post-footer .buttons .post-btn .save {
+    background-size: 270px 235px;
+    background-position: -221px -150px;
 }
-
-.article-list-item-meta {
-  margin-top: 5px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis
+.instagram .content .post .post-footer .likes {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: .4em 1em;
+    font-size: .95em;
 }
-
-.article-list-item-meta__item {
-  display: inline-block;
-  line-height: 18px;
-  font-size: 14px;
-  color: #98a0a7;
-  padding-left: 8px
+.instagram .content .post .post-footer .likes .user-like {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: .5em;
 }
-
-.article-list-item-meta__item:before {
-  display: inline-block;
-  vertical-align: middle;
-  border-left: 1px solid #ebeef1;
-  height: 12px;
-  content: "";
-  margin-right: 8px
+.instagram .content .post .post-footer .likes strong {
+    margin: 0 .3em;
 }
-
-.article-list-item-meta__item:first-child {
-  padding-left: 0
+.instagram .content .post .post-footer .comments {
+    width: 100%;
+    padding: .4em 1em;
+    font-size: .95em;
 }
-
-.article-list-item-meta__item:first-child:before {
-  display: none
+.instagram .content .post .post-footer .comments p {
+    margin: 0;
 }
-
-.article-list-item-meta__tier {
-  width: 24px;
-  height: 24px;
-  vertical-align: middle
-}
-
-.article-list-item-thumbnail {
-  display: table-cell;
-  width: 62px;
-  padding: 0 8px 0 4px;
-  vertical-align: middle
-}
-
-.article-list-item__thumbnail {
-  display: block;
-  width: 62px;
-  height: 62px;
-  -o-object-fit: cover;
-  object-fit: cover;
-  font-family: "object-fit: cover;"
+.instagram .content .post .post-footer .time {
+    text-transform: uppercase;
+    display: block;
+    padding: 0 1em;
+    color: #c0c0c0;
+    font-size: .75em;
 }
