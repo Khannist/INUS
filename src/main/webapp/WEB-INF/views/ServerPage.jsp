@@ -16,10 +16,11 @@
 </head>
 <body>
 <div class="container"> 
-	<input type="hidden" name="userId" id="userId" value="B">
+	<input type="hidden" name="userId" id="userId" value="${userId}">
 	<input type="hidden" name="roomCode" id="roomCode">
 	<input type="hidden" name="channelCode" id="channelCode">
-	<input type="hidden" name="username" id="username" value="비">
+	<input type="hidden" name="TchannelList" id="TchannelList" value="${channelList}">
+	<input type="hidden" name="username" id="username" value="에이">
 	<jsp:include page="NY/ServerHeader.jsp"></jsp:include>
 
 	<div class="ServerLbar">

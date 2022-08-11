@@ -86,12 +86,18 @@ function createChatingChannel(res){
 			$("#chating").empty();
 			disconnect();
 		}
-		if($("#roomList").children().length == 0) {
-			$("ul#channelSpace").children(":eq(0)").trigger("click");		
+		if($("#TchannelList").val() != null || $("#TchannelList").val() != "") {
+			$("#" + $("#TchannelList").val()).click();
+			$("#TchannelList").val("");
 		}else {
-			$("ul#channelSpace").children(":eq(" + ($("ul#channelSpace").children().length-1) + ")").trigger("click");
-			
+			if($("#roomList").children().length == 0) {
+				$("ul#channelSpace").children(":eq(0)").trigger("click");		
+			}else {
+				$("ul#channelSpace").children(":eq(" + ($("ul#channelSpace").children().length-1) + ")").trigger("click");
+				
+			}			
 		}
+		
 	}
 	
 }

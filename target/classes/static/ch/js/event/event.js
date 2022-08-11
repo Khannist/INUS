@@ -6,7 +6,6 @@
    var con2 = $("#inputNameSpace");
    var con3 = $("#inputInviteSpace");
 
-	console.log($(e.target).closest(con1).length);
 
    if (!$(e.target).closest(con1).length){
       con1.css({"display":"none"});

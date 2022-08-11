@@ -176,7 +176,7 @@ function createChatingRoom(res){
 	}
 }
 
-function checkRoom(res) {
+function checkRoom(res) { // 채널을 생성한후 main 채팅방을 만드는 함수
 	if(res.list) {
 		var num = res.list.length - 1;
 		var msg = {

@@ -62,8 +62,9 @@
   	
 </script> -->
 <input type="button" value="서버이동" onclick="location.href='SERVER'">
+<input type="button" value="더미페이지" onclick="location.href='DUMMY'">
 <div class="container">
-	<img src="/img/icon/NY/logo_2.png" class="icon" id="logoIcon" onclick="location.href='/MAIN'">
+	<img src="/NY/img/icon/logo_2.png" class="icon" id="logoIcon" onclick="location.href='/MAIN'">
 
 <!--       페이지1-------------------------------->
         <div class="page" id="page1">
