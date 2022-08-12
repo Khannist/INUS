@@ -2,37 +2,39 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>메인화면</title>
 <link type="text/css" rel="stylesheet" href="bs/css/inus.css">
+<link  rel="stylesheet" type="text/css" href="ch/css/channel.css">
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script src="https://kit.fontawesome.com/0535b153a9.js" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.4.0/sockjs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
 </head>
 <header>
 <img src="bs/css/image/last_logo.jpg" id="logo">
 </header>
 <body>
+
+ <sec:authorize access="isAuthenticated()">
+	<sec:authentication property="principal.username" var="userid" />
+	<td>${userid}</td>
+	<input type="hidden" id="userId" name="userId" value="${userid}">
+</sec:authorize>
 <section>
 <div class="MainLbar">
    <article>
    <div class="ServerList" data-aos="fade-right"
      data-aos-duration="3000">
-         <div id="serverCount">   <!-- 필요없어보인다고 지우면 안됌 -->
-         <ul>
-            <li>
-               <img class="serverImg" src="https://source.unsplash.com/random">   
-            </li>
-            <li>
-               <a href="/AddServer">
-               <img class="serverImg" id="plusServerImg" src="https://source.unsplash.com/random">
-               </a>
-            </li>
-         </ul>
-         </div>
+         <div id="serverCount">	<!-- 필요없어보인다고 지우면 안됌 -->
+		<jsp:include page="../ch/roomchannel/roomChannel.jsp"></jsp:include>
+	</div>
    </div>
    <div class="ChatAndFriendList" data-aos="fade-right"
      data-aos-duration="3000">
@@ -200,7 +202,8 @@
    
 </section>
 
-
+<jsp:include page="../ch/roomchannel/addChannel.jsp"></jsp:include>
+<script type="text/javascript" src="/ch/js/channel/mainchannel.js"></script>
 <script type="text/javascript">
   AOS.init();
 </script>
