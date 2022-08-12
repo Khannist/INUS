@@ -12,7 +12,7 @@
 	</select>
 	
 	<insert id="signup">
-		INSERT INTO memberManage_tbl (NUM, userId, USERNAME, PASSWORD, EMAIL, NICKNAME)
-		VALUES (USER_NUM_SEQ.NEXTVAL, #{username},#{name}, #{password}, #{email}, #{nickname})
+		INSERT INTO memberManage_tbl (NUM, userId, PASSWORD, EMAIL, NICKNAME)
+		VALUES (USER_NUM_SEQ.NEXTVAL, #{username}, #{password}, #{email}, #{nickname})
 	</insert>
 </mapper>

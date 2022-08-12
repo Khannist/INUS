@@ -15,11 +15,10 @@ public class CustomUserDetails implements UserDetails {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private int id;
+	private int num;
 	private String username;
 	private String password;
 	private String nickname;
-	private String phone;
 	private String role;
 	
 	// 계정이 가지고있는 권한을 리턴
