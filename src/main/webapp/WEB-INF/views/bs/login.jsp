@@ -14,7 +14,7 @@
   <h2>Login</h2>
   <form action="/login" method="post">
     <div class="user-box" data-aos="fade-right" data-aos-duration="2000">
-      <input type="text" name="username" required="">
+      <input type="text" name="userId" required="">
       <label>Username</label>
     </div>
     <div class="user-box" data-aos="fade-right" data-aos-duration="2000">

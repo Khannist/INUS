@@ -14,10 +14,10 @@ public class CustomUserDetailsService implements UserDetailsService{
 @Autowired
 private SqlSession sqlSession;	
 
-public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+public UserDetails loadUserByUsername(String userId) throws UsernameNotFoundException {
 	CustomUserDetails principal = new CustomUserDetails();
 	try {
-	principal = sqlSession.selectOne("AuthMapper.getUser",username);
+	principal = sqlSession.selectOne("AuthMapper.getUser",userId);
 	if(principal == null) { 
 		throw new UsernameNotFoundException("회원이 존재하지 않습니다");
 	}

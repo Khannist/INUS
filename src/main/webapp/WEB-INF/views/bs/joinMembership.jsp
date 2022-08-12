@@ -14,8 +14,8 @@
   <form action="/joinMembership" method="post">
   	
     <div class="user-box">
-      <input type="text" name="username" required="" maxlength="20" value="${signupDto.username}">
-      <span class="msg_box">${valid_name}</span>
+      <input type="text" name="userId" required="" maxlength="20" value="${signupDto.userId}">
+      <span class="msg_box">${valid_userId}</span>
       <label>ID</label>
     </div>
     

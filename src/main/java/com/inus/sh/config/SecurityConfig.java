@@ -26,7 +26,7 @@ public class SecurityConfig {
 			.and()
 			.formLogin()
 			.loginPage("/login")
-			.usernameParameter("username")
+			.usernameParameter("userId")
 			.passwordParameter("password")
 			.loginProcessingUrl("/login")
 			.defaultSuccessUrl("/boardList")
