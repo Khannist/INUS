@@ -34,18 +34,18 @@ public class AuthController {
 
 	
 	
-	@GetMapping("/signin")
+	@GetMapping("/login")
 	public ModelAndView signin() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/sh/jsp/signin");
+		mv.setViewName("/bs/login");
 		return mv;
 	}
 	
 	
-	@GetMapping("/signup")
+	@GetMapping("/joinMembership")
 	public ModelAndView signup(SignupDto signupDto) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/sh/jsp/signup");
+		mv.setViewName("/bs/joinMembership");
 		return mv;
 	}
 	
@@ -53,13 +53,13 @@ public class AuthController {
 	@GetMapping("/failed")
 	public ModelAndView failedSignin(Model model) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/sh/jsp/signin");
-		mv.addObject("/signin", "아이디 또는 비밀번호를 잘못 입력하셨습니다.");
+		mv.setViewName("/bs/login");
+		mv.addObject("/login", "아이디 또는 비밀번호를 잘못 입력하셨습니다.");
 		return mv;
 	}
 	
 	//Errors는 반드시 Request객체 바로뒤에 위치해야함
-	@PostMapping("/signup")
+	@PostMapping("/joinMembership")
 	public ModelAndView signup(@Valid SignupDto signupDto, Errors errors, Model model) {
 		ModelAndView mv = new ModelAndView();
 		//유효성 검사 실패
@@ -77,14 +77,14 @@ public class AuthController {
 			}
 			
 			// 사용자로부터 입력받은 데이터와 에러메시지를 가지고 회원가입 페이지로 다시이동
-			mv.setViewName("/sh/jsp/signup");
+			mv.setViewName("/bs/joinMembership");
 			return mv;
 		}
 		
 		//username이 이미 존재할시 키값에 오류메시지 저장
 		if(usernameChk(signupDto.getUsername()) != 0) {
 			mv.addObject("valid_username" ,"이미 등록된 아이디입니다.");
-			mv.setViewName("/sh/jsp/signup");
+			mv.setViewName("/bs/joinMembership");
 			return mv;
 		}
 		
@@ -94,9 +94,9 @@ public class AuthController {
 		//이때 회원가입이 성공하셨다는 메시지 출력 후 로그인 페이지 이동
 		String encPassword = bCryptPasswordEncoder.encode(signupDto.getPassword());
 		signupDto.setPassword(encPassword);
-		sqlSession.insert("com.inus.sh.dao.AuthMapper.signup", signupDto);
-		mv.addObject("/signin", "회원가입에 성공하였습니다");
-		mv.setViewName("/sh/jsp/signin");
+		sqlSession.insert("AuthMapper.signup", signupDto);
+		mv.addObject("/login", "회원가입에 성공하였습니다");
+		mv.setViewName("/bs/login");
 		return mv;
 		
 	}
@@ -112,7 +112,7 @@ public class AuthController {
 	public int
 		usernameChk(String username) {
 	    System.out.println("서비스 userid = " + username); 
-	    int result = sqlSession.selectOne("com.inus.sh.dao.AuthMapper.usernameChk", username);
+	    int result = sqlSession.selectOne("AuthMapper.usernameChk", username);
 	    return result; 
 	    
 	}
