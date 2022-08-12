@@ -17,7 +17,7 @@ private SqlSession sqlSession;
 public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 	CustomUserDetails principal = new CustomUserDetails();
 	try {
-	principal = sqlSession.selectOne("com.inus.sh.dao.AuthMapper.CustomUserDetails",username);
+	principal = sqlSession.selectOne("AuthMapper.getUser",username);
 	if(principal == null) { 
 		throw new UsernameNotFoundException("회원이 존재하지 않습니다");
 	}

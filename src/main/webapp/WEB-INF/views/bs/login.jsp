@@ -12,13 +12,13 @@
 <body>
 <div class="login-box" >
   <h2>Login</h2>
-  <form>
+  <form action="/login" method="post">
     <div class="user-box" data-aos="fade-right" data-aos-duration="2000">
-      <input type="text" name="" required="">
+      <input type="text" name="username" required="">
       <label>Username</label>
     </div>
     <div class="user-box" data-aos="fade-right" data-aos-duration="2000">
-      <input type="password" name="" required="">
+      <input type="password" name="password" required="">
       <label>Password</label>
     </div>
     <a href="/boardList">
@@ -26,7 +26,8 @@
       <span></span>
       <span></span>
       <span></span>
-      login
+      <input type="submit" value="Registration" id="a" style="display: none;">
+      <label for="a">login</label>
     </a>
     <a href="/joinMembership">
       <span></span>

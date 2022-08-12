@@ -4,11 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>회원가입</title>
+<link type="text/css" rel="stylesheet" href="bs/css/login.css">
 </head>
 <body>
 	<main>
 		<div class="login_box">
+		
 				<form action="/signup" method="post" >
 				
 					<div class="input_aera">

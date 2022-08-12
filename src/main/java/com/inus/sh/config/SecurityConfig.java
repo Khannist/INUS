@@ -25,17 +25,17 @@ public class SecurityConfig {
 			.permitAll()
 			.and()
 			.formLogin()
-			.loginPage("/signin")
+			.loginPage("/login")
 			.usernameParameter("username")
 			.passwordParameter("password")
-			.loginProcessingUrl("/signin")
-			.defaultSuccessUrl("/home")
+			.loginProcessingUrl("/login")
+			.defaultSuccessUrl("/boardList")
 			.failureUrl("/failed")
 			.permitAll()
 			.and()
 			.logout()
 			.logoutUrl("/doLogout")
-			.logoutSuccessUrl("/signin")
+			.logoutSuccessUrl("/login")
 			.invalidateHttpSession(true);
 			
 
