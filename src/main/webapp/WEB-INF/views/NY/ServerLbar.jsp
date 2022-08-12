@@ -4,8 +4,11 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
 
 <link href="ny/css/ServerLbar.css" rel="stylesheet">
+=======
+>>>>>>> 87d17a2da6400c3314d669df4645f5c9237215a9
 <link href="NY/css/ServerLbar.css" rel="stylesheet">
 <title>왼쪽 바</title>
 </head>
@@ -13,6 +16,7 @@
 
 	<div class="ServerList">
 		<div id="serverCount">	<!-- 필요없어보인다고 지우면 안됌 -->
+<<<<<<< HEAD
 
 			<jsp:include page="../ch/roomchannel/roomChannel.jsp"></jsp:include>
 		<ul>
@@ -25,6 +29,9 @@
 				</a>
 			</li>
 		</ul>
+=======
+			<jsp:include page="../ch/roomchannel/roomChannel.jsp"></jsp:include>
+>>>>>>> 87d17a2da6400c3314d669df4645f5c9237215a9
 		</div>
 	</div>
 	<div class="ChatAndFriendList">
@@ -32,12 +39,17 @@
 			<div class="ChatList">
 				<div class="headerP" >
 						<p id="ChatName">채팅방이름</p>
+<<<<<<< HEAD
 
 						<img class="ChatAndFriend_Icon" id="chatIcon" src="ny/img/icon/ChatListIcon.png" onclick="F_openrReplace()">
 						<img class="ChatAndFriend_Icon" id="chatIcon_2" style="display: none;" src="ny/img/icon/ChatListIcon_2.png" onclick="F_closeReplace()">
 						<img class="ChatAndFriend_Icon" id="chatIcon" src="NY/img/icon/ChatListIcon.png" onclick="F_openrReplace()">
 						<img class="ChatAndFriend_Icon" id="chatIcon_2" style="display: none;" src="NY/img/icon/ChatListIcon_2.png" onclick="F_closeReplace()">
 
+=======
+						<img class="ChatAndFriend_Icon" id="chatIcon" src="NY/img/icon/ChatListIcon.png" onclick="F_openrReplace()">
+						<img class="ChatAndFriend_Icon" id="chatIcon_2" style="display: none;" src="NY/img/icon/ChatListIcon_2.png" onclick="F_closeReplace()">
+>>>>>>> 87d17a2da6400c3314d669df4645f5c9237215a9
 				</div>
 				<!-- 채팅방이름 7자 이내 -->
 				
@@ -52,7 +64,7 @@
 						<li onclick="createRoom()">채팅방 만들기</li>
 						<li>서버 나가기</li>
 					</ul>
-					<div id="inputNameSpace" style="display:none;">
+					<div id="inputNameSpace" style="display:none;"><!-- 확인 -->
 						<input type="text" id="roomName"><br>
 						<input type="button" value="생성" onclick="createRoomName()">
 					</div>
@@ -70,11 +82,15 @@
 					
 					
 					<a href="/SET">
+<<<<<<< HEAD
 
 						<img id="setIcon"src="ny/img/icon/set_1.png">
 						<img id="setIcon"src="NY/img/icon/set_1.png">
 
 
+=======
+						<img id="setIcon"src="NY/img/icon/set_1.png">
+>>>>>>> 87d17a2da6400c3314d669df4645f5c9237215a9
 					</a>
 				</div>
 			</div>	

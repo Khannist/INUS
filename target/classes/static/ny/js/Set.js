@@ -141,9 +141,25 @@ function F_LogOutSet(){
 
 
 
+<<<<<<< HEAD
 
 
 
+=======
+//여기까지 Lbar누르면 페이지 이동 끝남
+
+
+function F_UserProfile(){
+	document.querySelector('#UserProfile').style.display = "block";   
+    document.querySelector('#ServerProfile').style.display = "none";
+}
+
+function F_ServerProfile(){
+	document.querySelector('#UserProfile').style.display = "none";   
+    document.querySelector('#ServerProfile').style.display = "block";
+    document.querySelector('#ProfileSet_btn01').style.color = "#B9BBBE";
+}
+>>>>>>> 87d17a2da6400c3314d669df4645f5c9237215a9
 
 
 

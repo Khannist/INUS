@@ -4,13 +4,17 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 87d17a2da6400c3314d669df4645f5c9237215a9
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.4.0/sockjs.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
 <link  rel="stylesheet" type="text/css" href="ny/css/ServerPage.css">
 <link  rel="stylesheet" type="text/css" href="ch/css/chat/chat.css">
 <link  rel="stylesheet" type="text/css" href="ch/css/room/room.css">
+<<<<<<< HEAD
 
 
 <link  rel="stylesheet" type="text/css" href="NY/css/ServerPage.css">
@@ -18,6 +22,8 @@
 
 <link  rel="stylesheet" type="text/css" href="NY/css/ServerPage.css">
 
+=======
+>>>>>>> 87d17a2da6400c3314d669df4645f5c9237215a9
 
 <title>Insert title here</title>
 </head>
@@ -48,10 +54,10 @@
 		      		<jsp:include page="NY/ServerFriendList.jsp"></jsp:include>
 		      	</div>
 		      </div>
-	      	
-	      	<!--.ChatPage 여기에 채팅 jsp 넣으면 된담 -->
+	      	<!--.ChatPage 여기에 채팅 jsp -->
 	      	<div class="ChatPage">
 	      		<!-- 뮤직페이지 열고 닫는 아이콘 -->
+<<<<<<< HEAD
 
 	      		<img src="ny/img/icon/gogoIcon.png" class="pageIcon" id="OpenMusic" onclick="FMusicPage()">
 	      		<img src="ny/img/icon/closeMusicIcon.png" class="pageIcon" id="CloseMusic" onclick="FC_MusicPage()">
@@ -73,36 +79,48 @@
 
 
 	      		<img src="NY/img/icon/gogoIcon.png" class="pageIcon" id="OpenMusic" onclick="FMusicRecommand()">
+=======
+				<img src="NY/img/icon/gogoIcon.png" class="pageIcon" id="OpenMusic" onclick="FMusicRecommand()">
+>>>>>>> 87d17a2da6400c3314d669df4645f5c9237215a9
 	      		<img src="NY/img/icon/closeMusicIcon.png" class="pageIcon" id="CloseMusic" onclick="FC_MusicRecommand()">
-
-	      		<div class="inputFix">	<!-- css아직 없음 -->
+	      		 
+				<jsp:include page="ch/chat/chat.jsp"></jsp:include>
+				
+	      		<div class="inputFix">
 	      			<div class="ChatInput">
 		        		<input id="chatRealInput" type="text" placeholder="채팅">
 		        		<img src="NY/img/icon/chatIcon/ghostIcon.png">
 		        		<img src="NY/img/icon/chatIcon/smilIecon.png">
 	       			</div>
-	       			<input id="chatRealsubmit" type="submit" value="보내기">
 	       			
+<<<<<<< HEAD
 
 
 
 
+=======
+	       				<input id="chatRealsubmit" type="button" value="보내기" onclick="sendChatSc()">
+	       				
+>>>>>>> 87d17a2da6400c3314d669df4645f5c9237215a9
 	      		</div>
 	      	</div>
-	      	
 	
 		
 	</div>
 </div>
-<script type="text/javascript" src="/ny/js/ServerPage.js"></script>
-<script type="text/javascript" src="/ny/js/MusicRecommand.js"></script>
+<script type="text/javascript" src="/NY/js/ServerPage.js"></script>
+<script type="text/javascript" src="/NY/js/MusicRecommand.js"></script>
+<script type="text/javascript" src="/NY/js/Set.js"></script>
+<script type="text/javascript" src="/NY/js/mainTest.js"></script>
 <script type="text/javascript" src="/ch/js/channel/channel.js"></script>
 <script type="text/javascript" src="/ch/js/room/room.js"></script>
 <script type="text/javascript" src="/ch/js/room/roomdel.js"></script>
 <script type="text/javascript" src="/ch/js/channel/channeldel.js"></script>
 <script type="text/javascript" src="/ch/js/stomp/stompChat.js"></script>
+
 <script type="text/javascript">
 
+<<<<<<< HEAD
 //서버 수정 페이지 나타남
 function F_openrReplace(){
     document.querySelector('.ServerReplace').style.display = "block";   //서버 수정 페이지 나타남
@@ -154,13 +172,17 @@ function FMusicPage(){
     document.querySelector('#chatIcon').style.display = "block";	   //닫히는 아이콘 없어짐  
 
 }
+=======
+>>>>>>> 87d17a2da6400c3314d669df4645f5c9237215a9
 //채팅 옆으로 밀고 뮤직 페이지 등장
 function FMusicRecommand(){
     document.querySelector('.MusicRecommand').style.display = "block";   	//뮤직 페이지 나타남
     document.querySelector('.MusicSearch').style.display = "none"; 		//검색 페이지 없어짐*/
+    document.querySelector('.ServerFriendList').style.display = "none"; 		//검색 페이지 없어짐*/
     document.querySelector('#CloseMusic').style.display = "block";			//닫히는 아이콘 나타남
     document.querySelector('#OpenMusic').style.display = "none";			//열리는 아이콘 없어짐*/
     document.querySelector('.ChatPage').style.width = "943px";    		
+    document.querySelector('#chating').style.width= "95%";		//채팅페이지 사이즈 조절
     document.querySelector('.ChatInput').style.width = "700px";   			//채팅방 사이즈 줄여짐
     document.querySelector('#chatRealInput').style.width = "550px";			//채팅인풋 크기조절*/
     document.querySelector('#chatRealsubmit').style.width = "150px";			//채팅 보내기 크기조절
@@ -169,6 +191,7 @@ function FMusicRecommand(){
 function FC_MusicRecommand(){
     document.querySelector('.MusicRecommand').style.display = "none";   //뮤직 페이지 없어짐
     document.querySelector('.MusicSearch').style.display = "none"; 		//검색 페이지 없어짐
+    document.querySelector('.ServerFriendList').style.display = "none"; 		//검색 페이지 없어짐*/
     document.querySelector('#CloseMusic').style.display = "none";		//닫히는 아이콘 나타남
     document.querySelector('#OpenMusic').style.display = "block";		//열리는 아이콘 없어짐
     document.querySelector('.ChatPage').style.width = "1543px";    		
@@ -176,7 +199,6 @@ function FC_MusicRecommand(){
     document.querySelector('#chatRealInput').style.width = "900px";			//채팅인풋 크기조절*/
     document.querySelector('#chatRealsubmit').style.width = "220px";			//채팅 보내기 크기조절
 }
-
 
 
 //뮤직페이지 없애고 음악검색 페이지 생김
@@ -188,14 +210,45 @@ function F_ToSearch(){
     document.querySelector('#ToMusic').style.display = "block";	//뮤직 아이콘 나타남
 
 }
+//검색페이지 없어지고 친구페이지 나타남
 function F_ToFriendList(){
     document.querySelector('.ServerFriendList').style.display = "block";	//서버에 속한 친구리스트 열림
     document.querySelector('.MusicSearch').style.display = "none";   //검색페이지 사라짐
     document.querySelector('.MusicRecommand').style.display = "none";   //뮤직페이지 사라짐
     document.querySelector('#ToMusic').style.display = "none";	//뮤직 아이콘 없어짐
+    document.querySelector('#ToMusicRe').style.display = "block";	//검색 아이콘 나타남
+
+}
+
+//친구페이지 없어지고 음악 추천페이지 나타남(첫페이지)
+function F_ToMusicRe(){
+    document.querySelector('.MusicRecommand').style.display = "block";	//서버에 속한 친구리스트 열림
+    document.querySelector('.MusicSearch').style.display = "none";   //검색페이지 사라짐
+    document.querySelector('.ServerFriendList').style.display = "none";   //뮤직페이지 사라짐
+    document.querySelector('#ToMusicRe').style.display = "none";	//뮤직 아이콘 없어짐
     document.querySelector('#ToSearch').style.display = "block";	//검색 아이콘 나타남
 
 }
+
+
+
+
+//서버 수정 페이지 나타남
+function F_openrReplace(){
+    document.querySelector('.ServerReplace').style.display = "block";   //서버 수정 페이지 나타남
+    document.querySelector('#chatIcon_2').style.display = "block";   //닫히는 아이콘 나타남
+    document.querySelector('#chatIcon').style.display = "none";   //열리는 아이콘 없어짐
+
+}
+//서버 수정 페이지 없어짐
+function F_closeReplace(){
+    document.querySelector('.ServerReplace').style.display = "none";   //서버 수정 페이지 없어짐
+    document.querySelector('#chatIcon_2').style.display = "none";         //열리는 아이콘 나타남
+    document.querySelector('#chatIcon').style.display = "block";      //닫히는 아이콘 없어짐  
+}
+
+
+
 
 /* 비디오 출력 부분 (효율적이게 수정(1/2))*/
 

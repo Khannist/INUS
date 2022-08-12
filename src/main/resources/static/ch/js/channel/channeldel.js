@@ -6,11 +6,9 @@
 		channelCode : code,
 		userId : $("#userId").val()
 	};
-	
-	console.log("code = " + JSON.stringify(msg));
 
 	commonAjax('/delChan', msg , 'post', function(result){
 	createChatingChannel(result);
 	});		
-
+	F_closeReplace();
 }

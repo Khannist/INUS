@@ -6,15 +6,9 @@ function connect() {
 	
 	stompClient = Stomp.over(socket);
 	stompClient.connect({}, function(frame){
-		console.log("Connected : " + frame);
 
 		stompClient.subscribe('/topic/' + $("#channelCode").val() + '/' + $("#roomCode").val(), function(res) {
-			console.log("출력 테스트중");
-			console.log("res = " + res);
-			console.log("res code = " + res.channelCode);
 			console.log(JSON.parse(res.body));
-			console.log("채널 출력 테스트중");
-			console.log(JSON.parse(res.body).list.channelCode);
 			createChat(JSON.parse(res.body));
 		});
 	});
@@ -22,9 +16,7 @@ function connect() {
 }
 function sendChatSc() {
 	if($("input#chatRealInput").val() == null || $("input#chatRealInput").val() == "") {
-			console.log("빈값");
 		}else {
-			console.log("sending");
 			var msg = {
 				'username' : $("#username").val(),
 				'userId' : $("#userId").val(),
@@ -40,8 +32,6 @@ function sendChatSc() {
 		$("#chatRealInput").focus();
 }
 function send(e) {
-
-	console.log("e = " + JSON.stringify(e));
 	if(e.keyCode == 13){
 		sendChatSc();
 	}

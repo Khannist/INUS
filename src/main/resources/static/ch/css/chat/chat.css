@@ -7,7 +7,8 @@
 
 .chating{
 	position: absolute;
-	width: 100%;
+	width: 1500px;
+	margin-left: 40px;
 	height: 92vh;
 	overflow: auto;
 }

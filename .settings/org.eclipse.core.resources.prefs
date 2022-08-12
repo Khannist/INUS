@@ -1,5 +1,9 @@
 eclipse.preferences.version=1
 encoding//src/main/java=UTF-8
 encoding//src/main/resources=UTF-8
+<<<<<<< HEAD
 encoding//src/test/java=UTF-8
+=======
+encoding//src/main/webapp/WEB-INF/views/NY/ServerFriendList.jsp=UTF-8
+>>>>>>> 87d17a2da6400c3314d669df4645f5c9237215a9
 encoding/<project>=UTF-8

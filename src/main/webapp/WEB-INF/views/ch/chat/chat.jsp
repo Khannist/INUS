@@ -8,7 +8,7 @@
 <link href="/ch/css/chat/chat.css" rel="stylesheet" type="text/css">
 
 </head>
-<body>
+<body>      		
 	<input type="hidden" id="sessionId" value="">
 	
 	<div id="chating" class="chating">

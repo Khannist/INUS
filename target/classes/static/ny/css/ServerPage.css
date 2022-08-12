@@ -12,6 +12,10 @@ p{
 } 
 body{
 	width: 1800px;
+<<<<<<< HEAD
+=======
+	max-width: 1800px;
+>>>>>>> 87d17a2da6400c3314d669df4645f5c9237215a9
 	height: 100vh;
 	background-color: #37393f;
 }  
@@ -65,6 +69,12 @@ body{
      	float: left;
      	position: relative;
     }
+<<<<<<< HEAD
+=======
+    .ServerFriendList{
+    	height: 800px;
+    }
+>>>>>>> 87d17a2da6400c3314d669df4645f5c9237215a9
     .MusicSearch li{
     	height: 120px;
     	padding: 10px 0px 0px 7px;

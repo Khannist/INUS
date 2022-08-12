@@ -10,12 +10,15 @@
 <link href="js/music.js" rel="">
 <meta charset="UTF-8">
 <title>음악페이지</title>
+<<<<<<< HEAD
 
 <link href="ny/css/MusicRecommand.css" rel="stylesheet">
 </head>
 <body>
 <div class="MusicPage">
 	<img class="ToIMG" id="ToSearch" src="ny/img/icon/ToSearch.png" onclick="F_ToSearch()">
+=======
+>>>>>>> 87d17a2da6400c3314d669df4645f5c9237215a9
 <link href="NY/css/MusicRecommand.css" rel="stylesheet">
 </head>
 <body>
@@ -23,6 +26,7 @@
 	<div class="#">
 	    <div class="firstvideo" >
 			<iframe
+			id = "abc"
 			width="560"
 			height="315" 
 			src="https://www.youtube.com/embed/videoseries?list=PLoA-ETv-zYwncop1d3HZV7AIiGK8rLWaT&feature=share" 
@@ -44,29 +48,41 @@
 			</div>
 			<ul>
 				<li>
+<<<<<<< HEAD
 
 					<img src="ny/img/PageImg/koreaTOP100.png" class="top100Img" id="top100Img_1" onclick="showVideo01()">
+=======
+>>>>>>> 87d17a2da6400c3314d669df4645f5c9237215a9
 					<img src="NY/img/PageImg/koreaTOP100.png" class="top100Img" id="top100Img_1" onclick="showVideo01()">
 					<p>KoreaTop100</p>
 					<!-- https://music.youtube.com/playlist?list=PLX_q1hyeET2TQLU4PzpVoSVYxsUnhzKaW&feature=share -->
 				</li>
 				<li >
+<<<<<<< HEAD
 
 					<img src="ny/img/PageImg/koreaMVTOP100.png" class="top100Img" id="top100Img_2" onclick="showVideo02()">
+=======
+>>>>>>> 87d17a2da6400c3314d669df4645f5c9237215a9
 					<img src="NY/img/PageImg/koreaMVTOP100.png" class="top100Img" id="top100Img_2" onclick="showVideo02()">
 					<p>KoreaMVTop100</p>
 					<!-- https://music.youtube.com/playlist?list=PLX_q1hyeET2Tbwcw6_aMvbCgv4HRtsaOh&feature=share -->
 				</li>
 				<li>
+<<<<<<< HEAD
 
 					<img src="ny/img/PageImg/globalTOP100.png" class="top100Img" id="top100Img_3" onclick="showVideo03()" >
+=======
+>>>>>>> 87d17a2da6400c3314d669df4645f5c9237215a9
 					<img src="NY/img/PageImg/globalTOP100.png" class="top100Img" id="top100Img_3" onclick="showVideo03()" >
 					<p>GlobalTop100</p>
 					<!-- https://music.youtube.com/playlist?list=PLX_q1hyeET2TyTOUo2FFLNG8H3xk5f5mP&feature=share -->
 				</li>
 				<li>
+<<<<<<< HEAD
 
 					<img src="ny/img/PageImg/globalMVTOP100.png" class="top100Img" id="top100Img_4" onclick="showVideo04()">
+=======
+>>>>>>> 87d17a2da6400c3314d669df4645f5c9237215a9
 					<img src="NY/img/PageImg/globalMVTOP100.png" class="top100Img" id="top100Img_4" onclick="showVideo04()">
 					<p>GlobalMVTop100</p>
 					<!-- https://music.youtube.com/playlist?list=PLX_q1hyeET2Q1s--AgeUE0vSOxJBQn1L0&feature=share -->
@@ -89,6 +105,7 @@
 				<input type="button" class="keyword" id="Exercise" value="운동" onclick="F_Exercise()">
 				<input type="button" class="keyword" id="leavework" value="퇴근" onclick="F_Leavework()">
 			</div>
+<<<<<<< HEAD
 
 							
 				<ul class="hiphopList">
@@ -350,6 +367,8 @@
 					<!-- https://music.youtube.com/watch?v=t8ERhuId1h4&list=PLoZaF2VQLrUHlGZV9WvuAj1Sz5wXlfjzR -->
 					</li>
 				</ul>
+=======
+>>>>>>> 87d17a2da6400c3314d669df4645f5c9237215a9
 				<div class="sideScroller">
 					<div class="sideScroller_2">
 						<ul class="hiphopList">
