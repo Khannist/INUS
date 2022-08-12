@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,11 +17,15 @@
 </head>
 <body>
 <div class="container"> 
-	<input type="hidden" name="userId" id="userId" value="${userId}">
+ <sec:authorize access="isAuthenticated()">
+	<sec:authentication property="principal.userId" var="userid" />
+	<sec:authentication property="principal.nickname" var="username" />
+	<input type="hidden" id="userId" name="userId" value="${userid}">
+	<input type="hidden" name="username" id="username" value="${username}">
+</sec:authorize>
 	<input type="hidden" name="roomCode" id="roomCode">
 	<input type="hidden" name="channelCode" id="channelCode">
 	<input type="hidden" name="TchannelList" id="TchannelList" value="${channelList}">
-	<input type="hidden" name="username" id="username" value="에이">
 	<jsp:include page="NY/ServerHeader.jsp"></jsp:include>
 
 	<div class="ServerLbar">

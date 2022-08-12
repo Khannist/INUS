@@ -12,10 +12,26 @@ function getChannel(){
 	});
 }
 
+function createRoomName() {
+	var roomName = "main";
+	var msg = {
+		channelCode : $('#channelCode').val(),	
+		roomName : roomName ,
+		userId : $('#userId').val()	
+	};
+	$.ajax({
+		url: '/createRoom',
+		data: msg,
+		type: 'post',
+		contentType :'application/x-www-form-urlencoded; charset=UTF-8'
+		});
+}
+
 function createServer(){	
 	var con = document.getElementById("channelNameInput");
     con.style.display = (con.style.display != 'none') ? "none" : "inline-block";
 }
+
 function channelCreateName(){
 	if($("#channelName").val() == null || $('#channelName').val() == ""){
 		$("#channelName").attr("placeholder", "이름을 입력해주세요!");
@@ -28,8 +44,8 @@ function channelCreateName(){
 		commonAjax('/createChannel', msg, 'post', function(result){
 			createChatingChannel(result);
 		});
-		var con = document.getElementById("channelNameInput");
-		con.style.display = "none";
+		
+		document.getElementById("channelNameInput").style.display = "none";
 		$("input#channelName").val("");
 		$("#channelName").attr("placeholder", "채널 이름 입력");
 	}

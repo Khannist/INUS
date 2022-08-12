@@ -23,9 +23,10 @@
 <body>
 
  <sec:authorize access="isAuthenticated()">
-	<sec:authentication property="principal.username" var="userid" />
-	<td>${userid}</td>
+	<sec:authentication property="principal.userId" var="userid" />
+	<sec:authentication property="principal.nickname" var="username" />
 	<input type="hidden" id="userId" name="userId" value="${userid}">
+	<input type="hidden" name="username" id="username" value="${username}">
 </sec:authorize>
 <section>
 <div class="MainLbar">

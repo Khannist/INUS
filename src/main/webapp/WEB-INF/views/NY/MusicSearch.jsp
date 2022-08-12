@@ -8,8 +8,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-<<<<<<< HEAD
-<link href="ny/css/musicSearchcss.css" rel="stylesheet">
+
+<link href="/NY/css/musicSearchcss.css" rel="stylesheet">
 </head>
 <body>
 <div class="MusicSearch">
@@ -59,9 +59,8 @@
 			<p id="num10_title"></p>
 		</li>
 	</ul>
-=======
->>>>>>> 87d17a2da6400c3314d669df4645f5c9237215a9
-<link href="NY/css/MusicSearch.css" rel="stylesheet">
+
+<link href="/NY/css/MusicSearch.css" rel="stylesheet">
 </head>
 <body>
 	<div class="SearchHeader">

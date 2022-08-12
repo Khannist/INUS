@@ -14,13 +14,7 @@ public class MemberController {
 	
 	@Autowired
 	private SqlSession ss;
-	
-	@RequestMapping("/DUMMY")
-	public ModelAndView dummyPage() {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("dummyPage/dummyPage");
-		return mv;
-	}
+
 	
 	@RequestMapping("/serverMove")
 	public ModelAndView ServerMove(Channel chn) {

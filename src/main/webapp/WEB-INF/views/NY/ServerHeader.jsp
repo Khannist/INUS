@@ -9,7 +9,7 @@
 </head>
 <body>
 <header>
-    <a href="DUMMY" id="Logo">			<!-- 메인으로 이동 -->
+    <a href="/boardList" id="Logo">			<!-- 메인으로 이동 -->
     	<img id="logo" src="NY/img/icon/letter-m.png">
     </a>
 </header>
