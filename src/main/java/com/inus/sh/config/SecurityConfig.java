@@ -26,13 +26,17 @@ public class SecurityConfig {
 			.and()
 			.formLogin()
 			.loginPage("/signin")
+			.usernameParameter("username")
+			.passwordParameter("password")
 			.loginProcessingUrl("/signin")
 			.defaultSuccessUrl("/home")
 			.failureUrl("/failed")
+			.permitAll()
 			.and()
 			.logout()
 			.logoutUrl("/doLogout")
-			.logoutSuccessUrl("/signin");
+			.logoutSuccessUrl("/signin")
+			.invalidateHttpSession(true);
 			
 
 		return http.build();

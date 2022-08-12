@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeController {
 
 	@GetMapping({"/","/home"})
-	public String signin() {
-		return "home";
+	public String home() {
+		return "/sh/jsp/home";
 	}
 }
