@@ -18,49 +18,8 @@
 <title>인덱스 화면(로그인화면)</title>
 </head>
 <body>
-<!-- <p><a href="/MAIN">메인페이지로(임시문구)</a></p>
-<p><a href="/MUSIC">음악출력(임시문구)</a></p> -->
-<!-- <script type="text/javascript">
-	setTimeout(function() {
-	    $('.companyIcon').animate({top : '40px'}, 600);
-	  }, 2200);
-  
-	$(document).ready(function() {
-	var mouseWheelEvent = 0;
-    var idx_lgth = $(".slider>li").length;
-    var srt = 0;
-
-	//첫페이지 이동
-	function moveOnePage(){
-     console.log('page 1 start');
-     //페이지 위치 저장
-     var offsetTop = $('#page1').offset().top;
-     //페이지 이동
-     moveScroll(offsetTop);
-     $("section>a:first-of-type").addClass('on').siblings().removeClass('on');
-    }
-	//두번째 페이지 이동
-    function moveTwoPage(){
-      console.log('page 2 start');
-      var offsetTop = $('#page2').offset().top;
-      moveScroll(offsetTop);
-      effectScroll('#productHeadLine', '#productMore', '#productTitle');
-      $("section>a:nth-of-type(2)").addClass('on').siblings().removeClass('on');
-    }
-
-
-  	
-  	//스크롤 이동
-    function moveScroll(location) {
-      $('html, body').animate({
-        scrollTop: location
-      }, 400);
-    }
-
-  	
-  	
-  	
-</script> -->
+<input type="button" value="로그인" onclick="location.href='signin'">
+<input type="button" value="회원가입" onclick="location.href='signup'">
 <input type="button" value="서버이동" onclick="location.href='SERVER'">
 <input type="button" value="더미페이지" onclick="location.href='DUMMY'">
 <div class="container">
