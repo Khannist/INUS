@@ -72,6 +72,7 @@ public class CommentController {
 		if(list.size() > 0) {
 			data.put("list", list);
 		}
+		System.out.println("list : "+list);
 		System.out.println("CommentDelete 컨트롤러 출력완료");
 		System.out.println("data : "+data);
 		res.setCharacterEncoding("UTF-8");

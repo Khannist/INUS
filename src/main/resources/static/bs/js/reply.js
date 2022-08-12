@@ -52,7 +52,7 @@ function getTest() {
 				var writer = list[i].inus_CmWriter;
 				var commentNum = list[i].inus_commentNum;
 				
-				comment_html += "<div><span id='inus_commentNum' >" + commentNum + "</span><br/>";
+				comment_html += "<div><span id='inus_commentNum"+ commentNum +"' >" + commentNum + "</span><br/>";
 				comment_html += "<div><span id='inus_CmWriter'><strong>" + writer + "</strong></span><br/>";
 				comment_html += "<span id='inus_CmContent'>" + content + "</span><br>";
 				
@@ -63,7 +63,7 @@ function getTest() {
 				console.log(con);
 				console.log(writer === con);
 				if(writer === con){
-					comment_html += '<input type="button" id="CommentDeleteBtn" value="댓글삭제" onclick="CommentDelete()">';
+					comment_html += "<input type=\"button\" id=\"CommentDeleteBtn\" value=\"댓글삭제\" onclick=\"CommentDelete('inus_commentNum"+ commentNum +"')\">";
 					comment_html += '<hr></div>';				
 				}
 				else{
@@ -79,11 +79,14 @@ function getTest() {
 	}
 
 // 댓글 삭제
-function CommentDelete(){
-		$("#CommentDeleteBtn").click(function(){
-		
-		var num = document.getElementById("inus_commentNum").innerText; 
+function CommentDelete(res){
+		console.log("삭제할 값 = " + JSON.stringify(res));
+		// 댓글 번호의 이름을 가져오는게 모두 고정값이라서 제일 처음값만 가져오는 거임 각 댓글 별로 값의 차이를 둬야함
+		// 차이를 두는데에 숫자값이 계속 변하니까 댓글생성할때 inus_commentNum + "숫자" 이런식으로 생성하면
+		// 원하는 값을 뽑아오기 수월해짐
+		var num = document.getElementById(res).innerText; 
 		var num1 = document.getElementById("inus_boardNum").innerText;
+		console.log(num);
 		
 			$.ajax({
 				type:"delete",
@@ -91,7 +94,7 @@ function CommentDelete(){
 				dataType:"text",
 				success:function(data){
 					console.log(data);
-					if(data.inus_commentNum = num){
+					if(data = num){
 						alert("삭제가 완료되었습니다.");
 						window.location.reload();
 						}
@@ -102,10 +105,7 @@ function CommentDelete(){
 				}
 					
 				
-			});
-		
-		});
-		
+			});	
 	}
 
 
