@@ -92,6 +92,7 @@
 }
 .go {
 	display: inline-block;
+	min-width: 120px;
 }
 .roomdel {
 	padding: 0;
@@ -101,7 +102,7 @@
 	transform: translate(-2px, 12px);
 	color: white;
 	font-size: 12px;
-	
+	cursor: pointer;	
 }
 
 .ServerReplace ul li:hover {
