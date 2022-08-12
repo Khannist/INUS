@@ -124,7 +124,11 @@
      	position: absolute;
 		top: 47px;
 		width: 182px;
+<<<<<<< HEAD
+		height: 71px;
+=======
 		height: 100px;
+>>>>>>> 87d17a2da6400c3314d669df4645f5c9237215a9
 		background-color: #202225;
 		margin-left: 5px;
 		display: none;

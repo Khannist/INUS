@@ -8,6 +8,59 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
+<<<<<<< HEAD
+<link href="ny/css/musicSearchcss.css" rel="stylesheet">
+</head>
+<body>
+<div class="MusicSearch">
+	<div></div>
+	<input type="text" class="SearchInput" id="search_Input" value="검색어를 입력해주세요">
+    <input type="button" class="SearchInput" id="search_Button" onclick="Search()"> 
+	<img class="ToIMG" id="ToMusic" src="ny/img/icon/ToMusicList.png" onclick="F_ToMusicList()">
+	<ul>	
+		<li id="search01">
+			<p id="num1_th"></p>
+			<p id="num1_title"></p>
+		</li>
+		<li id="search02">
+			<p id="num2_th"></p>
+			<p id="num2_title"></p>
+		</li>
+		<li id="search03">
+			<p id="num3_th"></p>
+			<p id="num3_title"></p>
+		</li>
+		<li id="search04">
+			<p id="num4_th"></p>
+			<p id="num4_title"></p>
+		</li>
+		<li id="search05">
+			<p id="num5_th"></p>
+			<p id="num5_title"></p>
+		</li>
+		<li id="search06">
+			<p id="num6_th"></p>
+			<p id="num6_title"></p>
+		</li>
+		<li id="search07">
+			<p id="num7_th"></p>
+			<p id="num7_title"></p>
+		</li>
+		<li id="search08">
+			<p id="num8_th"></p>
+			<p id="num8_title"></p>
+		</li>
+		<li id="search09">
+			<p id="num9_th"></p>
+			<p id="num9_title"></p>
+		</li>
+		<li id="search10">
+			<p id="num10_th"></p>
+			<p id="num10_title"></p>
+		</li>
+	</ul>
+=======
+>>>>>>> 87d17a2da6400c3314d669df4645f5c9237215a9
 <link href="NY/css/MusicSearch.css" rel="stylesheet">
 </head>
 <body>

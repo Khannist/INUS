@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.inus.sh.dao.UserMapper">
+
+	<update id="modifyInfo">
+	    UPDATE DL_USER SET
+	    
+	    <if test="valueType == 'password'">
+	        PASSWORD = #{value }
+	    </if>
+	    
+	    <if test="valueType == 'nickname'">
+	        NICKNAME = #{value }		
+	    </if>
+	    
+	    
+	    WHERE	USERNAME = #{username} 
+	</update>
+	
+</mapper>

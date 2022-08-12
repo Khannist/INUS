@@ -1,0 +1,28 @@
+@charset "UTF-8";
+*{
+            padding: 0;
+            margin: 0;
+        }
+        p{
+            text-align: center;
+        }
+        .Lbar{
+            width: 100px;
+            height: 800px;
+            border: 1px solid black;
+        }
+        .Lbar img{
+            width: 100px;
+        }
+        .Lbar ul{
+            list-style: none;
+        }
+        .Lbar ul li{
+            background-color: bisque;
+            border: 1px solid green;
+
+        }
+        .Lbar ul a{
+        	list-style: none;
+        	color: black;
+        }

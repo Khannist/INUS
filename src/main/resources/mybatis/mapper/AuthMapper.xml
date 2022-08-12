@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.inus.sh.dao.AuthMapper">
+	<select id="usernameChk" resultType="int">
+		SELECT COUNT(*) FROM memberManage_tbl WHERE userId = #{username}
+	</select>
+	
+	<select id="getUser" resultType="com.inus.sh.config.auth.CustomUserDetails">
+		SELECT * FROM memberManage_tbl WHERE userId = #{username}
+	</select>
+	
+	<insert id="signup">
+		INSERT INTO memberManage_tbl (NUM, userId, USERNAME, PASSWORD, EMAIL, NICKNAME)
+		VALUES (USER_NUM_SEQ.NEXTVAL, #{username},#{name}, #{password}, #{email}, #{nickname})
+	</insert>
+</mapper>
