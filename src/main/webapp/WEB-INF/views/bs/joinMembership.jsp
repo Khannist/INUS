@@ -12,12 +12,6 @@
   <h2>Create Account</h2>
   
   <form action="/joinMembership" method="post">
-  
-  	<div class="user-box">
-	  <input type="text" name="name" required="" maxlength="20" value="${signupDto.name}" >
-	  <span class="msg_box">${valid_name}</span>
-	  <label>Name</label>  	
-  	</div>
   	
     <div class="user-box">
       <input type="text" name="username" required="" maxlength="20" value="${signupDto.username}">
