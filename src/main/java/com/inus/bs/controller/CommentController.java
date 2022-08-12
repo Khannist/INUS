@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
 import com.inus.bs.vo.CommentVo;
@@ -25,25 +26,17 @@ public class CommentController {
 	
 	// 댓글 등록
 	@RequestMapping("/InsertComment")
-	public @ResponseBody void InsertComment(HttpServletResponse res, CommentVo vo) throws Exception{
-		Gson gson = new Gson();
-		Map<String, Object> data = new HashMap<String, Object>();
+	public  ModelAndView InsertComment( CommentVo vo) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		System.out.println(vo.getInus_boardNum());
 		sqlSession.insert("com.inus.board.CommentMapper.CommentRegist", vo);
-		
-		List<CommentVo> list = sqlSession.selectList("com.inus.board.CommentMapper.getList", vo);
-		
-
-		if(list.size() > 0) {
-			data.put("list", list);
-		}
-		
-		System.out.println("data = " + data);
-		res.setCharacterEncoding("UTF-8");
-		res.getWriter().print(gson.toJson(data));
+		mv.addObject("inus_boardNum", vo.getInus_boardNum());
+		mv.setViewName("redirect:/comment/CommentList");
+		return mv;
 	}
 	
 	// 댓글 목록
-	@RequestMapping(value="/CommentList", produces = "application/x-www-form-urlencoded; charset=UTF-8")
+	@RequestMapping("/CommentList")
 	public @ResponseBody void CommentList(HttpServletResponse res, CommentVo vo) throws Exception {
 		System.out.println("1 = " + vo.getInus_CmContent());
 		System.out.println("2 = " + vo.getInus_boardNum());

@@ -10,12 +10,13 @@ window.onload = function() {
 function getTest() {
 	$("#Comment_regist").click(function(){
 		var msg = {
-			inus_boardNum:document.getElementById("inus_boardNum").innerText, // 게시판 번호를 가져온다. 
-			inus_CmWriter: document.getElementById("inus_userName").innerText, // 로그인 기능이 없으므로 게시글 작성자 컬럼명을 가져와 사용
+			inus_boardNum:document.getElementById("inus_boardNum").value, // 게시판 번호를 가져온다. 
+			inus_CmWriter: document.getElementById("inus_userName").value, // 로그인 기능이 없으므로 게시글 작성자 컬럼명을 가져와 사용
 			inus_CmContent:$("#inus_CmContent").val() // 작성하는 내용을 벨류값으로 가져온다.
+			
 		}
 		
-		commonajax("/comment/InsertComment", msg, "POST", function(result){
+		commonajax("/comment/InsertComment", msg, "get", function(result){
 			getList(result);
 		});
 			
@@ -27,20 +28,18 @@ function getTest() {
 // 댓글 목록 ajax
 	function commentList() {
 		var msg = {
-			inus_boardNum:document.getElementById("inus_boardNum").innerText, // 게시판 번호를 가져온다. 
-			inus_CmWriter: document.getElementById("inus_userName").innerText, // 로그인 기능이 없으므로 게시글 작성자 컬럼명을 가져와 사용
+			inus_boardNum:document.getElementById("inus_boardNum").value, // 게시판 번호를 가져온다. 
+			inus_CmWriter: document.getElementById("inus_userName").value, // 로그인 기능이 없으므로 게시글 작성자 컬럼명을 가져와 사용
 			inus_CmContent:$("#inus_CmContent").val() // 작성하는 내용을 벨류값으로 가져온다.
 		}
 		
-		commonajax("/comment/CommentList", msg, "POST", function(result){
+		commonajax("/comment/CommentList", msg, "get", function(result){
 			getList(result);
 		});
 	}
 	function getList(data) {
 		console.log("data = "+ data);
-		console.log(JSON.parse(data));
-		data = JSON.parse(data);
-		console.log("list = " + data.list[0]);
+		console.log("list = " + data.list);
 		if(data.list.length > 0) {
 			var list = data.list;
 			
@@ -52,11 +51,11 @@ function getTest() {
 				var writer = list[i].inus_CmWriter;
 				var commentNum = list[i].inus_commentNum;
 				
-				comment_html += "<div><span id='inus_commentNum"+ commentNum +"' >" + commentNum + "</span><br/>";
-				comment_html += "<div><span id='inus_CmWriter'><strong>" + writer + "</strong></span><br/>";
+				comment_html += "<div><span style='display:none;' id='inus_commentNum"+ commentNum +"' >" + commentNum + "</span><br/>";
+				comment_html += "<div><span id='inus_CmWriter'><strong>" + writer + "</strong></span>&nbsp;&nbsp;";
 				comment_html += "<span id='inus_CmContent'>" + content + "</span><br>";
 				
-				var con = document.getElementById("inus_userName").innerText;
+				var con = document.getElementById("inus_userName").value;
 				
 				
 				console.log(writer);
@@ -64,7 +63,7 @@ function getTest() {
 				console.log(writer === con);
 				if(writer === con){
 					comment_html += "<input type=\"button\" id=\"CommentDeleteBtn\" value=\"댓글삭제\" onclick=\"CommentDelete('inus_commentNum"+ commentNum +"')\">";
-					comment_html += '<hr></div>';				
+					comment_html += '</div>';				
 				}
 				else{
 					comment_html += "</div><hr>";
@@ -85,7 +84,7 @@ function CommentDelete(res){
 		// 차이를 두는데에 숫자값이 계속 변하니까 댓글생성할때 inus_commentNum + "숫자" 이런식으로 생성하면
 		// 원하는 값을 뽑아오기 수월해짐
 		var num = document.getElementById(res).innerText; 
-		var num1 = document.getElementById("inus_boardNum").innerText;
+		var num1 = document.getElementById("inus_boardNum").value;
 		console.log(num);
 		
 			$.ajax({
@@ -121,7 +120,7 @@ function commonajax(url, parameter, type, calbak, contentType){
       contentType :'application/x-www-form-urlencoded; charset=UTF-8',
       success: function (data) {
          res = JSON.parse(data);
-         calbak(data);
+         calbak(res);
       },
       error : function(err){
          console.log('error');
