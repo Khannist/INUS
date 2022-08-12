@@ -16,7 +16,7 @@ public class CustomUserDetails implements UserDetails {
 	private static final long serialVersionUID = 1L;
 	
 	private int num;
-	private String username;
+	private String userId;
 	private String password;
 	private String nickname;
 	private String role;
@@ -34,7 +34,7 @@ public class CustomUserDetails implements UserDetails {
 
 	@Override
 	public String getUsername() {
-		return this.username;
+		return this.userId;
 	}
 	
 	public String getNickname() {

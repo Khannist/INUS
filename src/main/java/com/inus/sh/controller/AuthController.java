@@ -82,7 +82,7 @@ public class AuthController {
 		}
 		
 		//username이 이미 존재할시 키값에 오류메시지 저장
-		if(usernameChk(signupDto.getUsername()) != 0) {
+		if(usernameChk(signupDto.getUserId()) != 0) {
 			mv.addObject("valid_username" ,"이미 등록된 아이디입니다.");
 			mv.setViewName("/bs/joinMembership");
 			return mv;
@@ -110,9 +110,9 @@ public class AuthController {
 	}
 	
 	public int
-		usernameChk(String username) {
-	    System.out.println("서비스 userid = " + username); 
-	    int result = sqlSession.selectOne("AuthMapper.usernameChk", username);
+		usernameChk(String userId) {
+	    System.out.println("서비스 userid = " + userId); 
+	    int result = sqlSession.selectOne("AuthMapper.usernameChk", userId);
 	    return result; 
 	    
 	}

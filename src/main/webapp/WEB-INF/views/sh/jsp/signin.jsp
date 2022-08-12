@@ -10,7 +10,7 @@
 	<main>
 		<div class="login_box">
 			<form action="/signin" method="post">
-				<div class="input_area"><input type="text" name="username" value="" required placeholder="아이디를 입력해주세요"></div>
+				<div class="input_area"><input type="text" name="userId" value="" required placeholder="아이디를 입력해주세요"></div>
 				<div class="input_area"><input type="password" name="password" value="" required placeholder="비밀번호를 입력해주세요"></div>
 					
 				<input type="submit" value="로그인" class="login_btn">
