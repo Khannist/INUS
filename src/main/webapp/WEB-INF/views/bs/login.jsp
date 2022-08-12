@@ -12,15 +12,6 @@
 <body>
 <div class="login-box" >
   <h2>Login</h2>
-<<<<<<< HEAD
-  <form>
-    <div class="user-box" data-aos="fade-right" data-aos-duration="1000">
-      <input type="text" name="" required="">
-      <label>Username</label>
-    </div>
-    <div class="user-box" data-aos="fade-right" data-aos-duration="1000">
-      <input type="password" name="" required="">
-=======
   <form action="/login" method="post">
     <div class="user-box" data-aos="fade-right" data-aos-duration="2000">
       <input type="text" name="username" required="">
@@ -28,7 +19,6 @@
     </div>
     <div class="user-box" data-aos="fade-right" data-aos-duration="2000">
       <input type="password" name="password" required="">
->>>>>>> a1c617c6eb0cff720e0fe7c37bcf778d005e763f
       <label>Password</label>
     </div>
     <a href="/boardList">
