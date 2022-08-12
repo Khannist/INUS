@@ -1,4 +1,4 @@
-@charset "EUC-KR";
+@charset "UTF-8";
 
 *{
 	margin: 0;
@@ -6,28 +6,27 @@
 }
 body{
 	background-color: #36393F;
+	max-height: 100vh;
+	height: 100vh;
 }
 ul{
 	list-style: none;
 }
+button{cursor: pointer;}
 .container{
 	margin: auto;
 	/* width: 990px; */
 	height: 950px;
-	
 }
 
-h3{
-	color: white;
-	font-weight: normal;
-}
-/*øﬁ¬  πŸ*/
+
+/*ÏôºÏ™Ω Î∞î*/
 .SetLbar{
 	background-color: #2F3136;
 	float: left;
 	width: 	680px;
-	max-height: 968px;
-	height: 968px;
+	max-height: 100vh;
+	height: 100vh;
 	color: #B9BBBE;
 	position: relative;
 }
@@ -36,16 +35,30 @@ h3{
 	font-weight: normal;
 	margin-bottom: 8px;
 }
-
+.SetList li{
+	height: 25px;
+}
+	
+.SetList li p{
+	padding:4px 0px 4px 0px;
+}
+.SetList li:hover{
+	
+	background-color: #36393F;
+	color: white;
+	border: 1px;
+	border-radius: 3px;
+}
+	
 .UlList{
 	position: absolute;
 	right:20px;
 	top: 100px;
 	width: 220px;
-	height: 968px;
+	height: 868px;
 	overflow-y: auto; 
 }
-#UserSet{
+#UserSet, #moreSet{
 	border: none;
 }
 .SetLbar p{
@@ -53,7 +66,7 @@ h3{
 	cursor: pointer;
 }
 .SetScrollBar{
-	height: 1100px;
+	height: 768px;
 	overflow-y: auto; 
 } 
 .UlList::-webkit-scrollbar{
@@ -65,6 +78,16 @@ h3{
 	padding-top: 10px;
 }
 
+#LogOutbtn{
+	margin-top: 0;
+}
+#icon{
+	margin-left:10px;
+	color: white;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+}
 
 
 
@@ -80,14 +103,12 @@ h3{
 
 
 
-
-
-/*πÃµÂπŸ*/
+/*ÎØ∏ÎìúÎ∞î*/
 .SetMidbar{
 	background-color:#36393F;
 	float: left;
 	width: 	1143px;
-	height: 968px;
+	height: 100vh;
 	position: relative;
 	color: #B9BBBE;
 }
@@ -101,14 +122,17 @@ h3{
 }
 
 .MidSetList{
-	width: 800px;
-	height: 968px;
+	width: 780px;
+	height: 868px;
 	display: none;
 }
 .MidSetList h3{
 	margin-top: 100px;
 	margin-left: 80px;
 	font-size: 25px;
+	color: white;
+	font-weight: normal;
+	margin-bottom: 20px;
 }
 
 #AccountSet{
@@ -157,11 +181,12 @@ h3{
 	position: absolute;
 	right: 17px;
 	top: 14px;
-	width: 120px;
-	height: 30px;
-	background-color: aqua;
-	border: 1px solid black;
-	border-radius: 5px;
+	width: 130px;
+	height: 37px;
+	color: white;
+	background-color: #5068F2;
+	border: 1px;
+	border-radius: 3px;
 }
 #AccountSet .profileBottom{
 	position: absolute;
@@ -201,7 +226,7 @@ h3{
 }
 #AccountSet #nameTitle{
 	margin-left: 20px;
-	margin-top: 10px;
+	margin-top: 18px;
 	font-size: 12px;
 }
 #AccountSet #nameReal{
@@ -282,21 +307,20 @@ h3{
 }
 
 .Scrolldiv{
-	height:968px;
-	overflow-y: auto;
+	height: 780px;
 }
 
 .ScrollDiv2{
-	height:1100px;
+	height: 780px;
 	overflow-y: auto;
 }
-.Scrolldiv::-webkit-scrollbar{
+.ScrollDiv2::-webkit-scrollbar{
     display: none; 
 }
 
 
 
-/*«¡∑Œ« */
+/*ÌîÑÎ°úÌïÑ*/
 #ServerProfile{
 	display: none;
 	position: relative;
@@ -315,15 +339,9 @@ h3{
 	font-size: 18px;
 	margin-top: 13px;
 }
-#ProfileSet .button:hover{
-	color: white;
-}
 #ProfileSet_btn01{
-	margin-left: 50px;
+	margin-left: 32px;
 	color: white;
-}
-#ProfileSet_btn02{
-	color: #B9BBBE;
 }
 
 .LeftPart{
@@ -338,29 +356,26 @@ h3{
 	height: 750px;
 
 }
-#ServerProfile{
-	clear: both;
-}
 
 .AbataDiv{
 	position: absolute;
 	top: 170px;
 	left: 30px;
 	width: 310px;
-	height: 100px;
+	height: 120px;
 	border-bottom: 0.1px solid #B9BBBE;
 }
 
 .AbataDiv h3{
 	position: absolute;
-    top: -77px;
+    top: -57px;
     left: -70px;
     font-size: 15px;
 }
 #LeftBtn{
 	position: absolute;
     font-size: 15px;
-    top: 60px;
+    top: 70px;
     left:10px;
     width: 120px;
     height: 30px;
@@ -372,7 +387,7 @@ h3{
 #RightBtn{
 	position: absolute;
     font-size: 15px;
-    top: 60px;
+    top: 70px;
     left: 160px;
     width: 120px;
     height: 30px;
@@ -396,7 +411,7 @@ h3{
 .ColorDiv h3{
 	font-size: 14px;
 	position: absolute;
-	top: -110px;
+	top:-97px;
 	left: -70px;
 }
 .ColorDiv p{
@@ -425,6 +440,7 @@ h3{
 }
 
 .smallProfile{
+	    margin-top: 30px;
 	background-color: pink;
 	width: 280px;
 	height: 200px;
@@ -434,11 +450,11 @@ h3{
 	border: 1px;
     border-radius: 3px;
 }
-.smallProfile h3{
+.RightPart h3{
 	position: absolute;
-	top: -145px;
-	left: -80px;
-	font-size: 14px;
+    top: -157px;
+    left: -80px;
+    font-size: 15px;
 }
 .smallprofileMID{
 	margin-top: 60px;
@@ -471,141 +487,33 @@ h3{
 	left: 20px;
 }
 
-#ServerProfile{
-	margin-top: 10px;
-	width: 700px;
-	height: 770px;
-}
-.serverP01{
-	margin-top:10px;
-	width: 700px;
-	height: 140px;
-	border-bottom: 0.1px solid #B9BBBE;
-}
-.serverP01 #serverP_01{
-	color: white;
-	font-size: 15px;
-	margin-left: 20px;
-}
-#serverP_01 a{
-	text-decoration: none;
-	color: aqua;
-}
-#serverP_02{
-	position: absolute;
-	top: 45px;
-	left: 20px;
-	color: #B9BBBE;
-	font-size: 13px;
-}
-.serverP01 select{
-	width: 650px;
-	height: 45px;
-	color: white;
-	font-size: 20px;
-	background-color: #2F3136;
-	border: 1px;
-    border-radius: 3px;
-    position: absolute;
-	top: 72px;
-	left: 20px;
-}
-.serverP01 select option img{
-	width: 30px;
-	height: 30px;
-}
-.serverP02{
-	width: 300px;
-	height: 130px;
-	border-bottom: 0.1px solid #B9BBBE;
-}
-.serverP02 p{
-	position: absolute;
-	top: 172px;
-	left: 20px;
-	font-size: 13px;
-}
-.serverP02 input{
-	position: absolute;
-	top: 199px;
-	left: 20px;
-	width: 270px;
-	height: 40px;
-	background-color: #2F3136;
-	border: 1px;
-    border-radius: 3px;
-}
-.serverPNext{
-	width: 750px;
-	height: 640px;
-}
-.SleftPart{
-	margin-left: 10px;
-	float: left;
-	width: 340px;
-	height: 640px;
-}
 
-
-.serverP03{
-	width: 300px;
-	height: 430px;
-}
-
-.serverP03Inner{
-	width: 290px;
-	height: 120px;
-	background-color: #2F3136;
-	border: 1px;
-    border-radius: 3px;
-    margin-top: 20px;
-    margin-left: 4px;
-    max-width: 290px;
-}
-.serverP03Inner p{
-	margin: 10px;
-	color: white;
-	font-size: 13px;
-	position: absolute;
-	top: 300px;
-}
-.serverP03Inner button{
-	margin: 10px;
-	width: 130px;
-	height: 30px;
-	background-color: #2D7D46;
-	border: 1px;
-    border-radius: 3px;
-    color: white;
-    position: absolute;
-	top: 350px;
-}
-
-.SRightPart{
-	float: left;
-	width: 340px;
-	height: 640px;
-}
-
-.SRightPart h3{
-	position: absolute;
-	top: -165px;
-}
-
-
-/*¡§∫∏ ∫∏æ»*/
+/*Ï†ïÎ≥¥ Î≥¥Ïïà*/
 #SecuritySet{
 	width: 660px;
 	height: 850px;
 	margin-top: 100px;
 	margin-left: 40px;
 }
-
+.SecSetScroll{
+	width: 660px;
+	margin-top:140px;
+	height: 780px;
+	overflow-y: auto; 
+}
+.SecSetScroll::-webkit-scrollbar{
+    display: none; 
+}
 .SecuritySet01 h2{
 	color: white;
-	font-size: 20px;
-	font-weight: normal;
-	margin: -10px auto 30px auto;
+    font-size: 20px;
+    font-weight: normal;
+    margin: 0px auto 30px 40px;
+    position: absolute;
+    top: 110px;
+}
+.SecuritySet01 ul{
+	margin-left: 1px;
 }
 .SecuritySet01 span{
 	font-size: 12px;
@@ -614,6 +522,7 @@ h3{
 .SecuritySet01 p{
 	font-size: 14px;
 	margin-bottom: 10px;
+	margin-top: 40px;
 }
 .SecuritySet01 li div{
 	width: 600px;
@@ -661,14 +570,39 @@ h3{
 	font-size: 16px;
 	font-weight: normal;
 	color: white;
-	position: absolute;
-	top: 340px;
-	left: -40px;
+	margin: 0px 0px 20px 0px;
 }
 #Sec_seP{
-	position: absolute;
-	top: 480px;
-	left: 40px;
+	text-decoration: none;
+}
+#datauser{
+	margin-top: 30px;
+}
+.SecuritySet02{
+	width: 660px;
+	height: 100px;
+	border-bottom: 0.1px solid #B9BBBE;
+}
+.SecuritySet02 h3{
+	margin: 20px 0px 15px 0px;
+	font-size: 16px;
+	font-weight: normal;
+	color: white;
+}
+
+
+.SecuritySet02 a, .CheckMyInfo a{
+	text-decoration: none;
+	color: #00B6FF;
+	cursor: pointer;
+}
+.CheckMyInfo{
+	margin-top: 50px;
+	width: 660px;
+	height: 50px;
+	background-color: #2F3136;
+	text-align: center;
+	line-height: 46px;
 }
 
 
@@ -679,8 +613,11 @@ h3{
 
 
 
-/*ƒ£±∏ø‰√ª*/
+
+
+/*ÏπúÍµ¨ÏöîÏ≤≠*/
 #FreindSet{
+	margin-left:-1px;
 	margin-top: 30px;
 	position: relative;
 }
@@ -699,7 +636,7 @@ h3{
 	width: 78%;
 	height: 60px;
 	margin-left: 40px;
-	border-bottom: 0.3px solid #B9BBBE;
+	border-bottom: thin solid #B9BBBE;
 }
 
 .friendRequire label{
@@ -724,16 +661,16 @@ h3{
 	top: 215px;
     right: 150px;
 }
-/*input ¿∫ º˚∞‹¡÷±‚*/
+/*input ÏùÄ Ïà®Í≤®Ï£ºÍ∏∞*/
 /*input#chk_top{
   display:none;
   }
-input πŸ∑Œ ¥Ÿ¿Ω¿« label
+input Î∞îÎ°ú Îã§ÏùåÏùò label
 input#chk_top + label{
   cursor:pointer;
  }
 
-input πŸ∑Œ ¥Ÿ¿Ω¿« label:before ø° √º≈©«œ±‚ ¿¸ CSS º≥¡§
+input Î∞îÎ°ú Îã§ÏùåÏùò label:before Ïóê Ï≤¥ÌÅ¨ÌïòÍ∏∞ Ï†Ñ CSS ÏÑ§Ï†ï
 input#chk_top + label:before{
   content:"";
   display:inline-block;
@@ -741,14 +678,14 @@ input#chk_top + label:before{
   height:17px;
   line-height:17px;
   border:1px solid #cbcbcb;
-  vertical-align:middle;√º≈© ¿¸∞˙ √º≈© »ƒ ≥Ù¿Ã ¬˜¿Ã ∂ßπÆø° º≥¡§
+  vertical-align:middle;Ï≤¥ÌÅ¨ Ï†ÑÍ≥º Ï≤¥ÌÅ¨ ÌõÑ ÎÜíÏù¥ Ï∞®Ïù¥ ÎïåÎ¨∏Ïóê ÏÑ§Ï†ï
   }
   
-checkedµ» input πŸ∑Œ ¥Ÿ¿Ω¿« label:before ø° √º≈© »ƒ CSS º≥¡§  
+checkedÎêú input Î∞îÎ°ú Îã§ÏùåÏùò label:before Ïóê Ï≤¥ÌÅ¨ ÌõÑ CSS ÏÑ§Ï†ï  
 input#chk_top:checked + label:before{
-  content:"\f00c";∆˘∆ÆæÓΩÊ ¿Ø¥œƒ⁄µÂ
-  font-family:"Font Awesome 5 free"; ∆˘∆ÆæÓΩÊ æ∆¿Ãƒ‹ ªÁøÎ
-  font-weight:900;∆˘∆ÆæÓΩÊ º≥¡§
+  content:"\f00c";Ìè∞Ìä∏Ïñ¥Ïç∏ Ïú†ÎãàÏΩîÎìú
+  font-family:"Font Awesome 5 free"; Ìè∞Ìä∏Ïñ¥Ïç∏ ÏïÑÏù¥ÏΩò ÏÇ¨Ïö©
+  font-weight:900;Ìè∞Ìä∏Ïñ¥Ïç∏ ÏÑ§Ï†ï
   color:#fff;
   background-color:#000;
   border-color:#000;
@@ -758,7 +695,7 @@ input#chk_top:checked + label:before{
 
 
 
-/*µΩ∫«√∑π¿Ã*/
+/*ÎîîÏä§ÌîåÎ†àÏù¥*/
 
 #DisplaySet .theme{
 	margin:40px;
@@ -798,24 +735,26 @@ input#chk_top:checked + label:before{
 
 
 
-
-
-
-
-/*∑Œ±◊æ∆øÙ*/
-
-
-/**/
-
+/*Î°úÍ∑∏ÏïÑÏõÉ*/
+#LogOutSet{
+	display: none; /* Î™®Îã¨Ï∞Ω Ïà®Í≤® ÎÜìÍ∏∞ */
+    position: fixed; 
+    z-index: 1; /* Î™®Îã¨Ï∞ΩÏùÑ Ï†úÏùº ÏïûÏóê ÎëêÍ∏∞ */
+    /*padding-top: 100px;*/
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    overflow: auto; /* Ïä§ÌÅ¨Î°§ ÌóàÏö© auto */
+    cursor: pointer; /* ÎßàÏö∞Ïä§ ÏÜêÍ∞ÄÎùΩÎ™®Ïñë */
+    background-color: rgba(0, 0, 0, 0.8);
+}
 #Logoutdiv{
 	/*display: none;*/
-	z-index: 500;
 	width: 440px;
 	height: 210px;
-	background-color: #36393F;
 	border: 1px solid;
     border-radius: 3px;
     padding-left: 20px;
+    background-color: #36393F;
     margin:auto;
     margin-top: 300px;
 }
@@ -831,10 +770,10 @@ input#chk_top:checked + label:before{
 #CheckLogout{
 	width: 460px;
     height: 80px;
-    background-color: #2F3136;
+    background-color:  #2F3136;
     position: absolute;
     top: 430px;
-    left: 170px;
+    left: 722px;
     border-bottom: 1px ;
     border-radius: 3px;
 }

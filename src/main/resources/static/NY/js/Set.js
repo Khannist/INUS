@@ -24,13 +24,6 @@ function F_SecuritySet(){
 	$(".SetMidbar").children('#SecuritySet').attr("style","display:block");
 }
 
-//
-function F_ConnectSet(){
-	$(".SetMidbar").children('div').attr("style","display:none");
-	$(".SetMidbar").children('#ConnectSet').attr("style","display:block");
-}
-
-
 function F_FreindSet(){
 	$(".SetMidbar").children('div').attr("style","display:none");
 	$(".SetMidbar").children('#FreindSet').attr("style","display:block");
@@ -121,67 +114,56 @@ function F_AutoplaySet(){
 	$(".SetMidbar").children('div').attr("style","display:none");
 	$(".SetMidbar").children('#AutoplaySet').attr("style","display:block");
 }
-
-//여기까지 음악설정
-
-
-//AddSet
-
-
-function F_NewSkillSet(){
-	$(".SetMidbar").children('div').attr("style","display:none");
-	$(".SetMidbar").children('#NewSkillSet').attr("style","display:block");
-}
-
-function F_LogOutSet(){
-	$(".SetMidbar").children('div').attr("style","display:none");
-	$(".SetMidbar").children('#LogOutSet').attr("style","display:block");
-}
-
-
-
-
 //여기까지 Lbar누르면 페이지 이동 끝남
 
 
-function F_UserProfile(){
-	document.querySelector('#UserProfile').style.display = "block";   
-    document.querySelector('#ServerProfile').style.display = "none";
+
+function F_LogOutSet(){
+	$("#LogOutSet").attr("style","display:block");
 }
 
-function F_ServerProfile(){
-	document.querySelector('#UserProfile').style.display = "none";   
-    document.querySelector('#ServerProfile').style.display = "block";
-    document.querySelector('#ProfileSet_btn01').style.color = "#B9BBBE";
+//로그아웃 페이지 지우기
+function LogOutFakeBtn(){
+	document.querySelector('#LogOutSet').style.display = "none";
 }
-
-
 
 
 
 
 //로그아웃
+/*const modal2 = document.querySelector(".modal2");
+const LogOutbtn = document.querySelector("#LogOutbtn");
+const modal_img = document.querySelector("#Logoutdiv");
+const span = document.querySelector("#LogOutFake");
 
-$(function(){
-	
-	// 	이미지 클릭시 해당 이미지 모달
-	$("#LogOutSet").click(function(){
-		$("#Logoutdiv").show();
-		
-	
-	//.modal안에 button을 클릭하면 .modal닫기
-	$("#LogOutFake").click(function(){
-		$("#Logoutdiv").hide();
-	});
-	
-	//.modal밖에 클릭시 닫힘
-	$("#Logoutdiv").click(function (e) {
-    if (e.target.className != "#Logoutdiv") {
-      return false;
-    } else {
-      $("#Logoutdiv").hide();
-    }
-  });
+LogOutbtn.addEventListener('click', ()=>{
+modalDisplay("block");
 });
+span.addEventListener('click', ()=>{
+modalDisplay("none");
+});
+modal.addEventListener('click', ()=>{
+modalDisplay("none");
+});
+function modalDisplay(text){
+modal.style.display = text;
+}*/
 
-})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
