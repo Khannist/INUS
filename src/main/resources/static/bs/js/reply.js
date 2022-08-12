@@ -52,7 +52,7 @@ function getTest() {
 				var commentNum = list[i].inus_commentNum;
 				
 				comment_html += "<div><span style='display:none;' id='inus_commentNum"+ commentNum +"' >" + commentNum + "</span><br/>";
-				comment_html += "<div><span id='inus_CmWriter'><strong>" + writer + "</strong></span><br/>";
+				comment_html += "<div><span id='inus_CmWriter'><strong>" + writer + "</strong></span>&nbsp;&nbsp;";
 				comment_html += "<span id='inus_CmContent'>" + content + "</span><br>";
 				
 				var con = document.getElementById("inus_userName").value;
@@ -63,7 +63,7 @@ function getTest() {
 				console.log(writer === con);
 				if(writer === con){
 					comment_html += "<input type=\"button\" id=\"CommentDeleteBtn\" value=\"댓글삭제\" onclick=\"CommentDelete('inus_commentNum"+ commentNum +"')\">";
-					comment_html += '<hr></div>';				
+					comment_html += '</div>';				
 				}
 				else{
 					comment_html += "</div><hr>";

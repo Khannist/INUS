@@ -9,6 +9,7 @@
 <meta charset="UTF-8">
 <title>메인화면</title>
 <link type="text/css" rel="stylesheet" href="bs/css/inus.css">
+<link type="text/css" rel="stylesheet" href="bs/css/comment.css">
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script src="https://kit.fontawesome.com/0535b153a9.js" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
