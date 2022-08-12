@@ -11,7 +11,6 @@
 </head>
 <body>
    <div class="comment-box">
-                    
    		                 <div class="comment-count">댓글 <span id="count">0</span></div>
 
    		                 	   <!-- <span class="c-icon"><i class="fa-solid fa-user"></i>  -->
@@ -30,6 +29,6 @@
   <div class="comment_Box" style="border:1px solid gray;"> <!-- 댓글이 들어갈 박스 -->
 		<p>아직 작성된 글이 없습니다.</p>
 		
-	</div>
+  </div>
 </body>
 </html>

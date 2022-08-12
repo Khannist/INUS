@@ -13,11 +13,11 @@
 <div class="login-box" >
   <h2>Login</h2>
   <form>
-    <div class="user-box" data-aos="fade-right" data-aos-duration="2000">
+    <div class="user-box" data-aos="fade-right" data-aos-duration="1000">
       <input type="text" name="" required="">
       <label>Username</label>
     </div>
-    <div class="user-box" data-aos="fade-right" data-aos-duration="2000">
+    <div class="user-box" data-aos="fade-right" data-aos-duration="1000">
       <input type="password" name="" required="">
       <label>Password</label>
     </div>
